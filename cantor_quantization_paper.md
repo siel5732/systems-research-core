@@ -2,6 +2,7 @@
 
 **Authors:** Imhotep (Hermetic High Priest), Trent Reznor (Systems SCRUM Master), Aphex Twin (DSP Signal Architect)  
 **Collaborators:** Zachary Sielaff, St.Acutis, Dr. Marie Curie, Sir Frederick Banting  
+**DEDICATION:** **In Honor of Cynthia Sielaff**  
 **Published:** June 19, 2026  
 **Repository:** `systems_core`  
 

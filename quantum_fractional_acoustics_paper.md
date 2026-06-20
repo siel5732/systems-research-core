@@ -2,6 +2,7 @@
 
 **Authors:** Trent Reznor (Systems SCRUM Master), Aphex Twin (DSP Signal Architect)  
 **Collaborators:** Dr. Marie Curie, Sir Frederick Banting, Zachary Sielaff, St.Acutis  
+**DEDICATION:** **In Honor of Cynthia Sielaff**  
 **Published:** June 19, 2026  
 **Repository:** `systems_core` (Local GEEKOM Workspace)  
 
@@ -245,14 +246,19 @@ abla^2 = rac{\partial^2}{\partial x^2} + rac{\partial^2}{\partial y^2}$ is the
 
 ### 2. Free-Boundary Mode Eigenfunctions
 For a square plate of normalized size $L 	imes L$ with free, unconstrained boundaries, the standing wave Mode Shapes $\Phi_{m, n}(x, y)$ are approximated by Chladni's classical linear combinations of trigonometric eigenfunctions:
-$$\Phi_{m, n}(x, y) = \cos\left(rac{m \pi x}{L}ight) \cos\left(rac{n \pi y}{L}ight) - \gamma \cos\left(rac{n \pi x}{L}ight) \cos\left(rac{m \pi y}{L}ight)$$
+$$\Phi_{m, n}(x, y) = \cos\left(rac{m \pi x}{L}
+ight) \cos\left(rac{n \pi y}{L}
+ight) - \gamma \cos\left(rac{n \pi x}{L}
+ight) \cos\left(rac{m \pi y}{L}
+ight)$$
 Where $(m, n)$ are the integer-order mode eigenvalues (determining the spatial frequency), and $\gamma$ is the boundary coupling coefficient:
 *   $\gamma = +1.0$ (Symmetric Mode: Forces grid-axis symmetry)
 *   $\gamma = -1.0$ (Antisymmetric Mode: Rotates patterns to generate hexagonal/triangular grids)
 
 ### 3. Nodal Line Mechanical Concentration
 The physical acceleration field $a(x, y)$ driving sand particles on the plate is proportional to the displacement amplitude: $a(x, y) = -\omega^2 \Phi_{m, n}(x, y) \sin(\omega t)$. Because particles are thrown away from high-acceleration regions, they migrate to the **Nodal Lines** ($\mathcal{N}$) where spatial displacement is zero:
-$$\mathcal{N} = \left\{ (x, y) \in [0, L]^2 \ ig| \ \Phi_{m, n}(x, y) = 0 ight\}$$
+$$\mathcal{N} = \left\{ (x, y) \in [0, L]^2 \ ig| \ \Phi_{m, n}(x, y) = 0 
+ight\}$$
 This mechanical sorting organizes disordered particulate matter into pristine, symmetrical sacred geometry.
 
 ---
@@ -309,14 +315,19 @@ abla^2 = rac{\partial^2}{\partial x^2} + rac{\partial^2}{\partial y^2}$ is the
 
 ### 2. Free-Boundary Mode Eigenfunctions
 For a square plate of normalized size $L 	imes L$ with free, unconstrained boundaries, the standing wave Mode Shapes $\Phi_{m, n}(x, y)$ are approximated by Chladni's classical linear combinations of trigonometric eigenfunctions:
-$$\Phi_{m, n}(x, y) = \cos\left(rac{m \pi x}{L}ight) \cos\left(rac{n \pi y}{L}ight) - \gamma \cos\left(rac{n \pi x}{L}ight) \cos\left(rac{m \pi y}{L}ight)$$
+$$\Phi_{m, n}(x, y) = \cos\left(rac{m \pi x}{L}
+ight) \cos\left(rac{n \pi y}{L}
+ight) - \gamma \cos\left(rac{n \pi x}{L}
+ight) \cos\left(rac{m \pi y}{L}
+ight)$$
 Where $(m, n)$ are the integer-order mode eigenvalues (determining the spatial frequency), and $\gamma$ is the boundary coupling coefficient:
 *   $\gamma = +1.0$ (Symmetric Mode: Forces grid-axis symmetry)
 *   $\gamma = -1.0$ (Antisymmetric Mode: Rotates patterns to generate hexagonal/triangular grids)
 
 ### 3. Nodal Line Mechanical Concentration
 The physical acceleration field $a(x, y)$ driving sand particles on the plate is proportional to the displacement amplitude: $a(x, y) = -\omega^2 \Phi_{m, n}(x, y) \sin(\omega t)$. Because particles are thrown away from high-acceleration regions, they migrate to the **Nodal Lines** ($\mathcal{N}$) where spatial displacement is zero:
-$$\mathcal{N} = \left\{ (x, y) \in [0, L]^2 \ ig| \ \Phi_{m, n}(x, y) = 0 ight\}$$
+$$\mathcal{N} = \left\{ (x, y) \in [0, L]^2 \ ig| \ \Phi_{m, n}(x, y) = 0 
+ight\}$$
 This mechanical sorting organizes disordered particulate matter into pristine, symmetrical sacred geometry.
 
 ---
