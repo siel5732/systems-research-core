@@ -1,0 +1,79 @@
+{
+    "metadata": {
+        "title": "Takens' Theorem 3D Chaos Phase-Space Attractor Reconstruction",
+        "PI": "Trent Reznor & Aphex Twin",
+        "date": "2026-06-19",
+        "time_delay_steps_tau": 12,
+        "total_timesteps": 1500,
+        "sampling_rate_hz": 100.0,
+        "units": {
+            "time": "seconds",
+            "coordinates": "arbitrary units (Lorenz phase space)"
+        }
+    },
+    "topological_correlation_coefficient": 0.43294,
+    "trajectory_true_sample": [
+        {
+            "t": 0.24,
+            "x": 3.683,
+            "y": 6.553,
+            "z": 11.611
+        },
+        {
+            "t": 0.25,
+            "x": 3.983,
+            "y": 7.114,
+            "z": 11.564
+        },
+        {
+            "t": 0.26,
+            "x": 4.309,
+            "y": 7.721,
+            "z": 11.563
+        },
+        {
+            "t": 0.27,
+            "x": 4.665,
+            "y": 8.377,
+            "z": 11.615
+        },
+        {
+            "t": 0.28,
+            "x": 5.052,
+            "y": 9.082,
+            "z": 11.728
+        }
+    ],
+    "trajectory_reconstructed_sample": [
+        {
+            "t": 0.24,
+            "x(t)": 3.683,
+            "x(t-tau)": 1.579,
+            "x(t-2tau)": 1.003
+        },
+        {
+            "t": 0.25,
+            "x(t)": 3.983,
+            "x(t-tau)": 1.679,
+            "x(t-2tau)": 1.014
+        },
+        {
+            "t": 0.26,
+            "x(t)": 4.309,
+            "x(t-tau)": 1.789,
+            "x(t-2tau)": 1.031
+        },
+        {
+            "t": 0.27,
+            "x(t)": 4.665,
+            "x(t-tau)": 1.909,
+            "x(t-2tau)": 1.054
+        },
+        {
+            "t": 0.28,
+            "x(t)": 5.052,
+            "x(t-tau)": 2.042,
+            "x(t-2tau)": 1.084
+        }
+    ]
+}

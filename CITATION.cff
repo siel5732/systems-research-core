@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you utilize these advanced systems mathematics solvers, signal processing pipelines, or transfinite preprints, please cite them as follows."
+authors:
+  - family-names: Sielaff
+    given-names: Zachary
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Systems Core Advanced Mathematics & Signal Processing Pipeline: High-Fidelity Solvers for Non-Local Fractional Diffusion, Wavelet Denoising, Chaos Attractor Reconstruction, and Transfinite Projections"
+version: 1.0.0
+doi: 10.5281/zenodo.0000000
+date-released: 2026-06-19
+url: "https://github.com/siel5732/systems-research-core"
