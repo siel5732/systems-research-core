@@ -1,0 +1,302 @@
+[
+    {
+        "step": 0,
+        "spatial_probability": [
+            1.0000000000000002,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "shannon_entropy": 0.0,
+        "von_neumann_entanglement_entropy": -3.2034265038149176e-16
+    },
+    {
+        "step": 1,
+        "spatial_probability": [
+            0.0,
+            0.5000000000000001,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5000000000000001
+        ],
+        "shannon_entropy": 1.0,
+        "von_neumann_entanglement_entropy": 1.0
+    },
+    {
+        "step": 2,
+        "spatial_probability": [
+            0.5000000000000002,
+            0.0,
+            0.2500000000000001,
+            0.0,
+            0.0,
+            0.0,
+            0.2500000000000001,
+            0.0
+        ],
+        "shannon_entropy": 1.5,
+        "von_neumann_entanglement_entropy": 0.8112781244591327
+    },
+    {
+        "step": 3,
+        "spatial_probability": [
+            0.0,
+            0.375,
+            0.0,
+            0.12500000000000003,
+            0.0,
+            0.12500000000000003,
+            0.0,
+            0.375
+        ],
+        "shannon_entropy": 1.811278124459133,
+        "von_neumann_entanglement_entropy": 0.8112781244591327
+    },
+    {
+        "step": 4,
+        "spatial_probability": [
+            0.12500000000000006,
+            0.0,
+            0.3750000000000002,
+            0.0,
+            0.12500000000000006,
+            0.0,
+            0.3750000000000002,
+            0.0
+        ],
+        "shannon_entropy": 1.8112781244591327,
+        "von_neumann_entanglement_entropy": 0.8112781244591326
+    },
+    {
+        "step": 5,
+        "spatial_probability": [
+            0.0,
+            0.125,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.125
+        ],
+        "shannon_entropy": 1.8112781244591327,
+        "von_neumann_entanglement_entropy": 1.0
+    },
+    {
+        "step": 6,
+        "spatial_probability": [
+            0.12500000000000006,
+            0.0,
+            0.12500000000000006,
+            0.0,
+            0.6250000000000003,
+            0.0,
+            0.12500000000000006,
+            0.0
+        ],
+        "shannon_entropy": 1.5487949406953987,
+        "von_neumann_entanglement_entropy": -3.2034265038149176e-16
+    },
+    {
+        "step": 7,
+        "spatial_probability": [
+            0.0,
+            0.125,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.125
+        ],
+        "shannon_entropy": 1.8112781244591327,
+        "von_neumann_entanglement_entropy": 1.0
+    },
+    {
+        "step": 8,
+        "spatial_probability": [
+            0.12500000000000006,
+            0.0,
+            0.12500000000000006,
+            0.0,
+            0.6250000000000003,
+            0.0,
+            0.12500000000000006,
+            0.0
+        ],
+        "shannon_entropy": 1.5487949406953987,
+        "von_neumann_entanglement_entropy": 0.8112781244591326
+    },
+    {
+        "step": 9,
+        "spatial_probability": [
+            0.0,
+            0.125,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.125
+        ],
+        "shannon_entropy": 1.8112781244591327,
+        "von_neumann_entanglement_entropy": 0.8112781244591327
+    },
+    {
+        "step": 10,
+        "spatial_probability": [
+            0.25000000000000006,
+            0.0,
+            0.2500000000000001,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.2500000000000001,
+            0.0
+        ],
+        "shannon_entropy": 2.0,
+        "von_neumann_entanglement_entropy": 0.8112781244591328
+    },
+    {
+        "step": 11,
+        "spatial_probability": [
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006
+        ],
+        "shannon_entropy": 2.0,
+        "von_neumann_entanglement_entropy": 1.0
+    },
+    {
+        "step": 12,
+        "spatial_probability": [
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0
+        ],
+        "shannon_entropy": 2.0,
+        "von_neumann_entanglement_entropy": -3.2034265038149176e-16
+    },
+    {
+        "step": 13,
+        "spatial_probability": [
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006
+        ],
+        "shannon_entropy": 2.0,
+        "von_neumann_entanglement_entropy": 1.0
+    },
+    {
+        "step": 14,
+        "spatial_probability": [
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0,
+            0.25000000000000006,
+            0.0
+        ],
+        "shannon_entropy": 2.0,
+        "von_neumann_entanglement_entropy": 0.8112781244591328
+    },
+    {
+        "step": 15,
+        "spatial_probability": [
+            0.0,
+            0.12500000000000003,
+            0.0,
+            0.375,
+            0.0,
+            0.375,
+            0.0,
+            0.12500000000000003
+        ],
+        "shannon_entropy": 1.811278124459133,
+        "von_neumann_entanglement_entropy": 0.8112781244591327
+    },
+    {
+        "step": 16,
+        "spatial_probability": [
+            0.12500000000000006,
+            0.0,
+            0.12500000000000006,
+            0.0,
+            0.6250000000000003,
+            0.0,
+            0.12500000000000006,
+            0.0
+        ],
+        "shannon_entropy": 1.5487949406953987,
+        "von_neumann_entanglement_entropy": 0.8112781244591326
+    },
+    {
+        "step": 17,
+        "spatial_probability": [
+            0.0,
+            0.125,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.125
+        ],
+        "shannon_entropy": 1.8112781244591327,
+        "von_neumann_entanglement_entropy": 1.0
+    },
+    {
+        "step": 18,
+        "spatial_probability": [
+            0.12500000000000006,
+            0.0,
+            0.12500000000000006,
+            0.0,
+            0.6250000000000003,
+            0.0,
+            0.12500000000000006,
+            0.0
+        ],
+        "shannon_entropy": 1.5487949406953987,
+        "von_neumann_entanglement_entropy": -3.2034265038149176e-16
+    },
+    {
+        "step": 19,
+        "spatial_probability": [
+            0.0,
+            0.125,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.37500000000000006,
+            0.0,
+            0.125
+        ],
+        "shannon_entropy": 1.8112781244591327,
+        "von_neumann_entanglement_entropy": 1.0
+    }
+]
