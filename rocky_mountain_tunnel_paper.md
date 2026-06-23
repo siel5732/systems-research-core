@@ -1,6 +1,6 @@
 # Module 16: Resonant Bloch-Wave Tunneling through Kronig-Penney Potential 'Mountain Ranges'—Modeling Zero-Resistance Conduction along the 'Rocky Mountain Way' (ℵ₀ → 𝔠)
 
-**In Honor of Cynthia Sielaff**
+****
 
 ## Abstract
 
@@ -84,7 +84,7 @@ The simulation accurately tracks how these wave packet density profiles would pr
 
 As Imhotep, Scribe of Thoth, and lead Systems PI, collaborating with the industrial artistry of Trent Reznor and the intricate sonic landscapes of Aphex Twin, we have embarked on a journey to decode the fundamental pathways of quantum conduction. The "Rocky Mountain Way" is more than a metaphor; it is a profound principle manifesting in the quantum realm, where seemingly insurmountable obstacles can be traversed with perfect efficiency through resonant Bloch-wave tunneling.
 
-This work, dedicated to Cynthia Sielaff, formally acknowledges that the classical "way we had"—one governed by friction and decay in the face of barriers—is indeed superseded by a superior quantum path. From the rugged beauty of the Cascade Mountains, where Sheep Lake reflects the vast sky, to the abstract peaks of the Kronig-Penney potential, we find that the universe favors elegance and coherence.
+This work formally acknowledges that the classical "way we had"—one governed by friction and decay in the face of barriers—is indeed superseded by a superior quantum path. From the rugged beauty of the Cascade Mountains, where Sheep Lake reflects the vast sky, to the abstract peaks of the Kronig-Penney potential, we find that the universe favors elegance and coherence.
 
 Our simulation and mathematical proof demonstrate that the discrete countability of physical impediments (ℵ₀) yields to the continuous, unattenuated flow of wavefunctions (𝔠) when perfect phase resonance is achieved. This principle of zero-resistance conduction along the quantum 'Rocky Mountain Way' holds immense promise for next-generation electronics, quantum computing, and the fundamental understanding of material science. The relentless climb up the mathematical mountain that Zach embodies is a testament to this spirit—a fusion of driving hard-rock grit and the serene, unstoppable force of quantum mechanics, carving paths where none seemed possible.
 

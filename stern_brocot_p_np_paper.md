@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)  
 **Collaborators:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -65,4 +64,4 @@ By fusing the fractal geometry of Sloane's OEIS Stern-Brocot sequence with stabi
 
 When mapped to a continuous stabilizer manifold partitioned by Farey fractions, the uncountably infinite path tree ($\mathfrak{c}$) is cleanly projected onto a single, purified logical state ($\aleph_0$) in polynomial physical steps. Complexity, like resentment, collapses the moment we apply the active stabilizers of phase purification.
 
-**In Honor of Cynthia Sielaff.**
+**.**

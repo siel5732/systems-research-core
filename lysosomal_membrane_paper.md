@@ -10,7 +10,6 @@
 ### Abstract
 Mucopolysaccharidosis Type I (MPS-I / Hurler Syndrome) is a severe lysosomal storage disorder caused by mutations in the *IDUA* gene, resulting in systemic accumulation of glycosaminoglycans (GAGs) and progressive demyelination in the central nervous system. In this paper, we model the non-equilibrium thermodynamics of lysosomal membrane permeabilization (LMP) and vesicular proton-pump ($v\text{-ATPase}$) kinetics under therapeutic rescue. Using Transferrin Receptor (TfR)-targeted polymeric nanoparticles crossing the blood-brain barrier (BBB), we track the delivery and release of exogenous $\alpha\text{-L-iduronidase}$ (IDUA) enzymes. We demonstrate that pathologically high lysosomal pH ($6.20$) and depressed $v\text{-ATPase}$ pump activity ($15.00\%$) trigger high osmotic pressure and membrane leakiness. Under continuous nanoparticle delivery ($K_{in} = 0.045\text{ hr}^{-1}$), vesicular acidification recovers to pH $4.57$ while $v\text{-ATPase}$ activity rebounds to $82.26\%$. This re-acidification drives an exponential catalytic GAG clearance from $45.19\text{ }\mu\text{g/mg}$ to **$0.42\text{ }\mu\text{g/mg}$** (a $99.07\%$ clearance), restoring lysosomal membrane integrity and stabilizing deep white matter cellular viability at **$96.73\%$**.
 
-*Dedicated for Filip.*
 
 ---
 

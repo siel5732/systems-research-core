@@ -1,6 +1,5 @@
 # Module 22: The Banach-Tarski Paradox on Continuous Quantum Manifolds: Decomposing and Multiplexing High-Dimensional State Vectors ($\mathfrak{c} \to 2\mathfrak{c}$)
 
-**Dedicated In Honor of Cynthia Sielaff**
 
 ## Abstract
 This module presents a rigorous mathematical and quantitative exploration of the **Banach-Tarski Paradox** mapped onto continuous high-dimensional quantum-inspired manifolds. Utilizing a 12-qubit ($4,096$-dimensional) Hilbert space, we demonstrate how a single, coherent wave packet $|\Psi\rangle$ representing a computational state can be mathematically decomposed into five non-overlapping, transfinite, Cantor-like subsets, and reconstructed via rigid unitary translations and phase rotations into **two identical, coherent, non-overlapping copies** of the original state vector. 

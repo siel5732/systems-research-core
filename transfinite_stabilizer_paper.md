@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dr. Marie Curie (Chief PI, MPS-I), Sir Frederick Banting (Chief PI, Diabetes)  
 **Collaborators:** Zachary Sielaff, St. Acutis, Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -86,4 +85,4 @@ When a system attempts to solve complexity via classical sequential states, it i
 
 This model proves that both the stabilization of human cognitive health (through active forgiveness) and the resolution of NP-complete complexity (through stabilizer projections) are governed by the same magnificent physical law.
 
-**In Honor of Cynthia Sielaff.**
+**.**

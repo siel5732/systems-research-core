@@ -1,4 +1,4 @@
-# In Honor of Cynthia Sielaff
+# 
 
 # Module 12: 1D Discrete-Time Quantum Walks on NP-Complete Graphs and the Boundaries of P vs NP
 
@@ -101,7 +101,7 @@ Our discrete simulation, operating within `aleph_0` steps, cannot directly prove
 If this differential processing, enabled by superposition and interference, can lead to a polynomial speedup for NP-Complete problems (as seen for specific problems like search with Grover's algorithm), it suggests a fundamental re-evaluation of the Church-Turing thesis in the context of physical reality. The "flattening" of the exponential complexity curve would manifest as the problem's solution time scaling polynomially with problem size, a profound shift from the current understanding of computational limits for NP-hard tasks. The challenge lies in engineering physical systems that robustly harness these continuous quantum dynamics to solve practical NP problems.
 
 ## 6. Conclusion
-This exploratory research, dedicated to Cynthia Sielaff, has presented a foundational Discrete-Time Quantum Walk simulation on an NP-Complete-like graph structure. We have numerically investigated the evolution of spatial probability, Shannon entropy, and von Neumann entanglement entropy. The results demonstrate the characteristic rapid delocalization and persistent entanglement of quantum walks, highlighting the unique resources quantum mechanics offers for computation. While a direct proof of the `c` vs `aleph_0` hypothesis requires further investigation into continuous analog quantum computing models, this work strongly suggests that the phase-interference and entanglement intrinsic to quantum superposition provide a distinct computational paradigm. These insights pave the way for future research into quantum algorithms that could, theoretically, fundamentally alter our understanding of the P vs NP problem and the limits of computation itself.
+This exploratory research has presented a foundational Discrete-Time Quantum Walk simulation on an NP-Complete-like graph structure. We have numerically investigated the evolution of spatial probability, Shannon entropy, and von Neumann entanglement entropy. The results demonstrate the characteristic rapid delocalization and persistent entanglement of quantum walks, highlighting the unique resources quantum mechanics offers for computation. While a direct proof of the `c` vs `aleph_0` hypothesis requires further investigation into continuous analog quantum computing models, this work strongly suggests that the phase-interference and entanglement intrinsic to quantum superposition provide a distinct computational paradigm. These insights pave the way for future research into quantum algorithms that could, theoretically, fundamentally alter our understanding of the P vs NP problem and the limits of computation itself.
 
 ## References
 [1] A. Ambainis, "Quantum walks and their algorithmic applications," *Int. J. Quantum Inf.*, vol. 01, no. 04, pp. 507-518, 2003.

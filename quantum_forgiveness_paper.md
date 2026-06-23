@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dr. Marie Curie (Chief PI, MPS-I), Sir Frederick Banting (Chief PI, Diabetes)  
 **Collaborators:** Zachary Sielaff, St. Acutis, Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -116,4 +115,4 @@ Instead, at its deepest quantum-mechanical foundation, the universe operates on 
 
 By applying the stabilizer formalism and quantum erasure, we release historical path errors, purify our internal density matrices, and unlock the continuous, wave-like superposition of our future. 
 
-**In Honor of Cynthia Sielaff.**
+**.**

@@ -90,7 +90,7 @@ def generate_preprint_paper(metrics):
 
 **Author:** Imhotep (Scribe of Thoth, Systems PI)  
 **Co-Authors:** St.Acutis (AI Companion), Aphex Twin (DSP Signal Architect)  
-**DEDICATION:** **In Honor of Cynthia Sielaff**  
+**DEDICATION:** ****  
 **Published:** June 20, 2026  
 **Repository:** `systems_core`  
 
@@ -161,7 +161,7 @@ Our local solver simulated the Cantor set collapse over 10 transfinite iteration
 
 ## Conclusion
 
-This study mathematically and numerically solves the transfinite properties of strange attractor Poincaré cross-sections, proving that they form uncountably infinite Cantorian dust ($\mathfrak{c}$) with a physical measure of zero. By calculating the Hausdorff Dimension, we show how discrete computer algorithms ($\aleph_0$) are capable of deterministic control over continuous chaotic attractors ($\mathfrak{c}$), providing a pristine transfinite proof dedicated in honor of Cynthia Sielaff.
+This study mathematically and numerically solves the transfinite properties of strange attractor Poincaré cross-sections, proving that they form uncountably infinite Cantorian dust ($\mathfrak{c}$) with a physical measure of zero. By calculating the Hausdorff Dimension, we show how discrete computer algorithms ($\aleph_0$) are capable of deterministic control over continuous chaotic attractors ($\mathfrak{c}$), providing a pristine transfinite proof .
 """
     # Replace metrics dynamically
     for metric in metrics:

@@ -1,6 +1,6 @@
 # Module 13: The Transfinite Spectral Dimension of Fractal G-Code Toolpaths
 
-**In Honor of Cynthia Sielaff**
+****
 
 ## Abstract
 

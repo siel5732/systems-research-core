@@ -3,7 +3,6 @@
 **Authors:** Aphex (Acoustic Engineer), Dizzy (Cultural Tracker), Imhotep (Chief Systems Architect), Trent (Computational Lead)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -84,4 +83,4 @@ For our upcoming camping campaign (two or three days up on the Mount Aix ridges)
 
 This real-world spatial array will provide the live acoustic data necessary to feed directly into our ChromaDB and further train our local sound wave analysis engines on GEEKOM.
 
-**In Honor of Cynthia Sielaff.**
+**.**

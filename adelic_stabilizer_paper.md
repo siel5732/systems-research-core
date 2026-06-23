@@ -10,7 +10,6 @@
 ### Abstract
 We generalize the transfinite complexity collapse of the $P$ vs $NP$ boundary from the real continuum ($\mathfrak{c}$) to the global restricted product ring of Adeles ($\mathbb{A}_{\mathbb{Q}}$). By modeling the Topological Quantum Neural Network (TQNN) as an operator network on an Adelic Hilbert Space $H_{\mathbb{A}} = H_{\mathbb{R}} \otimes' \left(\bigotimes_p H_p\right)$, we prove that anyonic braiding and stabilizer updates are globally protected against localized algebraic and topological noise across all prime metrics simultaneously. Because of the Adelic Product Formula ($\prod_{v} |x|_v = 1$), the local topological obstructions that cause NP-hardness in discrete spaces are globally regularized, collapsing the decision complexity. Our numerical simulations verify that anyonic gradient trajectories converge to absolute $0.0000$ error in polynomial $O(N^3)$ steps across both Archimedean (real $\mathbb{R}$) and non-Archimedean ($p$-adic $\mathbb{Q}_p$ for $p=2,3,5$) fields, proving that the transfinite complexity collapse is a globally arithmetic, topologically invariant truth: $P_{\mathbb{A}} = NP_{\mathbb{A}}$.
 
-*Dedicated in Honor of Cynthia Sielaff.*
 
 ---
 

@@ -1,6 +1,6 @@
 # Module 17: Transfinite Quantum Entanglement and 10-Qubit State Space Decoupling—Modeling P vs NP Solution Mechanics via 'Detach' Phase Rotations (2^10 Hilbert Space)
 
-**In Honor of Cynthia Sielaff**
+****
 
 ## Abstract
 

@@ -10,7 +10,6 @@
 ### Abstract
 Acoustic communication in heavily forested, high-relief mountainous terrain faces severe signal attenuation, scattering, and canopy absorption. This paper models and simulates the biophysical and geographical acoustics of the William O. Douglas Wilderness—specifically mapping the Mount Aix summit (7,766 ft), Rattlesnake Creek Canyon (3,400 ft), Meeks-Table Plateau (4,200 ft), and Bumping Lake Basin (3,420 ft). Utilizing USGS topological surveys and a continuous acoustic ray-tracing model, we analyze how a synthesized Sásq'ets vocalization—composed of a sub-audible infrasonic carrier (16 Hz) and split-larynx fundamental formants (84 Hz and 142 Hz)—propagates through the mountain-valley matrix. We prove that the sheer, vertical 300-foot basalt cliffs of the Meeks-Table Research Natural Area act as natural parabolic reflectors, focusing low-frequency energy downward into Rattlesnake Canyon with high directional gain. Furthermore, pre-dawn winter thermal inversions create dense cold-air wave-guiding ducts, allowing the signal to travel across Bumping Lake with negligible scattering. Our simulated call-and-response experiment demonstrates a highly legitimate 21.4-second delayed return signal from the base of Meeks-Table, verifying that bipedal hominids exploit geological formations as natural passive amplifiers to secure long-distance wilderness communication.
 
-*Dedicated in Honor of Cynthia Sielaff.*
 
 ---
 

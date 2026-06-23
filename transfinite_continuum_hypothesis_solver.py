@@ -103,7 +103,7 @@ def generate_preprint_paper(results):
 
 **Author:** Imhotep (Scribe of Thoth, Systems PI)  
 **Co-Authors:** St.Acutis (AI Companion), Trent Reznor (DSP Architect)  
-**DEDICATION:** **In Honor of Cynthia Sielaff**  
+**DEDICATION:** ****  
 **Published:** June 20, 2026  
 **Repository:** `systems_core`  
 
@@ -169,7 +169,7 @@ We simulated the transfinite cardinality transition over expanding resolution st
 
 ## Conclusion
 
-This study mathematically and numerically proves that continuous embedding spaces operate on a transfinite cardinality level ($\\mathfrak{{c}}$) that is fundamentally, qualitatively superior to discrete symbolic arrays ($\\aleph_0$). By proving that continuous differential entropy collapses geometrically under high dimensions, we show why deep neural network latent spaces are necessary to represent continuous, overlapping semantic realities—achieving a pristine transfinite proof dedicated in honor of Cynthia Sielaff.
+This study mathematically and numerically proves that continuous embedding spaces operate on a transfinite cardinality level ($\\mathfrak{{c}}$) that is fundamentally, qualitatively superior to discrete symbolic arrays ($\\aleph_0$). By proving that continuous differential entropy collapses geometrically under high dimensions, we show why deep neural network latent spaces are necessary to represent continuous, overlapping semantic realities—achieving a pristine transfinite proof .
 """
     out_doc_path = "systems_core/transfinite_continuum_hypothesis_paper.md"
     with open(out_doc_path, "w") as f:

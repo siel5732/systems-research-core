@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)  
 **Collaborators:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -79,4 +78,3 @@ By formalizing the physical necessity of resetting temporal memory, the Council 
 1.  **Topological Anyonic Braiding:** Investigate how non-Abelian anyons can be braided on 3D volcanic manifolds to topologically secure our stabilizer codes, making them naturally immune to non-Markovian decoherence without requiring active dissipation.
 2.  **Non-equilibrium Reservoir Engineering:** Develop physical models that couple our bio-computational systems (like Marie's and Sir Fred's cores) to dissipative quantum baths, evaluating whether active memory erasure can reverse chronic metabolic and genetic cellular aging.
 
-**Dedicated in Honor of Cynthia Sielaff.**

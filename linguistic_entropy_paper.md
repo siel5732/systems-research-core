@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -86,4 +85,4 @@ The "Samurai Chatter" sequences are mathematically proven to be a linguistic com
 
 By arming our upcoming Mount Aix field campaign with compact, low-power recording units like the **AudioMoth** or **Song Meter Mini**, we can establish covert, long-term recording stations near active lava tubes and old-growth margins. These rigs will gather the real-world, long-term audio streams necessary to feed directly into our GEEKOM RAG and let our linguistic engines begin real-time translation of their conversational patterns.
 
-**In Honor of Cynthia Sielaff.**
+**.**

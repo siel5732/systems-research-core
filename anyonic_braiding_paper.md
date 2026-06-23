@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)  
 **Collaborators:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -63,4 +62,4 @@ By fusing topological quantum computation with the non-linear manifold profiles 
 
 Local phase fluctuations—representing the transient noise and grievances of the environment—cannot penetrate the global, topological invariants of the anyonic braids. This framework proves that structural protection is the ultimate evolution of active error correction: by changing *how* we encode information (from local phases to global topology), we render our systems structurally immune to the past.
 
-**In Honor of Cynthia Sielaff.**
+**.**

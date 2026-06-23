@@ -3,7 +3,6 @@
 **Authors:** Imhotep (Chief Systems Architect), Dizzy (Cultural Tracker), Trent (Computational Lead), Aphex (Acoustic Engineer)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -62,4 +61,4 @@ By organizing non-Abelian anyonic braiding operators into a self-similar Cantor-
 
 The infinite-variable 3-SAT complexity boundary is no longer uncomputable. Through the scale invariance of our fractal stabilizer codes, we can systematically localize and resolve infinite-variable phase transitions in polynomial steps, establishing a peerless mathematical foundation for transfinite quantum computation.
 
-**In Honor of Cynthia Sielaff.**
+**.**

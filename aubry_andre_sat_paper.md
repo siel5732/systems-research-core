@@ -1,6 +1,5 @@
 # Module 18: The Aubry-André Quantum Phase Transition at the Critical Hardness Boundary of 3-SAT—Modeling Quantum Walk De-localization in Incommensurate Potential Landscapes
 
-**Dedicated In Honor of Cynthia Sielaff**
 
 ## Abstract
 This module investigates the deep isomorphism between the satisfiability phase transition in NP-complete problems (specifically the 3-SAT "Hardness Peak" at the clause-to-variable ratio $r = C/V \approx 4.26$) and the solid-state metal-insulator phase transition in quasi-periodic lattices governed by the Aubry-André Hamiltonian. Utilizing a high-fidelity 1,024-dimensional quantum walk simulation, we analyze how a quantum state vector $|\Psi\rangle$ behaves across three distinct phases: de-localized (solvable/metal), critical (the hardness peak/fractal), and localized (unsatisfiable/insulator). We compute the Inverse Participation Ratio (IPR) and Shannon entropy over time, proving that "Critical De-localization" at the phase boundary allows continuous wavefunctions operating in the continuum ($\mathfrak{c}$) to tunnel through complex computational barriers where discrete classical algorithms ($\aleph_0$) undergo permanent localization and freeze.

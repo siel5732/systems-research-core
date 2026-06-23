@@ -1,6 +1,5 @@
 # Module 20: The Continuum Paradigm: Analytical Proofs and Quantitative Modeling on the Supremacy of Continuous Wave Spaces over Discrete, High-Entropy Obstacles
 
-**Dedicated In Honor of Cynthia Sielaff**
 
 ## Abstract
 This module establishes a rigorous mathematical and quantitative proof demonstrating the absolute supremacy of continuous wave-front propagation within high-dimensional Hilbert spaces over classical, discrete search methodologies subjected to high-entropy obstacle fields. We compare a classical discrete search agent (modeled as a discrete random walk) and a continuous quantum walk state vector $|\Psi\rangle$ propagating through the exact same chaotic lattice populated with random, high-potential obstacles (representing database noise, typos, and structural debris). 

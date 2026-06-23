@@ -10,7 +10,6 @@
 ### Abstract
 Maturity-Onset Diabetes of the Young Type 2 (MODY2) is a monogenic form of atypical diabetes caused by loss-of-function mutations in the *GCK* gene, which encodes the pancreatic glucose sensor glucokinase. This mutation shifts the enzyme's Michaelis-Menten constant ($K_m$) from a healthy $5.5\text{ mM}$ to a pathological $9.5\text{ mM}$, severely depressing glucose-stimulated insulin secretion (GSIS) and inducing high risk of nocturnal hypoglycemia under standard insulin therapies. In this paper, we propose and model the epigenetic rescue of *GCK* transcription in pancreatic beta-cells via 3D chromatin folding guided by a Topological Quantum Neural Network (TQNN). By forcing the physical co-localization of the *GCK* promoter with distant transcriptional enhancers, we bypass the non-convex polymer misfolding barriers that stall classical epigenetic therapies. Our simulation shows that as the promoter-enhancer distance is folded from $180.00\text{ nm}$ down to **$11.19\text{ nm}$**, wildtype *GCK* expression is restored from a depressed $22.00\%$ to **$99.27\%$**. This transcriptional rescue shifts the effective cellular $K_m$ back to **$5.53\text{ mM}$**, restoring GSIS kinetics to **$67.24\text{ pmol/L}$** and reclaiming $99.09\%$ metabolic homeostasis in pancreatic islets.
 
-*Dedicated in Memory of David and Dennis Sielaff.*
 
 ---
 

@@ -10,7 +10,6 @@
 ### Abstract
 The boundary between $P$ and $NP$ complexity classes is traditionally analyzed on countable discrete structures (size $\aleph_0$), where non-convex optimization barriers lead to worst-case exponential scaling $O(2^N)$ or $O(1.308^N)$ for random 3-SAT instances. This paper presents a novel topological resolution by mapping discrete boolean constraint satisfaction (3-SAT) onto continuous transfinite sheaves of Clifford stabilizer groups defined over a self-similar Cantor-space manifold $\mathcal{C}$ of cardinality $\mathfrak{c} = 2^{\aleph_0}$. Utilizing topological anyonic world-line braiding matrices derived from recent open-access registries (Microsoft Station Q and Princeton IAS), we prove that the topological obstruction classes—manifested as the second cohomology group $H^2(\mathcal{C}, \mathbb{Z}_2)$—vanish identically under continuous Clifford deformations. This topological trivialization guarantees that the continuous gradient flow of anyonic states tunnels through classical non-convex barriers with zero local-minima stagnation. We present simulated results showing that while classical discrete stochastic solvers remain trapped at asymptotic optimization errors exceeding $71.91\%$, our continuous topological Clifford sheaf flow converges to absolute zero error ($0.0000$) in polynomial steps $O(N^3)$, resolving the continuum-bounded $P$ vs $NP$ complexity boundary.
 
-*Dedicated in Honor of Cynthia Sielaff.*
 
 ---
 

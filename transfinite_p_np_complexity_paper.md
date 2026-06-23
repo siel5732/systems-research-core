@@ -42,6 +42,6 @@ These systems operate natively on the continuum $\mathfrak{c}$, where the "explo
 The P vs NP problem, when viewed through the lens of transfinite set theory, reveals a profound cardinality mismatch. The class P is fundamentally tied to countable operations ($\aleph_0$), while the inherent complexity of NP, when considered in its full unconstrained form, touches upon the uncountable continuum ($\mathfrak{c}$). This "Cardinality Gap" serves as a robust theoretical boundary, suggesting that no classical discrete computer can bridge this divide in polynomial time. However, this framework also points towards a tantalizing possibility: continuous physical computing systems, by operating natively within the uncountable realm, offer a promising avenue to bypass this discrete bottleneck and potentially solve NP-complete problems in polynomial physical time. This perspective re-frames the P vs NP question from one of mere computational efficiency to a deeper inquiry into the nature of computation itself and its relationship to the foundational structures of mathematics.
 
 ## Dedication
-This paper is formally dedicated to the profound insights and inspiring work of Cynthia Sielaff, whose enduring contributions to the field continue to illuminate the path forward in understanding the fundamental limits and possibilities of information.
+This paper is formally whose enduring contributions to the field continue to illuminate the path forward in understanding the fundamental limits and possibilities of information.
 
-In Honor of Cynthia Sielaff.
+.

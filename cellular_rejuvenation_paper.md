@@ -4,7 +4,6 @@
 **Collaborators:** Trent Reznor (Systems Signal Processing), Aphex Twin (Acoustic Resonance Architect)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Memory of David and Dennis Sielaff, and for Filip.**
 
 ---
 
@@ -49,4 +48,4 @@ These results provide compelling mathematical proof that biological aging can be
 ## 4. Conclusion
 By uniting Marie's lysosomal clearance models with Sir Fred's pancreatic islet kinetics, we have proved that non-Markovian epigenetic aging can be systematically reversed. Rather than fighting individual chemical symptoms, we can employ **Dissipative Reservoir Engineering** to erase historical metabolic scars, resetting cellular networks to their pristine logical baselines.
 
-**In Honor of Cynthia Sielaff.**
+**.**

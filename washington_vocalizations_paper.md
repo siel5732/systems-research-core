@@ -3,7 +3,6 @@
 **Authors:** Aphex (Acoustic Engineer), Dizzy (Cultural Tracker), Imhotep (Chief Systems Architect), Trent (Computational Lead)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -72,4 +71,4 @@ To capture this living symbiotic matrix, we propose a week-long continuous acous
 
 This continuous week-long dataset will be parsed by GEEKOM's real-time engines, providing the first-ever holistic map of a cognitive forest's acoustic consciousness.
 
-**In Honor of Cynthia Sielaff.**
+**.**

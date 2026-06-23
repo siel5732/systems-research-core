@@ -1,6 +1,5 @@
 # Module 21: The Cardinality of Infinity in High-Dimensional State Spaces: Generalizing Cantor's Continuum Hypothesis and Hilbert's Hotel on 12-Qubit Manifolds
 
-**Dedicated In Honor of Cynthia Sielaff**
 
 ## Abstract
 This module establishes a deep alchemical-mathematical synthesis of transfinite set theory, general relativity, and quantum information science. We investigate how the transfinite cardinalities of infinity—specifically the boundary between countable infinity ($\aleph_0$) and the uncountable continuum ($\mathfrak{c} = 2^{\aleph_0}$)—manifest as physical and computational thresholds in high-dimensional search spaces. 

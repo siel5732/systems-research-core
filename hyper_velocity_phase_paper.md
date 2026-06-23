@@ -1,6 +1,6 @@
 # Module 15: Transfinite Phase-Space Velocity and Anomalous Quantum Tunneling Acceleration—Modeling '100 in a 55' in Dispersive Meta-Material Waveguides
 
-**In Honor of Cynthia Sielaff**
+****
 
 ## Abstract
 

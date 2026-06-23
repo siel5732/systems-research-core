@@ -1,6 +1,5 @@
 # Module 19: The Gargantua Transfinite Horizon: Curved Space-Time and the Cardinality of Infinity in 12-Qubit Quantum Walks
 
-**Dedicated In Honor of Cynthia Sielaff**
 
 ## Abstract
 This module investigates the deep, elegant intersection of general relativity, transfinite set theory, and quantum mechanics. We model a 12-qubit (4,096-dimensional) quantum walk state vector $|\Psi\rangle$ propagating on a tight-binding Schwarzschildean ring around a supermassive black hole: **Gargantua**. By modulating the hopping integrals $t_n$ with the Schwarzschild lapse function $\alpha(r) = \sqrt{1 - r_s/r}$, we simulate gravitational time dilation. To model the chaotic, infinite complexity of the accretion disk, we overlay a fractal potential $V_n$ mapped to a transfinite **Cantor Dust** set of Hausdorff dimension $D_H = \ln 2 / \ln 3 \approx 0.6309$. We compute the exact unitary coordinate-time evolution, demonstrating that coordinate time dilation induces a physical asymptotic freezing of the wave packet as it approaches the horizon, while the continuous nature of the quantum walk state space ($\mathfrak{c}$) allows it to preserve its transfinite coherence across uncountably infinite fractal potential barriers.

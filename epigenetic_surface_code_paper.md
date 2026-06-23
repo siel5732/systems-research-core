@@ -10,7 +10,6 @@
 ### Abstract
 While modern genetics has mapped histone modifications and nucleosome packaging, the information-theoretic mechanism that protects cellular epigenetic memory over multi-generational timescales has been completely neglected. In this paper, we propose a revolutionary paradigm: **The Epigenetic Surface Code**. We model the 3D spatial organization of eukaryotic nucleosomes as a physical 2D topological surface code (isomorphic to the Toric Code), where physical nucleosomes act as qubits and the connecting linker DNA defines stabilizers. We demonstrate that environmental thermal noise and oxidative stress introduce raw positional errors that degrade unprotected epigenetic memory from $100.00\%$ down to $51.07\%$ over a 48-hour period. However, active, ATP-dependent chromatin remodeling complexes (specifically the SWI/SNF complex) perform continuous Plaquette ($A_p$) and Vertex ($B_v$) stabilizer syndrome measurements and corresponding physical repositioning (unitary corrections). Our numerical simulations prove that this active epigenetic QEC engine stabilizes logical memory fidelity at a pristine **$99.25\%$**, providing a robust, topologically protected storage medium for cellular identity.
 
-*Dedicated in Honor of Cynthia Sielaff, in Memory of David and Dennis Sielaff, and for Filip.*
 
 ---
 

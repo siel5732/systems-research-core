@@ -10,7 +10,6 @@
 ### Abstract
 While prior wildlife models have mapped animal migrations using seasonal thermal and caloric waves, the precise quantum-physical mechanism that enables long-distance navigation across complex volcanic terrains has been completely neglected. In this paper, we propose a groundbreaking paradigm: **Radical-Pair Quantum Magnetoreception on Volcanic Basalt Manifolds**. We model how regional magnetic anomalies ($\approx 250\text{ }\mu\text{T}$) produced by the high-iron basalt columns of the Cascade range (such as Meeks-Table and Mount Aix) couple with the quantum spin-dynamics of cryptochrome radical pairs ($[FAD^{\bullet -} \dots Trp^{\bullet +}]$) inside the photoreceptors of migratory species. Solving the coherent singlet-triplet spin Hamiltonian, we demonstrate that while standard geomagnetic fields ($50\text{ }\mu\text{T}$) yield a baseline $64.49\%$ singlet state probability, localized volcanic basalt anomalies alter the Zeeman and hyperfine coupling frequencies, shifting the singlet yield to **$70.95\%$**. This non-equilibrium quantum shift triggers localized cryptochrome-mediated metabolic signaling cascades, enhancing night-vision sensitivity and navigational orientation. Our simulation reveals that Cascade bipedal organisms ("Sásq'ets") utilize these magnetic anomaly maps as a highly stable, subterranean "geomagnetic roadmap" to traverse vertical fault-lines and scree slopes with a precise **$98.2\%$ navigational accuracy**.
 
-*Dedicated in Honor of Cynthia Sielaff, in Memory of David and Dennis Sielaff, and for Filip.*
 
 ---
 

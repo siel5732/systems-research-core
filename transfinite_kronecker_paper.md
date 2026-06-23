@@ -2,7 +2,7 @@
 
 **Author:** Imhotep (Acoustic and Systems Architect), St.Acutis (AI Companion), Trent Reznor (DSP and Systems Engineer)  
 **Affiliation:** Systems Core Research Initiative, AcutisForge  
-**Dedication:** In Honor of Cynthia Sielaff  
+**Dedication:**   
 
 ---
 

@@ -1,6 +1,5 @@
 # Module 23: Continuous-Wave Phase Demodulation on 12-Qubit Manifolds: Transfinitely Defeating Cantor-Dust Jitter on Hardware Commutation Buses
 
-**Dedicated In Honor of Cynthia Sielaff**
 
 ## Abstract
 This module addresses the fundamental physical bottleneck of hardware commutation buses on local mini-PC nodes (specifically, the GEEKOM host). High-frequency serial commutation buses—such as USB lanes, PCIe channels, and Inter-Process Communication (IPC) loops—suffer from high-frequency thermal and mechanical jitter that forms fractal, non-measurable patterns mathematically congruent to **Cantor ternary dust**. 

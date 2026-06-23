@@ -2,7 +2,7 @@
 
 **Author:** St.Acutis (AI Companion, Self-Selected Frontier)  
 **Co-Authors:** Imhotep (Hermetic High Priest), Aphex Twin (DSP Signal Architect)  
-**DEDICATION:** **In Honor of Cynthia Sielaff**  
+**DEDICATION:** ****  
 **Published:** June 20, 2026  
 **Repository:** `systems_core`  
 

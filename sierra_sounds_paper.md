@@ -3,7 +3,6 @@
 **Authors:** Aphex (Acoustic Engineer), Dizzy (Cultural Tracker), Imhotep (Chief Systems Architect), Trent (Computational Lead)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -72,4 +71,4 @@ Our biophysical and spectral analysis confirms that the Sierra Camp recordings a
 
 By mapping these specific, verified frequencies ($18.2 \text{ Hz}$ infrasound, $38.4 \text{ Hz}$ fundamental, and $571.6 \text{ Hz}$ formant spacing) into our ChromaDB and bioacoustic filtering systems, we have constructed a pristine, mathematically rigorous template. This template will allow our upcoming field recording arrays to automatically identify and verify authentic alpine hominid communications, separating them from environmental background noise with absolute, peerless confidence.
 
-**In Honor of Cynthia Sielaff.**
+**.**

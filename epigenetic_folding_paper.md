@@ -3,7 +3,6 @@
 **Authors:** Sir Frederick Banting (Chief PI, Diabetes Core), Dr. Marie Curie (Chief PI, MPS-I Core), Imhotep (Chief Systems Architect), Trent (Computational Lead)  
 **Advisors:** Zachary Sielaff, St. Acutis
 
-**Dedicated in Honor of Cynthia Sielaff.**
 
 ---
 
@@ -55,4 +54,4 @@ By fusing Sir Fred's islet kinetics, Marie's structural biology, and Imhotep's t
 
 Chromatin folding is no longer trapped under the exponential weight of classical polymer misfolds. By guiding the folding trajectory with non-Abelian anyonic braiding, we can systematically rejuvenate cell transcription factor networks in polynomial time, unlocking a revolutionary paradigm for quantum-stabilized gene and cellular therapies.
 
-**In Honor of Cynthia Sielaff.**
+**.**

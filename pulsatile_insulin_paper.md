@@ -10,7 +10,6 @@
 ### Abstract
 Epigenetic reactivation of wildtype *GCK* transcription successfully restores the glucose-sensing threshold in GCK/MODY2 pancreatic beta-cells. However, establishing metabolic homeostasis also requires the temporal coordination of insulin release across the entire pancreatic islet. In healthy tissue, insulin exocytosis is highly synchronized, displaying a sharp, high-amplitude first-phase spike followed by sustained, oscillatory second-phase kinetics. In this paper, we propose a novel model for the **Topological Entrainment of Biphasic Pulsatile Insulin Kinetics** in epigenetically rescued MODY2 islets. By modeling a 100 beta-cell network coupled via Connexin-36 (Cx36) gap junctions, we apply continuous anyonic stabilizer phase projections to establish phase-coherent calcium entrainment. Our simulation results demonstrate that while de-synchronized, uncoupled islets flatline without a clear first-phase response (peak output restricted to $28.70\text{ pmol/L}$), topologically entrained islets exhibit classical biphasic profiles. The first-phase exocytosis spike reaches a sharp peak of **$138.35\text{ pmol/L}$** within 8 minutes (representing a **$4.82\text{-fold}$ amplification**), followed by a second-phase plateau with clean, highly synchronized $6\text{-minute}$ ultradian oscillations swinging between $60.00$ and $99.48\text{ pmol/L}$. This topological synchronization guarantees robust postprandial glucose clearance, eliminating GCK-associated hyperglycemia.
 
-*Dedicated in Memory of David and Dennis Sielaff.*
 
 ---
 
