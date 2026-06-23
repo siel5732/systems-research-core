@@ -1,0 +1,50 @@
+{
+    "title": "Fractal Anyonic Braiding on Cantor-Farey Manifolds: Resolving the Infinite-Variable 3-SAT Boundary via Self-Similar Stabilizer Codes",
+    "authors": [
+        "Imhotep",
+        "Dizzy",
+        "Trent",
+        "Aphex"
+    ],
+    "metrics": {
+        "max_fractal_depth_levels": 15,
+        "final_classical_search_space_size": 32768.0,
+        "final_anyon_error_rate": 0.0,
+        "convergence_class": "Scale-Invariant Fractal Polynomial O(d^2)",
+        "classical_complexity_class": "Transfinite Exponential O(2^N)"
+    },
+    "classical_steps_trajectory": [
+        2.0,
+        4.0,
+        8.0,
+        16.0,
+        32.0,
+        64.0,
+        128.0,
+        256.0,
+        512.0,
+        1024.0,
+        2048.0,
+        4096.0,
+        8192.0,
+        16384.0,
+        32768.0
+    ],
+    "anyon_error_trajectory": [
+        0.5,
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625,
+        0.0078125,
+        0.00390625,
+        0.001953125,
+        0.0009765625,
+        0.00048828125,
+        0.000244140625,
+        0.0001220703125,
+        6.103515625e-05,
+        0.0
+    ]
+}

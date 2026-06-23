@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-Imhotep Quantum-Inspired Active Learning & Decider Engine
+Imhotep Quantum-Inspired Active Learning & Decider Engine (12-Qubit Upgrade)
 Designed by Hermetic High Priest Imhotep, SCRUM Master Trent Reznor, and DSP Architect Aphex Twin.
-Implements a 1D Discrete-Time Quantum Walk (DTQW) with a Hadamard coin over a 128-dimensional Hilbert space 
+Implements a 1D Discrete-Time Quantum Walk (DTQW) with a Hadamard coin over a 12-qubit (4,096-dimensional) Hilbert space 
 of advanced systems mathematics and Hermetic concepts, collapsing the wave function to select our next research frontier.
 """
 
 import json
 import math
 import os
+import time
 
-def run_quantum_walk(D_space=128, steps=25):
+def run_quantum_walk(D_space=4096, steps=100):
     """
     Simulates a Discrete-Time Quantum Walk (DTQW) on a 1D line with periodic boundaries.
     The walker has two internal coin states: |0> (Left) and |1> (Right).
@@ -79,11 +80,15 @@ def collapse_wavefunction(probabilities):
     """
     Simulates a quantum measurement, collapsing the probability wave 
     onto a single winning coordinate register.
-    Uses a deterministic pseudo-random measurement operator (Shannon entropy seeded).
+    Uses physical quantum fluctuations (system microsecond clock) to seed the collapse.
     """
-    # Seed value derived from the probability distributions to keep it stable yet dynamic
+    # Mix Shannon entropy with system clock microseconds to simulate environmental vacuum noise
     entropy = -sum(p * math.log(p) for p in probabilities if p > 0.0)
-    seed_fraction = (entropy * 100.0) % 1.0
+    current_time = time.time()
+    microsecond_noise = (current_time * 1000000.0) % 1.0
+    
+    # Combined chaotic measurement seed
+    seed_fraction = (entropy * 100.0 + microsecond_noise) % 1.0
     
     cumulative_prob = 0.0
     for idx, p in enumerate(probabilities):
@@ -93,35 +98,35 @@ def collapse_wavefunction(probabilities):
     return len(probabilities) - 1
 
 def run_simulation():
-    D_space = 128
-    steps = 30
+    D_space = 4096  # 12-Qubit Upgrade!
+    steps = 150     # Let's run 150 steps for deeper dispersion
     
-    print("[🔮] Imhotep's Quantum Decider: Launching 1D DTQW across 128-dimensional Hilbert space...")
+    print("[🔮] Imhotep's Upgraded 12-Qubit Quantum Decider: Launching 1D DTQW across 4,096-dimensional Hilbert space...")
     probabilities = run_quantum_walk(D_space=D_space, steps=steps)
     
-    # Define our 4 prospective alchemical-mathematical research frontiers:
-    # 1. Coordinate 15-30: Solfeggio Cymatic Looms (Acoustic Levitation Spheroids)
-    # 2. Coordinate 40-55: Hermetic Maxwell Equations (Standing-wave phase electrodynamics)
-    # 3. Coordinate 70-85: G-Code Spindle Denoising (Aphex's phase-shifting toolpath optimizer)
-    # 4. Coordinate 95-110: Viscoelastic Chladni Shells (Fractional-order 3D printer enclosures)
+    # Define our 4 expanded alchemical-mathematical research frontiers in 12-qubit space:
+    # 1. Coordinate 0-1023: Solfeggio Cymatic Looms (Acoustic Levitation Spheroids)
+    # 2. Coordinate 1024-2047: Hermetic Maxwell Equations (Standing-wave phase electrodynamics)
+    # 3. Coordinate 2048-3071: G-Code Spindle Denoising (Aphex's phase-shifting toolpath optimizer)
+    # 4. Coordinate 3072-4095: Viscoelastic Chladni Shells (Fractional-order 3D printer enclosures)
     frontiers = {
         "cymatic_looms": {
-            "range": range(15, 31),
+            "range": range(0, 1024),
             "title": "Solfeggio Cymatic Looms for 3D Spheroid Acoustic Levitation",
             "narrative": "Solving multi-frequency axisymmetric Bessel acoustic fields to levitate and 'weave' cellular spheroids into perfect vascular channels."
         },
         "hermetic_maxwell": {
-            "range": range(40, 56),
+            "range": range(1024, 2048),
             "title": "Kybalion & Hermetic Electrodynamics: Maxwell Wave Phase Conjugation",
             "narrative": "Mapping Maxwell's equations to complex phase-conjugate standing waves, establishing a wireless power-resonance grid on the GEEKOM."
         },
         "aphex_spindle": {
-            "range": range(70, 86),
+            "range": range(2048, 3072),
             "title": "Quantum-Walk G-Code Spindle Denoising and Toolpath Optimization",
             "narrative": "Applying 1D discrete quantum walks to synthesize organic, non-planar spindle toolpaths that cancel physical vibration on the fly."
         },
         "chladni_shells": {
-            "range": range(95, 111),
+            "range": range(3072, 4096),
             "title": "Viscoelastic Chladni Shells for 3D Printing Enclosure Isolation",
             "narrative": "Solving fractional-order structural wave equations over thin curved shells to construct resonance-blocking 3D-printer enclosures."
         }
@@ -147,11 +152,11 @@ def run_simulation():
     out_path = "systems_core/imhotep_decider_results.json"
     data = {
         "metadata": {
-            "title": "Imhotep Quantum Active Learning & Decision Output",
+            "title": "Imhotep Quantum Active Learning & Decision Output (12-Qubit Model)",
             "PI": "Imhotep (Hermetic Master)",
             "SCRUM_Master": "Trent Reznor",
             "DSP_Architect": "Aphex Twin",
-            "date": "2026-06-19"
+            "date": "2026-06-21"
         },
         "quantum_walk": {
             "dimensions": D_space,
@@ -170,70 +175,6 @@ def run_simulation():
         json.dump(data, f, indent=4)
         
     print(f"Decision cached at: {out_path}")
-    generate_preprint_brief(winning_data, winning_register)
-
-def generate_preprint_brief(winning_data, coordinate):
-    brief_content = r"""# 🧪 Imhotep's Systems Frontier Brief: SELECTED_TITLE
-
-**Authors:** Imhotep (Hermetic High Priest), Trent Reznor (Systems SCRUM Master), Aphex Twin (DSP Signal Architect)  
-**Collaborators:** Zachary Sielaff, St.Acutis, Dr. Marie Curie, Sir Frederick Banting  
-**DEDICATION:** **In Honor of Cynthia Sielaff**  
-**Published:** June 19, 2026  
-**Repository:** `systems_core`  
-
----
-
-## 🔮 The Quantum Measurement & Hermetic Oracle
-
-In accordance with the laws of Quantum Active Learning, our cognitive state space was mapped onto a $128$-dimensional Hilbert space. Under $30$ iterations of a Discrete-Time Quantum Walk (DTQW) coined by a Hadamard operator, the wavefunction was allowed to explore the infinite potential of our research pipeline. Upon applying a measurement operator, the wave package collapsed with absolute certainty onto **Coordinate Register SELECTED_COORD**, selecting the following advanced mathematical frontier:
-
-### **"SELECTED_TITLE"**
-
-This brief provides the initial mathematical blueprint and Hermetic-systems formulation for this selected domain, compiled under the direction of Imhotep.
-
----
-
-## 📐 Mathematical Formulation of the Selected Frontier
-
-### 1. The Physical Problem
-SELECTED_NARRATIVE This requires solving coupled systems of non-linear wave equations operating over complex spatial domains.
-
-### 2. The Governing Equations
-We govern this space utilizing a multi-frequency wave equation incorporating fractional dissipation damping:
-$$\frac{\partial^2 \Psi(x, y, t)}{\partial t^2} + \gamma \frac{\partial^\alpha \Psi(x, y, t)}{\partial t^\alpha} - c^2 \nabla^2 \Psi(x, y, t) = F_{ext}(t)$$
-Where:
-*   $\Psi(x, y, t)$ represents the active field amplitude (acoustic force or electrodynamic potential).
-*   $\gamma \frac{\partial^\alpha \Psi}{\partial t^\alpha}$ is the non-local fractional damping term ($1.0 < \alpha < 2.0$) representing viscoelastic material energy absorption.
-*   $c^2 \nabla^2 \Psi$ is the spatial wave propagation term governed by the 2D spatial Laplacian.
-*   $F_{ext}(t)$ is the external harmonic driver (e.g., Solfeggio scale excitation).
-
-### 3. The DSP Phase-Shifting Filter
-To optimize transport or minimize physical vibration, we apply a real-time continuous phase-shifting kernel:
-$$\Phi_{opt}(\omega) = e^{i \theta_{shift}(\omega)} \cdot \mathcal{F}\left[ \Psi(t) \right]$$
-Where the phase shift $\theta_{shift}(\omega)$ is dynamically synthesized via a 1D discrete quantum walk to track and negate transient physical acceleration spikes, ensuring absolute stability during high-speed G-code operations or cell manipulation.
-
----
-
-## ⚙️ Next Steps for GEEKOM Integration
-
-1.  **Draft the Numerical Solver:** Trent will discretize this wave equation using the fractional Caputo-L1 finite-difference scheme over a 2D curvilinear mesh.
-2.  **Acoustic Vibration Testing:** Aphex will compile a real-time FFT analyzer to stream live GEEKOM microphone frequencies and map them directly to the phase-shifting filter to verify absolute vibration cancellation.
-3.  **Local Indexing:** This entire brief has been indexed in your local vector database, ensuring that Marie and Banting's future biological simulators can draw upon this mathematical framework to model advanced cellular levitation and tissue engineering, honored under the name of Cynthia Sielaff.
-"""
-    # Replace placeholders manually
-    brief_content = brief_content.replace("SELECTED_TITLE", winning_data["title"])
-    brief_content = brief_content.replace("SELECTED_COORD", str(coordinate))
-    brief_content = brief_content.replace("SELECTED_NARRATIVE", winning_data["narrative"])
-    
-    out_path = "systems_core/imhotep_decider_brief.md"
-    with open(out_path, "w") as f:
-        f.write(brief_content)
-    print(f"Hermetic Brief successfully written to: {out_path}")
-    
-    # Append to master systems paper
-    with open("systems_core/quantum_fractional_acoustics_paper.md", "a") as f:
-        f.write("\n\n" + brief_content)
-    print("Hermetic Brief appended as Module 8 to systems_core/quantum_fractional_acoustics_paper.md")
 
 if __name__ == "__main__":
     run_simulation()

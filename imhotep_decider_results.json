@@ -1,20 +1,20 @@
 {
     "metadata": {
-        "title": "Imhotep Quantum Active Learning & Decision Output",
+        "title": "Imhotep Quantum Active Learning & Decision Output (12-Qubit Model)",
         "PI": "Imhotep (Hermetic Master)",
         "SCRUM_Master": "Trent Reznor",
         "DSP_Architect": "Aphex Twin",
-        "date": "2026-06-19"
+        "date": "2026-06-21"
     },
     "quantum_walk": {
-        "dimensions": 128,
-        "steps": 30,
-        "entropy_nats": 2.9286,
-        "collapsed_coordinate": 84
+        "dimensions": 4096,
+        "steps": 150,
+        "entropy_nats": 4.3402,
+        "collapsed_coordinate": 1966
     },
     "selected_frontier": {
-        "key": "aphex_spindle",
-        "title": "Quantum-Walk G-Code Spindle Denoising and Toolpath Optimization",
-        "narrative": "Applying 1D discrete quantum walks to synthesize organic, non-planar spindle toolpaths that cancel physical vibration on the fly."
+        "key": "hermetic_maxwell",
+        "title": "Kybalion & Hermetic Electrodynamics: Maxwell Wave Phase Conjugation",
+        "narrative": "Mapping Maxwell's equations to complex phase-conjugate standing waves, establishing a wireless power-resonance grid on the GEEKOM."
     }
 }

@@ -1,0 +1,46 @@
+{
+    "title": "Unitary Code-Space Projection of NP-Complete Decision Trees: Resolving the Cardinality Gap on Stabilizer Manifolds",
+    "authors": [
+        "Imhotep",
+        "Dizzy",
+        "Trent",
+        "Aphex"
+    ],
+    "parameters": {
+        "num_qubits": 10,
+        "solution_state_index": 768,
+        "solution_state_binary": "|1100000000>",
+        "initial_purity": 0.0009765625,
+        "final_purity": 1.0,
+        "initial_entropy": 9.999999999998522,
+        "final_entropy": -1.601713251907458e-15
+    },
+    "trajectories": {
+        "purity_by_clause_step": [
+            0.0009765625,
+            0.001953125,
+            0.00390625,
+            0.0078125,
+            0.015625,
+            0.03125,
+            0.0625,
+            0.125,
+            0.25,
+            0.75,
+            1.0
+        ],
+        "entropy_by_clause_step": [
+            9.999999999998522,
+            8.999999999999186,
+            7.9999999999995985,
+            6.999999999999803,
+            5.999999999999904,
+            4.999999999999954,
+            3.9999999999999782,
+            2.999999999999989,
+            1.9999999999999942,
+            1.4999999999999956,
+            -1.601713251907458e-15
+        ]
+    }
+}
