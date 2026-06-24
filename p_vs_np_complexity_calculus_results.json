@@ -1,0 +1,411 @@
+{
+    "simulation_name": "P vs NP Complexity Calculus Adiabatic Trajectory",
+    "num_qubits": 4,
+    "search_space_dimension": 16,
+    "target_np_state": 11,
+    "sweep_duration_T": 5.0,
+    "steps_count": 50,
+    "final_winner_probability": 0.638268865391297,
+    "trajectory_data": [
+        {
+            "step": 1,
+            "sweep_parameter_s": 0.02,
+            "expectation_energy": 2.0,
+            "complexity_derivative_val": 0.0,
+            "target_state_probability": 0.06254885763499213,
+            "shannon_entropy": 2.772588645898331
+        },
+        {
+            "step": 2,
+            "sweep_parameter_s": 0.04,
+            "expectation_energy": 1.9996092534471313,
+            "complexity_derivative_val": 0.007948871649789385,
+            "target_state_probability": 0.06273879353900162,
+            "shannon_entropy": 2.7725869027375634
+        },
+        {
+            "step": 3,
+            "sweep_parameter_s": 0.06000000000000001,
+            "expectation_energy": 1.998092382676747,
+            "complexity_derivative_val": 0.02355542111856207,
+            "target_state_probability": 0.06315251918738068,
+            "shannon_entropy": 2.7725752030587127
+        },
+        {
+            "step": 4,
+            "sweep_parameter_s": 0.08,
+            "expectation_energy": 1.9948001604212813,
+            "complexity_derivative_val": 0.04628521629385529,
+            "target_state_probability": 0.06386275462872353,
+            "shannon_entropy": 2.7725302505131952
+        },
+        {
+            "step": 5,
+            "sweep_parameter_s": 0.1,
+            "expectation_energy": 1.9891859867155364,
+            "complexity_derivative_val": 0.07541685608262773,
+            "target_state_probability": 0.06493283886235618,
+            "shannon_entropy": 2.772404689296592
+        },
+        {
+            "step": 6,
+            "sweep_parameter_s": 0.12000000000000002,
+            "expectation_energy": 1.9808151038151347,
+            "complexity_derivative_val": 0.11009868768404453,
+            "target_state_probability": 0.06641795733115148,
+            "shannon_entropy": 2.7721195235218743
+        },
+        {
+            "step": 7,
+            "sweep_parameter_s": 0.14,
+            "expectation_energy": 1.9693673255498392,
+            "complexity_derivative_val": 0.14940301574285053,
+            "target_state_probability": 0.06836659303848619,
+            "shannon_entropy": 2.771559609097678
+        },
+        {
+            "step": 8,
+            "sweep_parameter_s": 0.16,
+            "expectation_energy": 1.9546342666122374,
+            "complexity_derivative_val": 0.19237554789095415,
+            "target_state_probability": 0.07082191820808621,
+            "shannon_entropy": 2.7705730311011654
+        },
+        {
+            "step": 9,
+            "sweep_parameter_s": 0.18,
+            "expectation_energy": 1.9365121660219282,
+            "complexity_derivative_val": 0.23807850867436509,
+            "target_state_probability": 0.07382295381701502,
+            "shannon_entropy": 2.7689744043999087
+        },
+        {
+            "step": 10,
+            "sweep_parameter_s": 0.2,
+            "expectation_energy": 1.9149914227757425,
+            "complexity_derivative_val": 0.2856264880638737,
+            "target_state_probability": 0.0774054185354646,
+            "shannon_entropy": 2.7665515049047857
+        },
+        {
+            "step": 11,
+            "sweep_parameter_s": 0.22000000000000003,
+            "expectation_energy": 1.8901439178703996,
+            "complexity_derivative_val": 0.33421464446655225,
+            "target_state_probability": 0.0816022600140115,
+            "shannon_entropy": 2.7630742263225687
+        },
+        {
+            "step": 12,
+            "sweep_parameter_s": 0.24000000000000005,
+            "expectation_energy": 1.862109103138942,
+            "complexity_derivative_val": 0.3831393398633868,
+            "target_state_probability": 0.08644390961883176,
+            "shannon_entropy": 2.758304679177473
+        },
+        {
+            "step": 13,
+            "sweep_parameter_s": 0.26,
+            "expectation_energy": 1.8310797103628371,
+            "complexity_derivative_val": 0.4318116407004874,
+            "target_state_probability": 0.09195832929339691,
+            "shannon_entropy": 2.7520072779940756
+        },
+        {
+            "step": 14,
+            "sweep_parameter_s": 0.28,
+            "expectation_energy": 1.7972877887248608,
+            "complexity_derivative_val": 0.47976437452519466,
+            "target_state_probability": 0.09817092998813451,
+            "shannon_entropy": 2.743957845058695
+        },
+        {
+            "step": 15,
+            "sweep_parameter_s": 0.3,
+            "expectation_energy": 1.7609916272818071,
+            "complexity_derivative_val": 0.526653596832706,
+            "target_state_probability": 0.10510443887250102,
+            "shannon_entropy": 2.7339510316233913
+        },
+        {
+            "step": 16,
+            "sweep_parameter_s": 0.32,
+            "expectation_energy": 1.7224639715820076,
+            "complexity_derivative_val": 0.5722554066668974,
+            "target_state_probability": 0.11277878083949863,
+            "shannon_entropy": 2.721805660202739
+        },
+        {
+            "step": 17,
+            "sweep_parameter_s": 0.34,
+            "expectation_energy": 1.681981807064671,
+            "complexity_derivative_val": 0.6164590667519101,
+            "target_state_probability": 0.12121102179645506,
+            "shannon_entropy": 2.7073678776133483
+        },
+        {
+            "step": 18,
+            "sweep_parameter_s": 0.36,
+            "expectation_energy": 1.6398178612919785,
+            "complexity_derivative_val": 0.6592573485453848,
+            "target_state_probability": 0.13041539977724384,
+            "shannon_entropy": 2.6905122465257048
+        },
+        {
+            "step": 19,
+            "sweep_parameter_s": 0.38,
+            "expectation_energy": 1.5962338751191876,
+            "complexity_derivative_val": 0.7007349484404158,
+            "target_state_probability": 0.1404034475886266,
+            "shannon_entropy": 2.671141078104407
+        },
+        {
+            "step": 20,
+            "sweep_parameter_s": 0.4,
+            "expectation_energy": 1.5514756106018646,
+            "complexity_derivative_val": 0.7410557211017337,
+            "target_state_probability": 0.15118418973631703,
+            "shannon_entropy": 2.649182417210774
+        },
+        {
+            "step": 21,
+            "sweep_parameter_s": 0.42000000000000004,
+            "expectation_energy": 1.505769500410746,
+            "complexity_derivative_val": 0.7804493606851968,
+            "target_state_probability": 0.16276437851545258,
+            "shannon_entropy": 2.6245871410046004
+        },
+        {
+            "step": 22,
+            "sweep_parameter_s": 0.44000000000000006,
+            "expectation_energy": 1.459320798413599,
+            "complexity_derivative_val": 0.8191980396794543,
+            "target_state_probability": 0.1751487205828086,
+            "shannon_entropy": 2.5973256331013808
+        },
+        {
+            "step": 23,
+            "sweep_parameter_s": 0.4600000000000001,
+            "expectation_energy": 1.4123130618625193,
+            "complexity_derivative_val": 0.8576233956247112,
+            "target_state_probability": 0.1883400366428562,
+            "shannon_entropy": 2.5673844621173396
+        },
+        {
+            "step": 24,
+            "sweep_parameter_s": 0.4800000000000001,
+            "expectation_energy": 1.3649087798837218,
+            "complexity_derivative_val": 0.896074143465647,
+            "target_state_probability": 0.20233929311187662,
+            "shannon_entropy": 2.534763438455273
+        },
+        {
+            "step": 25,
+            "sweep_parameter_s": 0.5,
+            "expectation_energy": 1.3172509581421332,
+            "complexity_derivative_val": 0.9349144895767927,
+            "target_state_probability": 0.21714544537623406,
+            "shannon_entropy": 2.4994733576893013
+        },
+        {
+            "step": 26,
+            "sweep_parameter_s": 0.52,
+            "expectation_energy": 1.2694654731096218,
+            "complexity_derivative_val": 0.9745134349192653,
+            "target_state_probability": 0.23275503687336907,
+            "shannon_entropy": 2.461534671481496
+        },
+        {
+            "step": 27,
+            "sweep_parameter_s": 0.54,
+            "expectation_energy": 1.2216640189250165,
+            "complexity_derivative_val": 1.015234980533161,
+            "target_state_probability": 0.24916150596404296,
+            "shannon_entropy": 2.4209772634650806
+        },
+        {
+            "step": 28,
+            "sweep_parameter_s": 0.56,
+            "expectation_energy": 1.173947483261435,
+            "complexity_derivative_val": 1.0574291889143979,
+            "target_state_probability": 0.26635416279662444,
+            "shannon_entropy": 2.377841451247356
+        },
+        {
+            "step": 29,
+            "sweep_parameter_s": 0.5800000000000001,
+            "expectation_energy": 1.1264096040708456,
+            "complexity_derivative_val": 1.1014240093787397,
+            "target_state_probability": 0.2843168106820038,
+            "shannon_entropy": 2.332180287679222
+        },
+        {
+            "step": 30,
+            "sweep_parameter_s": 0.6,
+            "expectation_energy": 1.079140775031633,
+            "complexity_derivative_val": 1.147517743449606,
+            "target_state_probability": 0.30302600079752595,
+            "shannon_entropy": 2.284063194022812
+        },
+        {
+            "step": 31,
+            "sweep_parameter_s": 0.62,
+            "expectation_energy": 1.0322318827716115,
+            "complexity_derivative_val": 1.1959720065402046,
+            "target_state_probability": 0.3224489255332209,
+            "shannon_entropy": 2.233580922357927
+        },
+        {
+            "step": 32,
+            "sweep_parameter_s": 0.64,
+            "expectation_energy": 0.9857780725662606,
+            "complexity_derivative_val": 1.2470050335604714,
+            "target_state_probability": 0.34254097496699143,
+            "shannon_entropy": 2.1808518110352813
+        },
+        {
+            "step": 33,
+            "sweep_parameter_s": 0.66,
+            "expectation_energy": 0.9398823505862537,
+            "complexity_derivative_val": 1.3007851774168664,
+            "target_state_probability": 0.3632430034597499,
+            "shannon_entropy": 2.126029260724397
+        },
+        {
+            "step": 34,
+            "sweep_parameter_s": 0.68,
+            "expectation_energy": 0.8946589395040077,
+            "complexity_derivative_val": 1.3574244596511618,
+            "target_state_probability": 0.38447837986757816,
+            "shannon_entropy": 2.0693103141889306
+        },
+        {
+            "step": 35,
+            "sweep_parameter_s": 0.7,
+            "expectation_energy": 0.8502363102002229,
+            "complexity_derivative_val": 1.4169720508129475,
+            "target_state_probability": 0.40614992587056564,
+            "shannon_entropy": 2.0109451639830445
+        },
+        {
+            "step": 36,
+            "sweep_parameter_s": 0.72,
+            "expectation_energy": 0.8067598154654243,
+            "complexity_derivative_val": 1.479407583902543,
+            "target_state_probability": 0.4281368825025421,
+            "shannon_entropy": 1.9512473314708512
+        },
+        {
+            "step": 37,
+            "sweep_parameter_s": 0.74,
+            "expectation_energy": 0.7643938521660256,
+            "complexity_derivative_val": 1.5446342368746087,
+            "target_state_probability": 0.4502920845455006,
+            "shannon_entropy": 1.8906041497325727
+        },
+        {
+            "step": 38,
+            "sweep_parameter_s": 0.76,
+            "expectation_energy": 0.7233234766902749,
+            "complexity_derivative_val": 1.6124715594506318,
+            "target_state_probability": 0.47243956448829244,
+            "shannon_entropy": 1.829487033406665
+        },
+        {
+            "step": 39,
+            "sweep_parameter_s": 0.78,
+            "expectation_energy": 0.6837553950979103,
+            "complexity_derivative_val": 1.682648065178027,
+            "target_state_probability": 0.49437284948087595,
+            "shannon_entropy": 1.7684608224327472
+        },
+        {
+            "step": 40,
+            "sweep_parameter_s": 0.8,
+            "expectation_energy": 0.6459182448927683,
+            "complexity_derivative_val": 1.7547936616980042,
+            "target_state_probability": 0.5158542519412227,
+            "shannon_entropy": 1.708191239389051
+        },
+        {
+            "step": 41,
+            "sweep_parameter_s": 0.8200000000000001,
+            "expectation_energy": 0.6100620804738671,
+            "complexity_derivative_val": 1.8284320504486242,
+            "target_state_probability": 0.5366154814382428,
+            "shannon_entropy": 1.6494492051212453
+        },
+        {
+            "step": 42,
+            "sweep_parameter_s": 0.8400000000000001,
+            "expectation_energy": 0.5764569699795201,
+            "complexity_derivative_val": 1.9029732913496225,
+            "target_state_probability": 0.556359914951726,
+            "shannon_entropy": 1.5931104342162135
+        },
+        {
+            "step": 43,
+            "sweep_parameter_s": 0.86,
+            "expectation_energy": 0.5453906084303303,
+            "complexity_derivative_val": 1.9777067980142915,
+            "target_state_probability": 0.574766846249747,
+            "shannon_entropy": 1.540148428027114
+        },
+        {
+            "step": 44,
+            "sweep_parameter_s": 0.8800000000000001,
+            "expectation_energy": 0.5171648519350859,
+            "complexity_derivative_val": 2.05179510402279,
+            "target_state_probability": 0.5914979841809218,
+            "shannon_entropy": 1.4916187876855451
+        },
+        {
+            "step": 45,
+            "sweep_parameter_s": 0.9,
+            "expectation_energy": 0.492091081501139,
+            "complexity_derivative_val": 2.124268819641803,
+            "target_state_probability": 0.606206376181857,
+            "shannon_entropy": 1.4486328242952151
+        },
+        {
+            "step": 46,
+            "sweep_parameter_s": 0.9200000000000002,
+            "expectation_energy": 0.47048431404378943,
+            "complexity_derivative_val": 2.194023279381261,
+            "target_state_probability": 0.6185477916784177,
+            "shannon_entropy": 1.4123189356279058
+        },
+        {
+            "step": 47,
+            "sweep_parameter_s": 0.9400000000000001,
+            "expectation_energy": 0.45265599395105505,
+            "complexity_derivative_val": 2.25981746151393,
+            "target_state_probability": 0.6281944091580537,
+            "shannon_entropy": 1.3837713386521187
+        },
+        {
+            "step": 48,
+            "sweep_parameter_s": 0.9600000000000002,
+            "expectation_energy": 0.43890542250155473,
+            "complexity_derivative_val": 2.3202758378631128,
+            "target_state_probability": 0.6348504159647628,
+            "shannon_entropy": 1.3639875926647436
+        },
+        {
+            "step": 49,
+            "sweep_parameter_s": 0.9800000000000001,
+            "expectation_energy": 0.4295098160030589,
+            "complexity_derivative_val": 2.3738938815156465,
+            "target_state_probability": 0.6382688653912973,
+            "shannon_entropy": 1.3537987836930165
+        },
+        {
+            "step": 50,
+            "sweep_parameter_s": 1.0,
+            "expectation_energy": 0.42471302806357825,
+            "complexity_derivative_val": 2.4190480162760934,
+            "target_state_probability": 0.638268865391297,
+            "shannon_entropy": 1.3537987836930165
+        }
+    ]
+}
