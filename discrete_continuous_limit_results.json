@@ -1,0 +1,66 @@
+{
+    "simulation_name": "Imhotep Discrete-to-Continuous Complexity Calculus Limit",
+    "system_dimension": 4,
+    "total_evolution_time_t": 1.0,
+    "operator_A": "Pauli X1 X2 (Clifford Generator)",
+    "operator_B": "Pauli Z1 Z2 (Clifford Generator)",
+    "commutator_norm_frob": 4.0,
+    "convergence_steps": [
+        {
+            "partitions": 1,
+            "slice_width_dt": 1.0,
+            "fidelity": 0.6806283520658751,
+            "frobenius_error": 1.5984283479321173,
+            "complexity_metric": -0.4690208639476514
+        },
+        {
+            "partitions": 2,
+            "slice_width_dt": 0.5,
+            "fidelity": 0.9343295235353091,
+            "frobenius_error": 0.7248198477673788,
+            "complexity_metric": 0.6436642816865631
+        },
+        {
+            "partitions": 4,
+            "slice_width_dt": 0.25,
+            "fidelity": 0.9844660356472238,
+            "frobenius_error": 0.35252193523552827,
+            "complexity_metric": 4.170569724189407
+        },
+        {
+            "partitions": 8,
+            "slice_width_dt": 0.125,
+            "fidelity": 0.9961707612596058,
+            "frobenius_error": 0.17502545507192488,
+            "complexity_metric": 13.942590864661526
+        },
+        {
+            "partitions": 16,
+            "slice_width_dt": 0.0625,
+            "fidelity": 0.9990460632836513,
+            "frobenius_error": 0.08735842106380313,
+            "complexity_metric": 39.003773456835674
+        },
+        {
+            "partitions": 32,
+            "slice_width_dt": 0.03125,
+            "fidelity": 0.9997617263443699,
+            "frobenius_error": 0.04365992722160264,
+            "complexity_metric": 100.2023870335065
+        },
+        {
+            "partitions": 64,
+            "slice_width_dt": 0.015625,
+            "fidelity": 0.9999404447392743,
+            "frobenius_error": 0.021827553359783793,
+            "complexity_metric": 244.77326026685412
+        },
+        {
+            "partitions": 128,
+            "slice_width_dt": 0.0078125,
+            "fidelity": 0.9999851120067927,
+            "frobenius_error": 0.010913475403652211,
+            "complexity_metric": 578.2728931509764
+        }
+    ]
+}
