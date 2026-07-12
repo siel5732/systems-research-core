@@ -7,6 +7,7 @@ File: scripts/simulate_oblique_scheduler.py
 Description: Simulates continuous-time task priority dynamics on OB(3,5) coupled with
              System Computational Utility (Ut) and Congestion (Ct) evolution.
              Proves stability of the Lyapunov attractor under simulated concurrency storms.
+             Optimized utilizing Einstein Summation (einsum) for O(1) tangent projections.
 ================================================================================================
 """
 
@@ -30,19 +31,19 @@ EPSILON = 0.25 # Endocrine feedback coupling dampening factor
 ZETA = 0.50    # Lyapunov weighting coefficient
 
 def retract_to_ob35(P):
-    """Retracts matrix P back to the Oblique Manifold OB(3,5) via column-wise normalization."""
-    col_norms = np.linalg.norm(P, axis=0)
-    col_norms = np.where(col_norms < 1e-9, 1e-9, col_norms)
-    return P / col_norms
+    """Retracts matrix P back to the Oblique Manifold OB(3,5) via column-wise normalization using einsum."""
+    sq_norms = np.einsum('ij,ij->j', P, P)
+    inv_norms = 1.0 / np.sqrt(np.maximum(sq_norms, 1e-24))
+    return P * inv_norms[None, :]
 
 def calculate_tangent_gradient(P, grad_E):
-    """Projects Euclidean gradient onto the Tangent Space of the Oblique Manifold at P."""
-    normal_projections = np.sum(grad_E * P, axis=0)
-    return grad_E - P * normal_projections
+    """Projects Euclidean gradient onto the Tangent Space of the Oblique Manifold at P using einsum."""
+    normal_projections = np.einsum('ij,ij->j', grad_E, P)
+    return grad_E - P * normal_projections[None, :]
 
 def run_simulation(steps=100, dt=0.05):
     """Runs a numerical RK4 integration of the coupled ODE system under a simulated workload storm."""
-    print(f"{C_B}[⚙️] Initializing Oblique Manifold Scheduler RK4 Simulator...{C_RESET}")
+    print(f"{C_B}[⚙️] Initializing Oblique Manifold Scheduler RK4 Simulator (Einsum Optimized)...{C_RESET}")
     
     # 1. Initialize State Matrix P on OB(3,5) - 5 task columns in R^3
     P = np.zeros((3, 5))
@@ -88,11 +89,11 @@ def run_simulation(steps=100, dt=0.05):
         grad_M = calculate_tangent_gradient(P, grad_E)
         P_dot = -grad_M
         
-        # Metric Norm over the Oblique Manifold
-        p_dot_norm_sq = np.sum(np.linalg.norm(P_dot, axis=0) ** 2)
+        # Metric Norm over the Oblique Manifold (Optimized with Einsum)
+        p_dot_norm_sq = np.einsum('ij,ij', P_dot, P_dot)
         
-        # ODE RHS evaluation
-        u_dot = ALPHA * np.trace(np.dot(P.T, F_matrix)) - BETA * C * U - GAMMA * p_dot_norm_sq
+        # ODE RHS evaluation (Trace optimized via Frobenius inner product with einsum)
+        u_dot = ALPHA * np.einsum('ij,ij', P, F_matrix) - BETA * C * U - GAMMA * p_dot_norm_sq
         c_dot = DELTA * max(0.0, lambda_arrival - mu_service) - EPSILON * C * (1.0 - np.dot(d_vector, P[:, 2]))
         
         # 7. RK4 Integration steps for state variables U and C
@@ -103,19 +104,19 @@ def run_simulation(steps=100, dt=0.05):
         # K2
         u_half = np.clip(U + 0.5 * dt * k1_u, 0.0, 1.0)
         c_half = max(0.0, C + 0.5 * dt * k1_c)
-        k2_u = ALPHA * np.trace(np.dot(P.T, F_matrix)) - BETA * c_half * u_half - GAMMA * p_dot_norm_sq
+        k2_u = ALPHA * np.einsum('ij,ij', P, F_matrix) - BETA * c_half * u_half - GAMMA * p_dot_norm_sq
         k2_c = DELTA * max(0.0, lambda_arrival - mu_service) - EPSILON * c_half * (1.0 - np.dot(d_vector, P[:, 2]))
         
         # K3
         u_half2 = np.clip(U + 0.5 * dt * k2_u, 0.0, 1.0)
         c_half2 = max(0.0, C + 0.5 * dt * k2_c)
-        k3_u = ALPHA * np.trace(np.dot(P.T, F_matrix)) - BETA * c_half2 * u_half2 - GAMMA * p_dot_norm_sq
+        k3_u = ALPHA * np.einsum('ij,ij', P, F_matrix) - BETA * c_half2 * u_half2 - GAMMA * p_dot_norm_sq
         k3_c = DELTA * max(0.0, lambda_arrival - mu_service) - EPSILON * c_half2 * (1.0 - np.dot(d_vector, P[:, 2]))
         
         # K4
         u_next = np.clip(U + dt * k3_u, 0.0, 1.0)
         c_next = max(0.0, C + dt * k3_c)
-        k4_u = ALPHA * np.trace(np.dot(P.T, F_matrix)) - BETA * c_next * u_next - GAMMA * p_dot_norm_sq
+        k4_u = ALPHA * np.einsum('ij,ij', P, F_matrix) - BETA * c_next * u_next - GAMMA * p_dot_norm_sq
         k4_c = DELTA * max(0.0, lambda_arrival - mu_service) - EPSILON * c_next * (1.0 - np.dot(d_vector, P[:, 2]))
         
         # Final weighted RK4 steps
