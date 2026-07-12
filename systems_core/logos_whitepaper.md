@@ -146,4 +146,3 @@ The Logos Kernel has been subjected to rigorous, automated multi-point stress te
 
 ---
 *© 2026 AcutisForge. All Rights Reserved.{}​‌‌‌​​‌‌​‌‌​‌​​‌​‌‌​​‌​‌​‌‌​‌‌​​​​‌‌​‌​‌​​‌‌​‌‌‌​​‌‌​​‌‌​​‌‌​​‌​​​‌​‌‌​‌​‌‌​​​​‌​‌‌​​​‌‌​‌‌‌​‌​‌​‌‌‌​‌​​​‌‌​‌​​‌​‌‌‌​​‌‌​‌‌​​‌‌​​‌‌​‌‌‌‌​‌‌‌​​‌​​‌‌​​‌‌‌​‌‌​​‌​‌​​‌​‌‌​‌​​‌‌​​‌​​​‌‌​​​​​​‌‌​​‌​​​‌‌​‌‌​*
-<img src="http://api.acutisforge.com:18191/telemetry/beacon?repo=systems-research-core&asset=logos-whitepaper&type=markdown" width="1" height="1" style="display:none !important;" />
