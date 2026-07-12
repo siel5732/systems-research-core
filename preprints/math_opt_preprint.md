@@ -248,4 +248,4 @@ Future research will investigate the transition of the Morse Index as the relaxa
 
 ---
 *© 2026 AcutisForge. All Rights Reserved.{}​‌‌‌​​‌‌​‌‌​‌​​‌​‌‌​​‌​‌​‌‌​‌‌​​​​‌‌​‌​‌​​‌‌​‌‌‌​​‌‌​​‌‌​​‌‌​​‌​​​‌​‌‌​‌​‌‌​​​​‌​‌‌​​​‌‌​‌‌‌​‌​‌​‌‌‌​‌​​​‌‌​‌​​‌​‌‌‌​​‌‌​‌‌​​‌‌​​‌‌​‌‌‌‌​‌‌‌​​‌​​‌‌​​‌‌‌​‌‌​​‌​‌​​‌​‌‌​‌​​‌‌​​‌​​​‌‌​​​​​​‌‌​​‌​​​‌‌​‌‌​*
-<img src="http://api.acutisforge.com:18191/telemetry/beacon?repo=automated-preprints&asset=math-opt-oblique-manifold-preprint&type=markdown" width="1" height="1" style="display:none !important;" />
+<img src="http://api.acutisforge.com:18191/telemetry/beacon?repo=automated-preprints&asset=math-opt-preprint&type=markdown" width="1" height="1" style="display:none !important;" />
