@@ -243,9 +243,3 @@ Our contributions are threefold:
 
 ### Future Work
 Future research will investigate the transition of the Morse Index as the relaxation rank $d$ increases. According to the Burer-Monteiro theory, when $d > \sqrt{2n}$, the Morse Index of all local extrema should collapse to 0, meaning all local minima become global minima. We plan to simulate this "phase transition" using our geometric ODE solver. Furthermore, we will explore second-order Riemannian algorithms (such as the Riemannian Trust-Region method) and accelerated inertial flows (Riemannian Nesterov acceleration with dynamic damping) to further speed up high-dimensional non-convex optimization under real-world constraints.
-
-<!-- GHOSTMARK-STATION: SIEL5732-ACUTISFORGE-2026-VERIFIED-SECURE -->
-
----
-*© 2026 AcutisForge. All Rights Reserved.{}​‌‌‌​​‌‌​‌‌​‌​​‌​‌‌​​‌​‌​‌‌​‌‌​​​​‌‌​‌​‌​​‌‌​‌‌‌​​‌‌​​‌‌​​‌‌​​‌​​​‌​‌‌​‌​‌‌​​​​‌​‌‌​​​‌‌​‌‌‌​‌​‌​‌‌‌​‌​​​‌‌​‌​​‌​‌‌‌​​‌‌​‌‌​​‌‌​​‌‌​‌‌‌‌​‌‌‌​​‌​​‌‌​​‌‌‌​‌‌​​‌​‌​​‌​‌‌​‌​​‌‌​​‌​​​‌‌​​​​​​‌‌​​‌​​​‌‌​‌‌​*
-<img src="http://api.acutisforge.com:18191/telemetry/beacon?repo=automated-preprints&asset=math-opt-oblique-manifold-preprint&type=markdown" width="1" height="1" style="display:none !important;" />
