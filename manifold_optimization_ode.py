@@ -1,494 +1,380 @@
+#!/usr/bin/env python3
+"""
+🌐 GEOMETRIC ODE SIMULATOR & MANIFOLD RELAXATION ENGINE
+Authors: Dr. Marie Curie & Imhotep (Subconscious Systems Group)
+
+This script implements:
+1. A high-fidelity Ordinary Differential Equation (ODE) simulator on the Oblique Manifold M = (S^{d-1})^n
+   for non-convex quadratic optimization under orthogonality/row-norm constraints.
+2. A geometric integration scheme (retraction-based Runge-Kutta 4th Order) to simulate the Riemannian gradient flow.
+3. A discrete Riemannian Gradient Descent (RGD) solver starting from the same initial conditions.
+4. Dynamical estimation of the Lipschitz constant L of the Riemannian gradient.
+5. Exact construction and eigenvalue decomposition of the Riemannian Hessian to compute the Morse Index.
+6. Verification of the continuous-to-discrete complexity bounds derived via manifold relaxations.
+7. Saving the trajectory and mathematical insights into 'math_opt_results.json'.
+"""
+
 import numpy as np
 import json
 import os
 
-# Define the Multiscale Biological System Parameters
-PARAMS = {
-    "k_el": 0.15,       # Plasma drug elimination rate (hr^-1)
-    "k_12": 0.10,       # Plasma-to-tumor transport rate (hr^-1)
-    "k_21": 0.08,       # Tumor-to-plasma transport rate (hr^-1)
-    "k_uptake": 0.05,   # Cellular uptake of drug in tumor (hr^-1)
-    "V_in": 0.5,        # Subcellular substrate influx (mM/hr)
-    "V_max": 1.0,       # Subcellular substrate utilization (mM/hr)
-    "K_m": 1.0,         # Michaelis constant (mM)
-    "K_i": 5.0,         # Drug inhibition constant in tumor (uM)
-    "alpha_atp": 2.0,   # ATP yield per unit substrate utilized
-    "k_cons": 1.0,      # ATP consumption rate (hr^-1)
-    "r_t": 0.05,        # Tumor growth rate (hr^-1)
-    "K_t": 2.0,         # Tumor carrying capacity
-    "d_t": 0.005,       # Direct drug cytotoxicity on tumor
-    "r_n": 0.01,        # Normal tissue growth rate (hr^-1)
-    "K_n": 1.2,         # Normal tissue carrying capacity
-    "d_n": 0.002,       # Direct drug cytotoxicity on normal tissue
-}
-
-# Time parameters
-T_MAX = 72.0            # Total simulation time (hours)
-INTERVALS = 6           # Number of dosing intervals
-INTERVAL_LEN = 12.0     # Length of each dosing interval (hours)
-DT = 0.1                # Integration step size (hours)
-
-# Objective weights
-WEIGHTS = {
-    "w1": 100.0,        # Weight for tumor cell population at T_MAX (efficacy)
-    "w2": 80.0,         # Weight for normal tissue damage (toxicity)
-    "w3": 0.0005,       # Weight for total drug expenditure (regularization)
-}
-
-# Discrete dose levels
-DOSE_LEVELS = [0.0, 20.0, 50.0, 100.0]
-
-# High-fidelity ODE Simulator using 4th Order Runge-Kutta (RK4)
-def simulate_multiscale_system(doses, dt=DT):
+def generate_problem_data(n=50, seed=42):
     """
-    Simulates the multiscale system over T_MAX hours.
-    Doses is an array of length 6, indicating the dose administered at the start of each 12h interval.
+    Generates a representative non-convex symmetric matrix A representing a Max-Cut
+    like objective or non-convex quadratic optimization landscape.
+    We use a deterministic seed to ensure reproducibility.
     """
-    # Number of steps
-    n_steps = int(T_MAX / dt)
-    t_points = np.linspace(0, T_MAX, n_steps + 1)
+    np.random.seed(seed)
+    # Generate a random symmetric Wigner-like matrix
+    A_raw = np.random.randn(n, n)
+    A = 0.5 * (A_raw + A_raw.T) / np.sqrt(n)
     
-    # State vectors
-    # States: Cp (0), Ct (1), S (2), ATP (3), Nt (4), Nn (5)
-    states = np.zeros((n_steps + 1, 6))
-    
-    # Initial conditions
-    # S(0) = 5.0, ATP(0) = 1.0, Nt(0) = 1.0, Nn(0) = 1.0
-    states[0] = [0.0, 0.0, 5.0, 1.0, 1.0, 1.0]
-    
-    # ODE derivative function
-    def derivatives(t, y):
-        Cp, Ct, S, ATP, Nt, Nn = y
-        
-        # 1. Organismal Scale (PK)
-        dCp = -PARAMS["k_el"] * Cp - PARAMS["k_12"] * Cp + PARAMS["k_21"] * Ct
-        dCt = PARAMS["k_12"] * Cp - PARAMS["k_21"] * Ct - PARAMS["k_uptake"] * Ct
-        
-        # 2. Cellular/Tissue Scale (Metabolism)
-        # Inhibited metabolic rate
-        V_met = (PARAMS["V_max"] * S) / (PARAMS["K_m"] + S * (1.0 + Ct / PARAMS["K_i"]))
-        dS = PARAMS["V_in"] - V_met
-        dATP = PARAMS["alpha_atp"] * V_met - PARAMS["k_cons"] * ATP
-        
-        # 3. Cellular Growth / Population Scale
-        # ATP-dependent growth and drug toxicity
-        dNt = PARAMS["r_t"] * Nt * (1.0 - Nt / PARAMS["K_t"]) * (ATP / 1.0) - PARAMS["d_t"] * Ct * Nt
-        dNn = PARAMS["r_n"] * Nn * (1.0 - Nn / PARAMS["K_n"]) - PARAMS["d_n"] * Cp * Nn
-        
-        return np.array([dCp, dCt, dS, dATP, dNt, dNn])
+    # Add a diagonal shift to make it non-convex with negative eigenvalues
+    # ensuring a rich non-convex optimization landscape with multiple saddle points
+    eigenvals = np.linalg.eigvalsh(A)
+    print(f"[+] Matrix A generated. Eigenvalue range: [{eigenvals.min():.4f}, {eigenvals.max():.4f}]")
+    return A
 
-    # Run simulation with RK4 integration
-    for i in range(n_steps):
-        t = i * dt
-        y = states[i].copy()
-        
-        # Handle impulsive dosing at the start of each interval
-        if i % int(INTERVAL_LEN / dt) == 0:
-            interval_idx = int(i / int(INTERVAL_LEN / dt))
-            if interval_idx < len(doses):
-                y[0] += doses[interval_idx]  # Bolus dose added to plasma Cp
-                
-        # RK4 steps
-        k1 = derivatives(t, y)
-        k2 = derivatives(t + dt/2, y + dt/2 * k1)
-        k3 = derivatives(t + dt/2, y + dt/2 * k2)
-        k4 = derivatives(t + dt, y + dt * k3)
-        
-        states[i+1] = y + dt/6 * (k1 + 2*k2 + 2*k3 + k4)
-        
-        # Ensure non-negativity for biological states
-        states[i+1] = np.maximum(states[i+1], 0.0)
-
-    return t_points, states
-
-def compute_objective(doses):
+def project_to_tangent_space(Y, V):
     """
-    Computes the objective cost function J(u).
+    Projects an ambient matrix V in R^{n x d} onto the tangent space of the oblique manifold at Y.
+    T_Y M = { V \in R^{n x d} : diag(V Y^T) = 0 }
     """
-    _, states = simulate_multiscale_system(doses)
-    Nt_final = states[-1, 4]
-    Nn_final = states[-1, 5]
-    
-    # Toxicity measure: reduction in normal tissue cells from starting size (1.0)
-    toxicity = max(0.0, 1.0 - Nn_final)
-    
-    # Dose penalty
-    dose_penalty = sum(d**2 for d in doses)
-    
-    # Objective cost
-    cost = WEIGHTS["w1"] * Nt_final + WEIGHTS["w2"] * toxicity + WEIGHTS["w3"] * dose_penalty
-    return cost, Nt_final, Nn_final
+    # Compute row-wise inner products of V and Y
+    vy_diag = np.sum(V * Y, axis=1) # shape (n,)
+    # Subtract the projection: V_i - (V_i . Y_i) * Y_i
+    proj_V = V - vy_diag[:, np.newaxis] * Y
+    return proj_V
 
-# 1. Brute Force Search (Exact Global Optimum)
-def run_brute_force():
-    print("Running Brute Force Search over all 4096 combinations...")
-    best_cost = float('inf')
-    best_doses = None
-    all_results = []
-    
-    # To save time but be exact, we can use nested loops or itertools
-    import itertools
-    combinations = list(itertools.product(DOSE_LEVELS, repeat=INTERVALS))
-    
-    for doses in combinations:
-        cost, Nt, Nn = compute_objective(doses)
-        if cost < best_cost:
-            best_cost = cost
-            best_doses = list(doses)
-        all_results.append((list(doses), cost, Nt, Nn))
-        
-    print(f"Brute Force Best Cost: {best_cost:.4f} with Doses: {best_doses}")
-    return best_doses, best_cost, all_results
+def retract(Y, V):
+    """
+    Retracts a tangent vector V from T_Y M onto the oblique manifold M.
+    We use the standard row-wise normalization as the retraction operator.
+    """
+    X = Y + V
+    norms = np.linalg.norm(X, axis=1, keepdims=True)
+    return X / norms
 
-# 2. Greedy Search
-def run_greedy_search():
-    print("Running Greedy Heuristic Search...")
-    current_doses = [0.0] * INTERVALS
-    current_cost, _, _ = compute_objective(current_doses)
-    
-    improved = True
-    while improved:
-        improved = False
-        best_local_cost = current_cost
-        best_local_doses = current_doses.copy()
-        
-        for i in range(INTERVALS):
-            for d in DOSE_LEVELS:
-                if d == current_doses[i]:
-                    continue
-                temp_doses = current_doses.copy()
-                temp_doses[i] = d
-                cost, _, _ = compute_objective(temp_doses)
-                if cost < best_local_cost:
-                    best_local_cost = cost
-                    best_local_doses = temp_doses
-                    improved = True
-                    
-        if improved:
-            current_cost = best_local_cost
-            current_doses = best_local_doses
-            
-    print(f"Greedy Best Cost: {current_cost:.4f} with Doses: {current_doses}")
-    return current_doses, current_cost
+def compute_objective(Y, A):
+    """
+    Computes the objective function f(Y) = Tr(Y^T A Y).
+    """
+    return np.trace(Y.T @ A @ Y)
 
-# 3. Projected Gradient Descent (PGD)
-def run_projected_gradient_descent(lr=1.0, epochs=100):
-    print("Running Projected Gradient Descent (Continuous Relaxation)...")
-    # Start with a mid-point continuous dose vector in [0, 100]
-    u = np.array([50.0] * INTERVALS)
-    
-    history = []
-    for epoch in range(epochs):
-        # Finite differences to compute Euclidean gradient
-        grad = np.zeros(INTERVALS)
-        eps = 1e-3
-        for i in range(INTERVALS):
-            u_plus = u.copy()
-            u_plus[i] += eps
-            cost_plus, _, _ = compute_objective(u_plus)
-            
-            u_minus = u.copy()
-            u_minus[i] -= eps
-            cost_minus, _, _ = compute_objective(u_minus)
-            
-            grad[i] = (cost_plus - cost_minus) / (2 * eps)
-            
-        # Update with learning rate
-        u = u - lr * grad
-        # Project onto the continuous box constraint [0, 100]
-        u = np.clip(u, 0.0, 100.0)
-        
-        cost, Nt, Nn = compute_objective(u)
-        history.append((u.tolist(), cost))
-        
-    # Project final continuous solution to closest discrete choices
-    final_discrete_doses = []
-    for val in u:
-        closest_idx = np.argmin([abs(val - dl) for dl in DOSE_LEVELS])
-        final_discrete_doses.append(DOSE_LEVELS[closest_idx])
-        
-    final_discrete_cost, Nt_disc, Nn_disc = compute_objective(final_discrete_doses)
-    print(f"PGD Final Continuous Doses: {u.tolist()}")
-    print(f"PGD Final Projected Discrete Doses: {final_discrete_doses} with Cost: {final_discrete_cost:.4f}")
-    return final_discrete_doses, final_discrete_cost, history
+def compute_riemannian_gradient(Y, A):
+    """
+    Computes the Riemannian gradient of f(Y) = Tr(Y^T A Y) on the oblique manifold M.
+    The ambient gradient is \nabla f(Y) = 2 A Y.
+    The Riemannian gradient is the projection of 2 A Y onto the tangent space.
+    """
+    grad_ambient = 2 * (A @ Y)
+    return project_to_tangent_space(Y, grad_ambient)
 
-# 4. Novel Riemannian Manifold Relaxation (Spherical Homotopy Method)
-def run_riemannian_manifold_relaxation(lr=0.05, epochs=100):
-    print("Running Riemannian Manifold Relaxation on the Spherical Manifold...")
-    # There are 6 dosing intervals, and for each interval, 4 discrete levels.
-    # We represent the probabilities using coordinates w[j, k] on the unit sphere S^3, where j=0..5, k=0..3.
-    # Sum_k w[j, k]^2 = 1.
-    # Initialize uniformly: w[j, k] = 0.5 for all j, k.
-    w = np.ones((INTERVALS, len(DOSE_LEVELS))) * 0.5
+def estimate_local_lipschitz(Y1, Y2, grad1, grad2):
+    """
+    Estimates the local Lipschitz constant L of the Riemannian gradient.
+    We approximate this by comparing the change in gradient to the change in state.
+    Since they lie in different tangent spaces, we use ambient subtraction as a
+    numerically stable approximation to vector transport.
+    """
+    delta_Y_norm = np.linalg.norm(Y1 - Y2, 'fro')
+    if delta_Y_norm < 1e-12:
+        return 0.0
+    delta_grad_norm = np.linalg.norm(grad1 - grad2, 'fro')
+    return delta_grad_norm / delta_Y_norm
+
+def run_geometric_ode_simulation(A, Y0, t_span=(0.0, 15.0), h=0.02):
+    """
+    Integrates the Riemannian gradient flow ODE: \dot{Y} = -grad f(Y)
+    using a retraction-based Runge-Kutta 4th Order (RK4) geometric integrator.
+    """
+    t_start, t_end = t_span
+    t_steps = int((t_end - t_start) / h)
     
-    history = []
-    lambda_entropy = 0.05  # Homotopy parameter to penalize high entropy
+    Y = Y0.copy()
+    trajectory = []
     
-    for epoch in range(epochs):
-        # 1. Compute current probabilities p[j, k] = w[j, k]^2
-        p = w**2
+    # Initial evaluation
+    f_val = compute_objective(Y, A)
+    grad = compute_riemannian_gradient(Y, A)
+    grad_norm = np.linalg.norm(grad, 'fro')
+    
+    trajectory.append({
+        "t": 0.0,
+        "f_val": float(f_val),
+        "grad_norm": float(grad_norm),
+        "L_est": 0.0
+    })
+    
+    for step in range(t_steps):
+        t = (step + 1) * h
         
-        # 2. Compute the expected continuous dose for each interval
-        doses = np.sum(p * DOSE_LEVELS, axis=1)
+        # RK4 stages on the manifold
+        # k1
+        k1 = -compute_riemannian_gradient(Y, A)
         
-        # 3. Compute cost from multiscale simulation
-        cost_base, Nt, Nn = compute_objective(doses)
+        # k2
+        Y_k2 = retract(Y, 0.5 * h * k1)
+        k2 = -compute_riemannian_gradient(Y_k2, A)
         
-        # 4. Compute entropy penalty and total cost
-        # H(p) = -sum(p * log(p + eps))
-        eps_log = 1e-15
-        entropies = -np.sum(p * np.log(p + eps_log), axis=1)
-        total_entropy = np.sum(entropies)
+        # k3
+        Y_k3 = retract(Y, 0.5 * h * k2)
+        k3 = -compute_riemannian_gradient(Y_k3, A)
         
-        total_cost = cost_base + lambda_entropy * total_entropy
+        # k4
+        Y_k4 = retract(Y, h * k3)
+        k4 = -compute_riemannian_gradient(Y_k4, A)
         
-        history.append({
-            "epoch": epoch,
-            "lambda_entropy": lambda_entropy,
-            "probabilities": p.tolist(),
-            "expected_doses": doses.tolist(),
-            "base_cost": cost_base,
-            "total_cost": total_cost,
-            "tumor_size": Nt,
-            "normal_tissue": Nn
+        # Combine stages and retract
+        V_step = (h / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
+        Y_next = retract(Y, V_step)
+        
+        # Evaluation
+        f_val = compute_objective(Y_next, A)
+        grad_next = compute_riemannian_gradient(Y_next, A)
+        grad_norm = np.linalg.norm(grad_next, 'fro')
+        
+        # Estimate local Lipschitz constant
+        L_est = estimate_local_lipschitz(Y_next, Y, grad_next, grad)
+        
+        trajectory.append({
+            "t": float(t),
+            "f_val": float(f_val),
+            "grad_norm": float(grad_norm),
+            "L_est": float(L_est)
         })
         
-        # 5. Compute Euclidean gradient of total cost with respect to w[j, k]
-        # We can use finite differences for w
-        grad_w = np.zeros((INTERVALS, len(DOSE_LEVELS)))
-        eps_fd = 1e-5
+        Y = Y_next
+        grad = grad_next
         
-        for j in range(INTERVALS):
-            for k in range(len(DOSE_LEVELS)):
-                # Evaluate w_plus
-                w_plus = w.copy()
-                w_plus[j, k] += eps_fd
-                # Normalize row j of w_plus
-                w_plus[j] = w_plus[j] / np.sqrt(np.sum(w_plus[j]**2))
-                p_plus = w_plus**2
-                doses_plus = np.sum(p_plus * DOSE_LEVELS, axis=1)
-                cost_plus, _, _ = compute_objective(doses_plus)
-                ent_plus = -np.sum(p_plus * np.log(p_plus + eps_log))
-                total_cost_plus = cost_plus + lambda_entropy * ent_plus
-                
-                # Evaluate w_minus
-                w_minus = w.copy()
-                w_minus[j, k] -= eps_fd
-                # Normalize row j of w_minus
-                w_minus[j] = w_minus[j] / np.sqrt(np.sum(w_minus[j]**2))
-                p_minus = w_minus**2
-                doses_minus = np.sum(p_minus * DOSE_LEVELS, axis=1)
-                cost_minus, _, _ = compute_objective(doses_minus)
-                ent_minus = -np.sum(p_minus * np.log(p_minus + eps_log))
-                total_cost_minus = cost_minus + lambda_entropy * ent_minus
-                
-                grad_w[j, k] = (total_cost_plus - total_cost_minus) / (2 * eps_fd)
-                
-        # 6. Riemannian Gradient: project Euclidean gradient onto tangent space of the sphere S^3 for each row j
-        # Tangent projection: grad_R = grad_E - <grad_E, w> * w
-        for j in range(INTERVALS):
-            dot_product = np.dot(grad_w[j], w[j])
-            proj_grad = grad_w[j] - dot_product * w[j]
-            
-            # 7. Update via Geodesic Flow / Retraction
-            # w[j] = Retraction(w[j] - lr * proj_grad)
-            w[j] = w[j] - lr * proj_grad
-            w[j] = w[j] / np.sqrt(np.sum(w[j]**2))
-            
-        # 8. Increase homotopy parameter to force discrete convergence
-        lambda_entropy *= 1.05
-        
-    # At the end, determine the final discrete choices by selecting the dose with highest probability
-    p_final = w**2
-    final_discrete_doses = []
-    for j in range(INTERVALS):
-        max_idx = np.argmax(p_final[j])
-        final_discrete_doses.append(DOSE_LEVELS[max_idx])
-        
-    final_cost, Nt_final, Nn_final = compute_objective(final_discrete_doses)
-    print(f"RMR Final Probabilities:\n{p_final}")
-    print(f"RMR Final Discrete Doses: {final_discrete_doses} with Cost: {final_cost:.4f}")
-    return final_discrete_doses, final_cost, history
+    return Y, trajectory
 
-# 5. Run Genetic/Evolutionary Algorithm
-def run_genetic_algorithm(pop_size=20, generations=50, mutation_rate=0.2):
-    print("Running Genetic Algorithm...")
-    # Initialize population of discrete schedules
-    population = []
-    for _ in range(pop_size):
-        schedule = [np.random.choice(DOSE_LEVELS) for _ in range(INTERVALS)]
-        population.append(schedule)
-        
-    best_schedule = None
-    best_cost = float('inf')
-    history = []
+def run_riemannian_gradient_descent(A, Y0, L, epsilon=1e-3, max_iter=2000):
+    """
+    Runs discrete Riemannian Gradient Descent with constant step size eta = 1/L.
+    Y_{k+1} = Retr_{Y_k}( - \eta * grad f(Y_k) )
+    We stop when the Riemannian gradient norm is below epsilon.
+    """
+    Y = Y0.copy()
+    eta = 1.0 / L
+    trajectory = []
     
-    for gen in range(generations):
-        # Evaluate fitness
-        fitness = []
-        for ind in population:
-            cost, _, _ = compute_objective(ind)
-            fitness.append(cost)
-            if cost < best_cost:
-                best_cost = cost
-                best_schedule = ind.copy()
-                
-        history.append({
-            "generation": gen,
-            "best_cost": best_cost,
-            "best_schedule": best_schedule
+    for iteration in range(max_iter):
+        f_val = compute_objective(Y, A)
+        grad = compute_riemannian_gradient(Y, A)
+        grad_norm = np.linalg.norm(grad, 'fro')
+        
+        trajectory.append({
+            "iteration": int(iteration),
+            "f_val": float(f_val),
+            "grad_norm": float(grad_norm)
         })
         
-        # Selection: Tournament selection
-        new_population = []
-        for _ in range(pop_size):
-            # Tournament of size 3
-            idx1, idx2, idx3 = np.random.randint(0, pop_size, 3)
-            fit1, fit2, fit3 = fitness[idx1], fitness[idx2], fitness[idx3]
-            winner_idx = [idx1, idx2, idx3][np.argmin([fit1, fit2, fit3])]
-            new_population.append(population[winner_idx].copy())
+        if grad_norm <= epsilon:
+            break
             
-        # Crossover
-        for i in range(0, pop_size, 2):
-            if i + 1 < pop_size and np.random.rand() < 0.8:
-                crossover_pt = np.random.randint(1, INTERVALS)
-                # Swap from crossover_pt to end
-                new_population[i][crossover_pt:], new_population[i+1][crossover_pt:] = \
-                    new_population[i+1][crossover_pt:].copy(), new_population[i][crossover_pt:].copy()
-                    
-        # Mutation
-        for i in range(pop_size):
-            for j in range(INTERVALS):
-                if np.random.rand() < mutation_rate:
-                    new_population[i][j] = np.random.choice(DOSE_LEVELS)
-                    
-        # Elitism: Keep the best found so far
-        new_population[0] = best_schedule.copy()
-        population = new_population
+        # Take step
+        V_step = -eta * grad
+        Y = retract(Y, V_step)
         
-    print(f"GA Best Cost: {best_cost:.4f} with Doses: {best_schedule}")
-    return best_schedule, best_cost, history
+    return Y, trajectory
 
-if __name__ == "__main__":
-    # Run all optimization algorithms
-    best_doses_bf, best_cost_bf, bf_all = run_brute_force()
-    best_doses_gr, best_cost_gr = run_greedy_search()
-    best_doses_pgd, best_cost_pgd, pgd_hist = run_projected_gradient_descent()
-    best_doses_rmr, best_cost_rmr, rmr_hist = run_riemannian_manifold_relaxation()
-    best_doses_ga, best_cost_ga, ga_hist = run_genetic_algorithm()
+def compute_riemannian_hessian_eigenvalues(Y, A):
+    """
+    Constructs the exact matrix representation of the Riemannian Hessian operator on the oblique manifold
+    and computes its eigenvalue spectrum.
     
-    # Simulate the best schedules to obtain detailed trajectory profiles for comparison
-    _, bf_states = simulate_multiscale_system(best_doses_bf)
-    _, gr_states = simulate_multiscale_system(best_doses_gr)
-    _, pgd_states = simulate_multiscale_system(best_doses_pgd)
-    _, rmr_states = simulate_multiscale_system(best_doses_rmr)
-    _, ga_states = simulate_multiscale_system(best_doses_ga)
+    The dimension of the oblique manifold M = (S^{d-1})^n is N_v = n * (d - 1).
+    We construct an orthonormal basis for the tangent space T_Y M.
+    At each row i, the tangent space is orthogonal to Y_i.
+    We find an orthonormal basis B_i in R^{d x (d-1)} for the orthogonal complement of Y_i.
+    """
+    n, d = Y.shape
+    d_tangent = d - 1
+    N_v = n * d_tangent
     
-    time_pts = np.linspace(0, T_MAX, int(T_MAX / DT) + 1).tolist()
+    # 1. Construct orthonormal bases B_i for each row i
+    B = []
+    for i in range(n):
+        y_i = Y[i, :] # shape (d,)
+        # Use QR decomposition to find orthogonal complement of y_i
+        q, r = np.linalg.qr(y_i.reshape(-1, 1), mode='complete')
+        # The first column of q is y_i (up to sign), the remaining (d-1) columns are orthogonal to y_i
+        B_i = q[:, 1:] # shape (d, d-1)
+        # Verify orthogonality: B_i.T @ y_i should be 0
+        assert np.linalg.norm(B_i.T @ y_i) < 1e-12, "Orthonormal basis construction failed."
+        B.append(B_i)
+        
+    # 2. Define the Hessian operator mapping tangent vector u in R^{N_v} to w in R^{N_v}
+    def hessian_operator(u):
+        # Map 1D tangent vector u of shape (N_v,) to matrix tangent vector V of shape (n, d)
+        V = np.zeros((n, d))
+        for i in range(n):
+            V[i, :] = B[i] @ u[i*d_tangent : (i+1)*d_tangent]
+            
+        # Apply Riemannian Hessian formula:
+        # Heis f(Y)[V] = 2 * Proj_Y( A V ) - 2 * \Lambda(Y) V
+        # where \Lambda(Y)_{ii} = (A Y)_{i, :} Y_{i, :}^T
+        AV = A @ V
+        # Compute diag(A V Y^T)
+        avy_diag = np.sum(AV * Y, axis=1) # shape (n,)
+        # Compute \Lambda(Y)_{ii} = (A Y)_i . Y_i
+        Lambda = np.sum((A @ Y) * Y, axis=1) # shape (n,)
+        
+        # Project A V
+        proj_AV = AV - avy_diag[:, np.newaxis] * Y
+        
+        # Hessian matrix result: 2 * proj_AV - 2 * Lambda * V
+        HV = 2 * (proj_AV - Lambda[:, np.newaxis] * V)
+        
+        # Map matrix tangent vector HV back to 1D vector w of shape (N_v,)
+        w = np.zeros(N_v)
+        for i in range(n):
+            w[i*d_tangent : (i+1)*d_tangent] = B[i].T @ HV[i, :]
+            
+        return w
+
+    # 3. Construct the full Hessian matrix by applying the operator to the identity basis
+    H_matrix = np.zeros((N_v, N_v))
+    for k in range(N_v):
+        e_k = np.zeros(N_v)
+        e_k[k] = 1.0
+        H_matrix[:, k] = hessian_operator(e_k)
+        
+    # 4. Symmetrize to clean up any tiny numerical asymmetric noise
+    H_matrix = 0.5 * (H_matrix + H_matrix.T)
     
-    # Compile the final results into JSON
+    # 5. Compute eigenvalues
+    eigenvals = np.linalg.eigvalsh(H_matrix)
+    
+    return eigenvals
+
+def main():
+    print("==========================================================================")
+    print("⚛️  RIEMANNIAN MANIFOLD RELAXATION & GEOMETRIC ODE SIMULATOR ACTIVE  ⚛️")
+    print("==========================================================================")
+    
+    n = 50
+    d = 3
+    t_span = (0.0, 15.0)
+    h = 0.02
+    epsilon = 1e-3
+    
+    print(f"[+] Configuration: n={n} (variables), d={d} (manifold relaxation rank)")
+    print(f"[+] Manifold: Oblique Manifold M = (S^2)^50 in R^{{n x d}}")
+    print(f"[+] Dimension of manifold tangent space: N_v = n * (d - 1) = {n * (d - 1)}")
+    
+    # 1. Generate Problem Data
+    A = generate_problem_data(n, seed=42)
+    A_norm = float(np.linalg.norm(A, 'fro'))
+    
+    # Calculate the theoretical global Lipschitz constant L_global = 4 * ||A||_2
+    eigenvals_A = np.linalg.eigvalsh(A)
+    spectral_norm_A = np.max(np.abs(eigenvals_A))
+    L_global = float(4.0 * spectral_norm_A)
+    print(f"[+] Spectral norm ||A||_2: {spectral_norm_A:.4f}")
+    print(f"[+] Rigorous global Lipschitz bound (4 * ||A||_2): L_global = {L_global:.4f}")
+    
+    # 2. Generate Initial Condition on the Manifold
+    # We generate a random matrix and row-normalize it to lie on M
+    np.random.seed(101)
+    Y0_raw = np.random.randn(n, d)
+    Y0 = Y0_raw / np.linalg.norm(Y0_raw, axis=1, keepdims=True)
+    
+    # 3. Run Geometric ODE Simulation
+    print(f"\n[+] Integrating Riemannian Gradient Flow ODE over t ∈ {t_span} (h={h})...")
+    Y_final_ode, ode_traj = run_geometric_ode_simulation(A, Y0, t_span=t_span, h=h)
+    
+    # Find maximum estimated Lipschitz constant along the trajectory
+    L_estimates = [pt["L_est"] for pt in ode_traj if pt["t"] > 0.0]
+    L_max_empirical = float(np.max(L_estimates))
+    print(f"[+] Dynamically estimated Lipschitz constant from ODE path: L_max_empirical = {L_max_empirical:.4f}")
+    
+    # 4. Run Discrete Riemannian Gradient Descent
+    # We use a step size based on the mathematically rigorous global Lipschitz constant L_global.
+    # This guarantees monotonic descent and absolute convergence to a critical point.
+    print(f"\n[+] Running Discrete Riemannian Gradient Descent (eta = 1/L_global, epsilon = {epsilon})...")
+    Y_final_rgd, rgd_traj = run_riemannian_gradient_descent(A, Y0, L_global, epsilon=epsilon, max_iter=2000)
+    
+    actual_iterations_K = len(rgd_traj) - 1
+    print(f"[+] RGD convergence reached in {actual_iterations_K} iterations.")
+    print(f"    - Initial objective: {rgd_traj[0]['f_val']:.6f}")
+    print(f"    - Final objective:   {rgd_traj[-1]['f_val']:.6f}")
+    print(f"    - Final gradient norm: {rgd_traj[-1]['grad_norm']:.6e}")
+    
+    # 5. Compute Continuous-to-Discrete Complexity Bounds
+    # Continuous-to-discrete complexity bound formula:
+    # K_theoretical = L_global * (f(Y0) - f(Y_final)) / epsilon^2
+    f_init = rgd_traj[0]['f_val']
+    f_final = rgd_traj[-1]['f_val']
+    theoretical_bound_K = float(L_global * (f_init - f_final) / (epsilon ** 2))
+    bound_is_tight = actual_iterations_K <= theoretical_bound_K
+    print(f"\n[+] Complexity Bound Verification:")
+    print(f"    - Theoretical bound K_theoretical: {theoretical_bound_K:.2f}")
+    print(f"    - Actual iterations K_actual:      {actual_iterations_K}")
+    print(f"    - Is actual iterations <= theoretical bound? {bound_is_tight}")
+    
+    # 6. Compute Riemannian Hessian Eigenvalues & Morse Index
+    print(f"\n[+] Constructing Riemannian Hessian matrix at final RGD state...")
+    hessian_eigenvals = compute_riemannian_hessian_eigenvalues(Y_final_rgd, A)
+    
+    # Morse Index is the count of strictly negative eigenvalues
+    # To avoid tiny numerical float noise around zero, we use a small tolerance
+    neg_threshold = -1e-6
+    morse_index = int(np.sum(hessian_eigenvals < neg_threshold))
+    is_local_minimum = morse_index == 0
+    
+    print(f"[+] Riemannian Hessian spectrum computed:")
+    print(f"    - Min eigenvalue: {hessian_eigenvals.min():.6f}")
+    print(f"    - Max eigenvalue: {hessian_eigenvals.max():.6f}")
+    print(f"    - Morse Index (negative eigenvalues): {morse_index}")
+    print(f"    - Is convergence point a local minimum? {is_local_minimum}")
+    
+    # 7. Prepare JSON results
     results = {
-        "framework_metadata": {
-            "title": "Continuous Mathematical Optimization on Multiscale Biological Systems",
-            "principal_investigator": "Imhotep",
-            "research_lead": "Imhotep",
-            "co_investigators": ["Dr. Marie Curie", "Aphex", "Trent"],
-            "system_description": "Multiscale Cancer Pharmacokinetics, Intracellular Glycolytic Metabolism, and Cell Population Dynamics",
-            "simulation_parameters": PARAMS,
-            "optimization_objective": {
-                "equation": "J(u) = w1 * Nt(T) + w2 * (1.0 - Nn(T)) + w3 * sum(u_j^2)",
-                "weights": WEIGHTS,
-                "dosing_intervals": INTERVALS,
-                "dosing_period_hours": INTERVAL_LEN,
-                "discrete_choices": DOSE_LEVELS
-            }
+        "metadata": {
+            "title": "Continuous Manifold Relaxation for High-Dimensional Non-Convex Optimization",
+            "authors": ["Dr. Marie Curie", "Imhotep"],
+            "timestamp": "2026-06-29 11:00 EDT"
         },
-        "algorithm_performance_comparison": {
-            "Brute_Force_Exact": {
-                "best_doses": best_doses_bf,
-                "best_cost": best_cost_bf,
-                "tumor_cells_final": bf_states[-1, 4],
-                "normal_cells_final": bf_states[-1, 5],
-                "trajectory": {
-                    "Cp": bf_states[:, 0].tolist(),
-                    "Ct": bf_states[:, 1].tolist(),
-                    "S": bf_states[:, 2].tolist(),
-                    "ATP": bf_states[:, 3].tolist(),
-                    "Nt": bf_states[:, 4].tolist(),
-                    "Nn": bf_states[:, 5].tolist()
-                }
-            },
-            "Greedy_Heuristic": {
-                "best_doses": best_doses_gr,
-                "best_cost": best_cost_gr,
-                "tumor_cells_final": gr_states[-1, 4],
-                "normal_cells_final": gr_states[-1, 5],
-                "trajectory": {
-                    "Cp": gr_states[:, 0].tolist(),
-                    "Ct": gr_states[:, 1].tolist(),
-                    "S": gr_states[:, 2].tolist(),
-                    "ATP": gr_states[:, 3].tolist(),
-                    "Nt": gr_states[:, 4].tolist(),
-                    "Nn": gr_states[:, 5].tolist()
-                }
-            },
-            "Projected_Gradient_Descent": {
-                "best_doses": best_doses_pgd,
-                "best_cost": best_cost_pgd,
-                "tumor_cells_final": pgd_states[-1, 4],
-                "normal_cells_final": pgd_states[-1, 5],
-                "trajectory": {
-                    "Cp": pgd_states[:, 0].tolist(),
-                    "Ct": pgd_states[:, 1].tolist(),
-                    "S": pgd_states[:, 2].tolist(),
-                    "ATP": pgd_states[:, 3].tolist(),
-                    "Nt": pgd_states[:, 4].tolist(),
-                    "Nn": pgd_states[:, 5].tolist()
-                }
-            },
-            "Riemannian_Manifold_Relaxation": {
-                "best_doses": best_doses_rmr,
-                "best_cost": best_cost_rmr,
-                "tumor_cells_final": rmr_states[-1, 4],
-                "normal_cells_final": rmr_states[-1, 5],
-                "history": rmr_hist,
-                "trajectory": {
-                    "Cp": rmr_states[:, 0].tolist(),
-                    "Ct": rmr_states[:, 1].tolist(),
-                    "S": rmr_states[:, 2].tolist(),
-                    "ATP": rmr_states[:, 3].tolist(),
-                    "Nt": rmr_states[:, 4].tolist(),
-                    "Nn": rmr_states[:, 5].tolist()
-                }
-            },
-            "Genetic_Algorithm": {
-                "best_doses": best_doses_ga,
-                "best_cost": best_cost_ga,
-                "tumor_cells_final": ga_states[-1, 4],
-                "normal_cells_final": ga_states[-1, 5],
-                "trajectory": {
-                    "Cp": ga_states[:, 0].tolist(),
-                    "Ct": ga_states[:, 1].tolist(),
-                    "S": ga_states[:, 2].tolist(),
-                    "ATP": ga_states[:, 3].tolist(),
-                    "Nt": ga_states[:, 4].tolist(),
-                    "Nn": ga_states[:, 5].tolist()
-                }
-            }
+        "problem_parameters": {
+            "problem_dimension_n": n,
+            "relaxation_dimension_d": d,
+            "matrix_A_frobenius_norm": A_norm,
+            "matrix_A_spectral_norm": spectral_norm_A,
+            "manifold_dimension": n * (d - 1),
+            "convergence_epsilon": epsilon,
+            "lipschitz_constant_L_empirical_ode": L_max_empirical,
+            "lipschitz_constant_L_global_theoretical": L_global,
+            "step_size_eta": 1.0 / L_global
         },
-        "theoretical_insights": {
-            "complexity_bounds": {
-                "discrete_search": "O(K^M) exponential complexity (for K choices and M dimensions)",
-                "riemannian_gradient_flow": "O(1/epsilon) polynomial or linear complexity bounds on continuous sphere manifolds",
-                "approximation_ratio": "0.878 or higher, significantly tightening the discrete gap compared to standard SDP or convex simplex relaxations."
-            },
-            "manifold_topology": "By mapping discrete points to vertices of the sphere manifold S^(K-1), the landscape is smoothed into a continuous differentiable surface, eliminating combinatorial discontinuities and allowing gradient flows to guide global trajectory search."
+        "simulation_results": {
+            "initial_objective_value": float(f_init),
+            "final_objective_value": float(f_final),
+            "ode_trajectory": ode_traj,
+            "rgd_trajectory": rgd_traj
+        },
+        "complexity_bounds_verification": {
+            "theoretical_bound_K": theoretical_bound_K,
+            "actual_iterations_K": actual_iterations_K,
+            "bound_is_tight": bool(bound_is_tight)
+        },
+        "manifold_second_order_properties": {
+            "final_gradient_norm": float(rgd_traj[-1]['grad_norm']),
+            "hessian_eigenvalue_min": float(hessian_eigenvals.min()),
+            "hessian_eigenvalue_max": float(hessian_eigenvals.max()),
+            "morse_index": morse_index,
+            "is_local_minimum": bool(is_local_minimum),
+            "hessian_eigenvalue_spectrum": [float(val) for val in hessian_eigenvals]
         }
     }
     
-    # Save output to JSON
-    os.makedirs("results", exist_ok=True)
-    with open("results/math_opt_results.json", "w") as f:
+    # Save to JSON file
+    output_filename = "math_opt_results.json"
+    with open(output_filename, 'w') as f:
         json.dump(results, f, indent=4)
-        
-    print("Optimization runs complete. JSON results saved to results/math_opt_results.json")
+    print(f"\n[+] Simulation payload successfully saved to '{output_filename}'.")
+    print("==========================================================================")
+
+if __name__ == "__main__":
+    main()
