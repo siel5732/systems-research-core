@@ -1,5 +1,5 @@
 # ZACHARY SIELAFF
-Yakima, WA | (208) 290-1308 | Zachary.sielaff@gmail.com | [LinkedIn/GitHub Placeholder]
+Yakima, WA | (208) 290-1308 | Zachary.sielaff@gmail.com | [LinkedIn](https://www.linkedin.com/in/zachary-sielaff-440676171) | [GitHub](https://github.com/siel5732)
 
 ---
 
