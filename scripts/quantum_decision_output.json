@@ -1,7 +1,7 @@
 {
     "metadata": {
         "title": "Quantum Active Learning Decider Output",
-        "timestamp_utc": "2026-06-19 14:54:00",
+        "timestamp_utc": "2026-07-16 23:00:00",
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
@@ -23,8 +23,8 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 9,
-        "title": "MODY3 K-ATP Channel Bypass Kinetics using Low-Dose Oral Glipizide Therapies",
+        "selected_topic_id": 1,
+        "title": "Closed-Loop Artificial Pancreas Model Predictive Control (MPC) under Exercise Challenges",
         "coverage_factor": 0.1,
         "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
