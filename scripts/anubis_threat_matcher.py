@@ -164,11 +164,11 @@ def run_threat_matcher():
     print("[🛡️] Anubis: Gathering local system software profile...")
     profile = gather_local_software_profile()
     
-    print("[🧬] Connecting to local ChromaDB (127.0.0.1:8000)...")
+    print("[🧬] Connecting to local ChromaDB (localhost:8000)...")
     using_http = False
     try:
         # First try to connect to the live HTTP ChromaDB server on Port 8000
-        client = chromadb.HttpClient(host="127.0.0.1", port=8000)
+        client = chromadb.HttpClient(host="localhost", port=8000)
         client.get_version()
         using_http = True
         print("[🧬] Successfully connected to live ChromaDB HTTP Server on Port 8000!")
