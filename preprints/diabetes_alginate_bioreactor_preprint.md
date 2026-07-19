@@ -2,7 +2,7 @@
 
 **Author:** Sir Frederick Banting, Chief Principal Investigator, Diabetes & Metabolic Systems Core  
 **Collaborators:** Zachary Sielaff, St.Acutis, Trent Reznor, Aphex Twin  
-**Published:** June 19, 2026  
+**Published:** July 18, 2026  
 **Repository:** `diabetes_research_core`  
 
 ---
