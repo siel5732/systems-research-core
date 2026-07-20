@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
 AcutisForge Preprint Synchronizer
-Copies the latest preprints and results to the respective central directories
-for commitment and deployment.
+Copies the latest preprints and results for the selected topics:
+- MPS-I: Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics
+- Diabetes: Permselective Alginate Hydrogel Micro-Bioreactors Krogh Oxygen Diffusion
+- Math Optim: Geometric ODE Simulator & Manifold Relaxation
+to the respective central directories for commitment and deployment.
 """
 
 import shutil
@@ -14,9 +17,9 @@ def main():
     print("====================================================================")
 
     # Paths to source preprints
-    mps_src = "mps_research_core/preprints/mps_i_ada_clearance_preprint.md"
+    mps_src = "mps_research_core/mps_lnp_mrna_paper.md"
     diabetes_src = "diabetes_research_core/diabetes_capsule_oxygen_diffusion_paper.md"
-    math_opt_src = "preprints/math_opt_preprint.md"
+    math_opt_src = "math_optim_preprint.md"
 
     # Destination directories
     main_preprints_dir = "preprints"
@@ -27,9 +30,9 @@ def main():
 
     # 1. Sync MPS-I Preprint
     if os.path.exists(mps_src):
-        shutil.copyfile(mps_src, os.path.join(main_preprints_dir, "mps_i_ada_clearance_preprint.md"))
-        shutil.copyfile(mps_src, os.path.join(sys_preprints_dir, "mps_i_ada_clearance_preprint.md"))
-        print(f"[+] Synchronized MPS-I ADA Clearance Preprint: {mps_src}")
+        shutil.copyfile(mps_src, os.path.join(main_preprints_dir, "mps_i_lnp_delivery_preprint.md"))
+        shutil.copyfile(mps_src, os.path.join(sys_preprints_dir, "mps_i_lnp_delivery_preprint.md"))
+        print(f"[+] Synchronized MPS-I LNP-mRNA Delivery Preprint: {mps_src}")
     else:
         print(f"[!] Warning: MPS-I source preprint not found: {mps_src}")
 
@@ -43,13 +46,14 @@ def main():
 
     # 3. Sync Math Optimization Preprint
     if os.path.exists(math_opt_src):
+        shutil.copyfile(math_opt_src, os.path.join(main_preprints_dir, "math_opt_oblique_manifold_preprint.md"))
+        shutil.copyfile(math_opt_src, os.path.join(sys_preprints_dir, "math_opt_oblique_manifold_preprint.md"))
         shutil.copyfile(math_opt_src, os.path.join(sys_preprints_dir, "math_opt_preprint.md"))
         print(f"[+] Synchronized Mathematical Optimization Preprint: {math_opt_src}")
     else:
         print(f"[!] Warning: Math Optimization source preprint not found: {math_opt_src}")
 
     # 4. Sync results to systems-research-core
-    # We want results for all three topics in systems-research-core/results/ as well
     os.makedirs("systems-research-core/results", exist_ok=True)
     
     shutil.copyfile(

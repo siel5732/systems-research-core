@@ -5,10 +5,10 @@
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
-        "selected_topic_id": 7,
-        "title": "Anti-Drug Antibody (ADA) Humoral Clearance Kinetics and Tolerization",
+        "selected_topic_id": 5,
+        "title": "Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics for Liver-Targeted Transient IDUA Expression",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.2031,
+        "wave_amplitude_probability": 0.3906,
         "state_vector_probabilities": [
             0.0,
             0.1016,

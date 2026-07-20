@@ -1,28 +1,30 @@
 #!/usr/bin/env python3
 """
 AcutisForge Biophysical Research Round Simulator Orchestrator
-Executes the three scientific simulators (MPS-I, Diabetes, Math Optim)
-and ensures their outputs are aligned under research_round/ and preprints/.
+Executes the three scientific simulators (MPS-I, Diabetes, Math Optim) for the selected topics:
+- MPS-I: Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics
+- Diabetes: Permselective Alginate Hydrogel Micro-Bioreactors Krogh Oxygen Diffusion
+- Math Optim: Geometric ODE Simulator & Manifold Relaxation
+Ensures their outputs are aligned under research_round/ and preprints/.
 """
 
 import subprocess
 import shutil
-import json
 import os
 
 def main():
     print("====================================================================")
-    print("🚀 RUNNING BIOPHYSICAL AND MATHEMATICAL SIMULATORS FOR MORNING ROUND")
+    print("🚀 RUNNING BIOPHYSICAL AND MATHEMATICAL SIMULATORS FOR EVENING ROUND")
     print("====================================================================")
 
-    # 1. Run the MPS-I Humoral Kinetics and Tolerization Simulator
-    print("\n[+] Running MPS-I Humoral Kinetics & Tolerization Simulator...")
-    subprocess.run(["python3", "mps_research_core/mps_immune_tolerization_simulator.py"], check=True)
+    # 1. Run the MPS-I LNP-mRNA Delivery Kinetics Simulator
+    print("\n[+] Running MPS-I LNP-mRNA Delivery Kinetics Simulator...")
+    subprocess.run(["python3", "mps_research_core/mps_lnp_mrna_simulator.py"], check=True)
     
     # Copy results to research_round/mps/mps_i_simulation_results.json
     os.makedirs("research_round/mps", exist_ok=True)
     shutil.copyfile(
-        "mps_research_core/mps_immune_tolerization_results.json",
+        "results/mps_i_lnp_delivery_results.json",
         "research_round/mps/mps_i_simulation_results.json"
     )
     print("    -> Copied MPS-I results to research_round/mps/mps_i_simulation_results.json")
