@@ -23,8 +23,8 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 3,
-        "title": "Permselective Alginate Hydrogel Micro-Bioreactors Krogh Oxygen Diffusion",
+        "selected_topic_id": 7,
+        "title": "Acoustic-Patterned Concentric Alignment of Beta-Cell Spheroids within Hydrogel Scaffolds",
         "coverage_factor": 0.1,
         "wave_amplitude_probability": 0.2031,
         "state_vector_probabilities": [

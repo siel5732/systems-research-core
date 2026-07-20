@@ -1,25 +1,37 @@
 #!/usr/bin/env python3
 """
-AcutisForge Preprint Synchronizer
+AcutisForge Preprint Synchronizer (Dynamic Edition)
 Copies the latest preprints and results for the selected topics:
-- MPS-I: Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics
-- Diabetes: Permselective Alginate Hydrogel Micro-Bioreactors Krogh Oxygen Diffusion
+- MPS-I: Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics (Topic 5) or matching selection
+- Diabetes: Acoustic-Patterned Concentric Alignment of Beta-Cell Spheroids (Topic 7) or matching selection
 - Math Optim: Geometric ODE Simulator & Manifold Relaxation
 to the respective central directories for commitment and deployment.
 """
 
 import shutil
 import os
+import json
 
 def main():
     print("====================================================================")
     print("🔄 SYNCHRONIZING ACADEMIC PREPRINTS AND SIMULATION RESULTS")
     print("====================================================================")
 
-    # Paths to source preprints
-    mps_src = "mps_research_core/mps_lnp_mrna_paper.md"
-    diabetes_src = "diabetes_research_core/diabetes_capsule_oxygen_diffusion_paper.md"
-    math_opt_src = "math_optim_preprint.md"
+    # 1. Load the selected topics from the Quantum Active Learning Engine
+    decision_file = "scripts/quantum_decision_output.json"
+    if not os.path.exists(decision_file):
+        raise FileNotFoundError(f"Could not find quantum decision file: {decision_file}")
+
+    with open(decision_file, "r") as f:
+        decision = json.load(f)
+
+    mps_id = decision["mps_core"]["selected_topic_id"]
+    mps_title = decision["mps_core"]["title"]
+    diabetes_id = decision["diabetes_core"]["selected_topic_id"]
+    diabetes_title = decision["diabetes_core"]["title"]
+
+    print(f"[+] Loaded selected MPS-I topic (ID {mps_id}): {mps_title}")
+    print(f"[+] Loaded selected Diabetes topic (ID {diabetes_id}): {diabetes_title}")
 
     # Destination directories
     main_preprints_dir = "preprints"
@@ -29,22 +41,45 @@ def main():
     os.makedirs(sys_preprints_dir, exist_ok=True)
 
     # 1. Sync MPS-I Preprint
+    # Map topic ID to source file
+    mps_preprints = {
+        5: "mps_research_core/mps_lnp_mrna_paper.md"
+    }
+    mps_src = mps_preprints.get(mps_id, mps_preprints[5])
+    mps_dst_name = "mps_i_lnp_delivery_preprint.md"
+
     if os.path.exists(mps_src):
-        shutil.copyfile(mps_src, os.path.join(main_preprints_dir, "mps_i_lnp_delivery_preprint.md"))
-        shutil.copyfile(mps_src, os.path.join(sys_preprints_dir, "mps_i_lnp_delivery_preprint.md"))
-        print(f"[+] Synchronized MPS-I LNP-mRNA Delivery Preprint: {mps_src}")
+        shutil.copyfile(mps_src, os.path.join(main_preprints_dir, mps_dst_name))
+        shutil.copyfile(mps_src, os.path.join(sys_preprints_dir, mps_dst_name))
+        print(f"[+] Synchronized MPS-I Preprint: {mps_src} -> {mps_dst_name}")
     else:
         print(f"[!] Warning: MPS-I source preprint not found: {mps_src}")
 
     # 2. Sync Diabetes Preprint
+    # Map topic ID to source file
+    diabetes_preprints = {
+        3: {
+            "src": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_paper.md",
+            "dst": "diabetes_alginate_bioreactor_preprint.md"
+        },
+        7: {
+            "src": "diabetes_research_core/acoustic_islet_patterning_paper.md",
+            "dst": "diabetes_acoustic_islet_patterning_preprint.md"
+        }
+    }
+    db_info = diabetes_preprints.get(diabetes_id, diabetes_preprints[7])
+    diabetes_src = db_info["src"]
+    diabetes_dst_name = db_info["dst"]
+
     if os.path.exists(diabetes_src):
-        shutil.copyfile(diabetes_src, os.path.join(main_preprints_dir, "diabetes_alginate_bioreactor_preprint.md"))
-        shutil.copyfile(diabetes_src, os.path.join(sys_preprints_dir, "diabetes_alginate_bioreactor_preprint.md"))
-        print(f"[+] Synchronized Diabetes Alginate Bioreactor Preprint: {diabetes_src}")
+        shutil.copyfile(diabetes_src, os.path.join(main_preprints_dir, diabetes_dst_name))
+        shutil.copyfile(diabetes_src, os.path.join(sys_preprints_dir, diabetes_dst_name))
+        print(f"[+] Synchronized Diabetes Preprint: {diabetes_src} -> {diabetes_dst_name}")
     else:
         print(f"[!] Warning: Diabetes source preprint not found: {diabetes_src}")
 
     # 3. Sync Math Optimization Preprint
+    math_opt_src = "math_optim_preprint.md"
     if os.path.exists(math_opt_src):
         shutil.copyfile(math_opt_src, os.path.join(main_preprints_dir, "math_opt_oblique_manifold_preprint.md"))
         shutil.copyfile(math_opt_src, os.path.join(sys_preprints_dir, "math_opt_oblique_manifold_preprint.md"))
@@ -53,9 +88,10 @@ def main():
     else:
         print(f"[!] Warning: Math Optimization source preprint not found: {math_opt_src}")
 
-    # 4. Sync results to systems-research-core
+    # 4. Sync results to systems-research-core/results
     os.makedirs("systems-research-core/results", exist_ok=True)
     
+    # We copy the consolidated results
     shutil.copyfile(
         "research_round/mps/mps_i_simulation_results.json",
         "systems-research-core/results/mps_i_results.json"
