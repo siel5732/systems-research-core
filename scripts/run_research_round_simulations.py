@@ -40,6 +40,11 @@ def main():
             "script": "mps_research_core/mps_lnp_mrna_simulator.py",
             "results_src": "results/mps_i_lnp_delivery_results.json",
             "results_dst": "research_round/mps/mps_i_simulation_results.json"
+        },
+        9: {
+            "script": "mps_research_core/mps_skeletal_matrix_degradation_simulator.py",
+            "results_src": "mps_research_core/mps_skeletal_matrix_degradation_results.json",
+            "results_dst": "research_round/mps/mps_i_simulation_results.json"
         }
     }
     
@@ -48,6 +53,12 @@ def main():
         3: {
             "script": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_simulator.py",
             "results_src": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_results.json",
+            "results_dst": "research_round/diabetes/diabetes_simulation_results.json",
+            "additional_dst": "research_round/diabetes/diabetes_spheroid_simulation_results.json"
+        },
+        5: {
+            "script": "diabetes_research_core/diabetes_islet_neovascularization_simulator.py",
+            "results_src": "research_data/diabetes/diabetes_simulation_data.json",
             "results_dst": "research_round/diabetes/diabetes_simulation_results.json",
             "additional_dst": "research_round/diabetes/diabetes_spheroid_simulation_results.json"
         },

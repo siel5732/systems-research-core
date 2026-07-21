@@ -43,10 +43,18 @@ def main():
     # 1. Sync MPS-I Preprint
     # Map topic ID to source file
     mps_preprints = {
-        5: "mps_research_core/mps_lnp_mrna_paper.md"
+        5: {
+            "src": "mps_research_core/mps_lnp_mrna_paper.md",
+            "dst": "mps_i_lnp_delivery_preprint.md"
+        },
+        9: {
+            "src": "mps_research_core/mps_skeletal_matrix_degradation_paper.md",
+            "dst": "mps_i_skeletal_matrix_degradation_preprint.md"
+        }
     }
-    mps_src = mps_preprints.get(mps_id, mps_preprints[5])
-    mps_dst_name = "mps_i_lnp_delivery_preprint.md"
+    mps_info = mps_preprints.get(mps_id, mps_preprints[5])
+    mps_src = mps_info["src"]
+    mps_dst_name = mps_info["dst"]
 
     if os.path.exists(mps_src):
         shutil.copyfile(mps_src, os.path.join(main_preprints_dir, mps_dst_name))
@@ -61,6 +69,10 @@ def main():
         3: {
             "src": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_paper.md",
             "dst": "diabetes_alginate_bioreactor_preprint.md"
+        },
+        5: {
+            "src": "diabetes_research_core/islet_neovascularization_paper.md",
+            "dst": "diabetes_islet_xenotransplant_preprint.md"
         },
         7: {
             "src": "diabetes_research_core/acoustic_islet_patterning_paper.md",
