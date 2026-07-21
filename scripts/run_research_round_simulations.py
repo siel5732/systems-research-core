@@ -41,6 +41,11 @@ def main():
             "results_src": "results/mps_i_lnp_delivery_results.json",
             "results_dst": "research_round/mps/mps_i_simulation_results.json"
         },
+        7: {
+            "script": "mps_research_core/mps_immune_tolerization_simulator.py",
+            "results_src": "mps_research_core/mps_immune_tolerization_results.json",
+            "results_dst": "research_round/mps/mps_i_simulation_results.json"
+        },
         9: {
             "script": "mps_research_core/mps_skeletal_matrix_degradation_simulator.py",
             "results_src": "mps_research_core/mps_skeletal_matrix_degradation_results.json",

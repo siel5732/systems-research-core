@@ -47,6 +47,10 @@ def main():
             "src": "mps_research_core/mps_lnp_mrna_paper.md",
             "dst": "mps_i_lnp_delivery_preprint.md"
         },
+        7: {
+            "src": "mps_research_core/immune_tolerization_paper.md",
+            "dst": "mps_i_ada_clearance_preprint.md"
+        },
         9: {
             "src": "mps_research_core/mps_skeletal_matrix_degradation_paper.md",
             "dst": "mps_i_skeletal_matrix_degradation_preprint.md"
