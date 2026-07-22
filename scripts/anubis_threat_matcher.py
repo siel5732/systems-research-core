@@ -233,12 +233,15 @@ Keep the tone highly technical, direct, and clinical. Avoid fluff or generic war
     report = query_anubis_brain(prompt)
     
     os.makedirs(REPORTS_DIR, exist_ok=True)
-    report_path = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260701.md")
+    report_path_fixed = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260701.md")
+    report_path_today = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260722_1130.md")
     
     try:
-        with open(report_path, "w") as f:
+        with open(report_path_fixed, "w") as f:
             f.write(report)
-        print(f"[🛡️] Private Threat Reconciliation saved successfully to: {report_path}")
+        with open(report_path_today, "w") as f:
+            f.write(report)
+        print(f"[🛡️] Private Threat Reconciliation saved successfully to: {report_path_today} (and {report_path_fixed})")
         print("\n=== SAMPLE OF GENERATED REPORT ===")
         print(report[:400] + "\n...")
     except Exception as e:
