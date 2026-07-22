@@ -36,6 +36,11 @@ def main():
 
     # Map MPS topics to simulators and result files
     mps_mappings = {
+        1: {
+            "script": "mps_research_core/mps_crispr_hdr_kinetics_simulator.py",
+            "results_src": "mps_research_core/mps_crispr_hdr_results.json",
+            "results_dst": "research_round/mps/mps_i_simulation_results.json"
+        },
         5: {
             "script": "mps_research_core/mps_lnp_mrna_simulator.py",
             "results_src": "results/mps_i_lnp_delivery_results.json",

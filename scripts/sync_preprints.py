@@ -43,6 +43,10 @@ def main():
     # 1. Sync MPS-I Preprint
     # Map topic ID to source file
     mps_preprints = {
+        1: {
+            "src": "mps_research_core/crispr_hdr_kinetics_paper.md",
+            "dst": "mps_i_crispr_hdr_preprint.md"
+        },
         5: {
             "src": "mps_research_core/mps_lnp_mrna_paper.md",
             "dst": "mps_i_lnp_delivery_preprint.md"
