@@ -23,10 +23,10 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 1,
-        "title": "Closed-Loop Artificial Pancreas Model Predictive Control (MPC) under Exercise Challenges",
+        "selected_topic_id": 7,
+        "title": "Acoustic-Patterned Concentric Alignment of Beta-Cell Spheroids within Hydrogel Scaffolds",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.1016,
+        "wave_amplitude_probability": 0.2031,
         "state_vector_probabilities": [
             0.0,
             0.1016,
