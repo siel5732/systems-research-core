@@ -60,6 +60,12 @@ def main():
     
     # Map Diabetes topics to simulators and result files
     diabetes_mappings = {
+        1: {
+            "script": "diabetes_research_core/artificial_pancreas_mpc_simulator.py",
+            "results_src": "research_data/diabetes/artificial_pancreas_mpc_results.json",
+            "results_dst": "research_round/diabetes/diabetes_simulation_results.json",
+            "additional_dst": "research_round/diabetes/diabetes_spheroid_simulation_results.json"
+        },
         3: {
             "script": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_simulator.py",
             "results_src": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_results.json",
