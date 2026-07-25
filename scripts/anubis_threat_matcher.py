@@ -234,7 +234,7 @@ Keep the tone highly technical, direct, and clinical. Avoid fluff or generic war
     
     os.makedirs(REPORTS_DIR, exist_ok=True)
     report_path_fixed = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260701.md")
-    report_path_today = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260722_1130.md")
+    report_path_today = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260724_2330.md")
     
     try:
         with open(report_path_fixed, "w") as f:
