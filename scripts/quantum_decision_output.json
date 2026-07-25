@@ -5,10 +5,10 @@
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
-        "selected_topic_id": 5,
-        "title": "Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics for Liver-Targeted Transient IDUA Expression",
+        "selected_topic_id": 9,
+        "title": "Skeletal Chondrocytic Extracellular Matrix Degradation under Local GAG Pressure",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.3906,
+        "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
             0.0,
             0.1016,
@@ -23,10 +23,10 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 7,
-        "title": "Acoustic-Patterned Concentric Alignment of Beta-Cell Spheroids within Hydrogel Scaffolds",
+        "selected_topic_id": 5,
+        "title": "Stem-Cell-Derived Islet Cell Xenotransplant Neovascularization & Angiogenesis Coupling",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.2031,
+        "wave_amplitude_probability": 0.3906,
         "state_vector_probabilities": [
             0.0,
             0.1016,
