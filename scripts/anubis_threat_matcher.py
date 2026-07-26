@@ -233,8 +233,10 @@ Keep the tone highly technical, direct, and clinical. Avoid fluff or generic war
     report = query_anubis_brain(prompt)
     
     os.makedirs(REPORTS_DIR, exist_ok=True)
+    import datetime
+    now_dt = datetime.datetime.now()
     report_path_fixed = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260701.md")
-    report_path_today = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260724_2330.md")
+    report_path_today = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260725_2330.md")
     
     try:
         with open(report_path_fixed, "w") as f:
