@@ -74,6 +74,10 @@ def main():
     # 2. Sync Diabetes Preprint
     # Map topic ID to source file
     diabetes_preprints = {
+        1: {
+            "src": "diabetes_research_core/artificial_pancreas_paper.md",
+            "dst": "diabetes_preprint.md"
+        },
         3: {
             "src": "diabetes_research_core/diabetes_capsule_oxygen_diffusion_paper.md",
             "dst": "diabetes_alginate_bioreactor_preprint.md"
