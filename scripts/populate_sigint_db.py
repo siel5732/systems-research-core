@@ -11,7 +11,7 @@ import numpy as np
 
 def generate_sigint_database():
     print("[🧬] Connecting to local ChromaDB HTTP server on Port 8000...")
-    client = chromadb.HttpClient(host="127.0.0.1", port=8000)
+    client = chromadb.HttpClient(host="localhost", port=8000)
     
     collection_name = "sigint_cryptology_intelligence_base"
     print(f"[🧬] Re-creating collection '{collection_name}'...")
