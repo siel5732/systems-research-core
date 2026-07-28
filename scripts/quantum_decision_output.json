@@ -23,10 +23,10 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 1,
-        "title": "Closed-Loop Artificial Pancreas Model Predictive Control (MPC) under Exercise Challenges",
+        "selected_topic_id": 5,
+        "title": "Stem-Cell-Derived Islet Cell Xenotransplant Neovascularization & Angiogenesis Coupling",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.1016,
+        "wave_amplitude_probability": 0.3906,
         "state_vector_probabilities": [
             0.0,
             0.1016,
