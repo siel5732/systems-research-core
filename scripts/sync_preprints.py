@@ -47,6 +47,10 @@ def main():
             "src": "mps_research_core/crispr_hdr_kinetics_paper.md",
             "dst": "mps_i_crispr_hdr_preprint.md"
         },
+        3: {
+            "src": "mps_research_core/mps_joint_shear_stress_paper.md",
+            "dst": "mps_i_joint_shear_stress_preprint.md"
+        },
         5: {
             "src": "mps_research_core/mps_lnp_mrna_paper.md",
             "dst": "mps_i_lnp_delivery_preprint.md"
