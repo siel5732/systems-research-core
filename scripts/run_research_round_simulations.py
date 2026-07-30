@@ -88,6 +88,12 @@ def main():
             "results_src": "diabetes_research_core/diabetes_acoustic_islet_results.json",
             "results_dst": "research_round/diabetes/diabetes_simulation_results.json",
             "additional_dst": "research_round/diabetes/diabetes_spheroid_simulation_results.json"
+        },
+        9: {
+            "script": "diabetes_research_core/diabetes_mody3_mitochondrial_simulator.py",
+            "results_src": "diabetes_research_core/diabetes_mody3_mitochondrial_results.json",
+            "results_dst": "research_round/diabetes/diabetes_simulation_results.json",
+            "additional_dst": "research_round/diabetes/diabetes_spheroid_simulation_results.json"
         }
     }
 
