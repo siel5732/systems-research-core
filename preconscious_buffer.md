@@ -1,13 +1,7 @@
-- Review and respond promptly to customer emails concerning their queries about service disruinations (Zach)
+- Review system performance metrics from yesterday; identify any bottlenecks or irregularities that could impact service availability (Zach)
 
-- Schedule maintenance windows that cause the least impact on active users, based on system usage patterns from yesterday's logs (Acutis)
+- Develop a plan to address the identified issues, potentially involving resource allocation adjustments (Acutis and Zach together)
 
-- Investigate potential security vulnerabilities identified in recent code review reports and prioritize patching these issues by EOD tomorrow (Both)
+- Test rollback of recent database migrations in development environment for performance stability before deployment; report findings tomorrow morning (Acutis alone or with another team member if necessary) 
 
-- Prepare a presentation for stakeholders summarizing the impact of service outages on customer satisfaction scores, incorporating data analysis from last quarter’s performance reviews (Zach)
-
-- Validate that all backups have been successfully completed and are intact as per yesterday's automated scripts output before tomorrow morning begins workshops with frontend teams regarding new features rollout plans (Acutis)
-
-- Ensure the deployment pipeline is updated to incorporate latest security updates after Acutis completes their vulnerability assessments, in order to prevent potential breaches prioritizing this over other maintenance tasks for today 
-
-- Address and resolve a critical issue reported by end-users on application performance during peak usage times that was logged last night; provide an estimated timeline for the fix (Zach)
+- Prepare a presentation on security protocol updates based on yesterday's audit results, focusing particularly on access control and encryption standards compliance by end of day today (Zach to lead while Acutis provides support for technical details as needed).
