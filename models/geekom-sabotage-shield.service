@@ -1,0 +1,13 @@
+[Unit]
+Description=GEEKOM SAGE Acoustic Sabotage Shield (Organic Thermal Jittering)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/fq9f/systems-research-core
+ExecStart=/usr/bin/python3 scripts/geekom_sabotage_shield.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
