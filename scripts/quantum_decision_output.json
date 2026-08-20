@@ -23,10 +23,10 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 3,
-        "title": "Permselective Alginate Hydrogel Micro-Bioreactors Krogh Oxygen Diffusion",
+        "selected_topic_id": 1,
+        "title": "Closed-Loop Artificial Pancreas Model Predictive Control (MPC) under Exercise Challenges",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.2031,
+        "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
             0.0,
             0.1016,
