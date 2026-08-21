@@ -13,22 +13,31 @@
       "AAPL",
       "MSFT"
     ],
-    "net_asset_value": 207.01511939603165
+    "net_asset_value": 206.46005016180993
   },
   "Aphex": {
-    "cash": 19.778154435765092,
+    "cash": 16.968554435765093,
     "holdings": {
       "BTC-USD": 0.0018,
       "NVDA": 0.3067376043946377
     },
-    "options": [],
+    "options": [
+      {
+        "ticker": "ETH-USD",
+        "type": "CALL",
+        "strike": 2388.32,
+        "qty": 0.0004,
+        "premium": 70.24,
+        "expiry": 24
+      }
+    ],
     "profile": "High-Volatility Tech/Crypto Derivatives",
     "targets": [
       "NVDA",
       "BTC-USD",
       "ETH-USD"
     ],
-    "net_asset_value": 203.39265699790275
+    "net_asset_value": 220.13084332092004
   },
   "Marie": {
     "cash": 140.06763533933787,
@@ -43,7 +52,7 @@
       "NVDA",
       "SPY"
     ],
-    "net_asset_value": 145.8233546046784
+    "net_asset_value": 145.04957169329754
   },
   "Anubis": {
     "cash": 152.47998046875,
@@ -56,6 +65,6 @@
       "GLD",
       "SPY"
     ],
-    "net_asset_value": 252.1174774169922
+    "net_asset_value": 256.29498291015625
   }
 }
