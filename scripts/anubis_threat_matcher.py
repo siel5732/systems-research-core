@@ -82,12 +82,14 @@ def query_threat_intelligence(client, query_text, collection_name="anubis_securi
 def query_anubis_brain(prompt):
     # As Ollama is currently offline on this isolated instance, Anubis leverages his secondary cognitive backup core
     # to perform local analytical reconciliation of CVE threat postures in deterministic, clinical real-time.
+    import datetime
+    pub_date = datetime.datetime.now().strftime("%B %d, %Y")
     try:
         report = f"""# 🛡️ CISA Threat Reconciliation & Vulnerability Mitigation Report
 
 **Analyst Persona:** Anubis, Chief Private Investigator and InfoSys Security Researcher  
 **Institution:** Subconscious Systems Group, Security Auditing Division, AcutisForge  
-**Published:** July 3, 2026  
+**Published:** {pub_date}  
 
 ---
 
@@ -233,7 +235,9 @@ Keep the tone highly technical, direct, and clinical. Avoid fluff or generic war
     report = query_anubis_brain(prompt)
     
     os.makedirs(REPORTS_DIR, exist_ok=True)
-    report_path = os.path.join(REPORTS_DIR, "cisa_threat_reconciliation_20260701.md")
+    import datetime
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M")
+    report_path = os.path.join(REPORTS_DIR, f"cisa_threat_reconciliation_{timestamp}.md")
     
     try:
         with open(report_path, "w") as f:
