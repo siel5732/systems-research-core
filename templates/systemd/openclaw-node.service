@@ -1,0 +1,21 @@
+[Unit]
+Description=OpenClaw Node Client (GEEKOM Local Client Daemon)
+# Wait for the network and the SSH tunnel service to be established
+After=network.target openclaw-tunnels.service
+Wants=openclaw-tunnels.service
+# Disable rate-limiting so systemd restarts it infinitely
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+# Ensure the node environment inherits path and gateway variables
+Environment=OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1
+# Connecting to 127.0.0.1:18790 which is the local end of our secure reverse SSH tunnel
+ExecStart=/usr/bin/env openclaw node run --host 127.0.0.1 --port 18790
+
+# Infinite restart policy to keep reconnecting if the tunnel drops
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

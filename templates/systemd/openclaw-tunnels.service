@@ -1,0 +1,26 @@
+[Unit]
+Description=OpenClaw Secure SSH Reverse Tunnels (Node & Webhook)
+After=network.target network-online.target
+Wants=network-online.target
+# Disable restart rate-limiting so it reconnects infinitely
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+# User-level systemd executes as fq9f, so paths can be relative to home (~/)
+# We use SSH options to ensure self-healing and instant exit on port failure.
+ExecStart=/usr/bin/ssh -N \
+    -o "ServerAliveInterval=15" \
+    -o "ServerAliveCountMax=3" \
+    -o "ExitOnForwardFailure=yes" \
+    -o "StrictHostKeyChecking=accept-new" \
+    -R 18790:localhost:49017 \
+    -R 18191:localhost:18191 \
+    root@2.24.83.231
+
+# Infinite restart policy
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
