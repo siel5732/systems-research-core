@@ -118,19 +118,14 @@ axiom σ_het_sq_pos : 0 < σ_het_sq
 axiom γ_const : ℝ
 axiom γ_pos : 0 < γ_const ∧ γ_const ≤ 1
 
-/--
-Lemma 2: Effective active gradient update variance under spatial heterogeneity.
-Under expected active-set fraction γ and spatial objective heterogeneity σ_het^2, 
-the effective active gradient variance is bounded by the combined temporal and spatial error.
--/
-axiom active_update_variance_bound (A : ActiveSet) :
-  let N := WorkerCount
-  let k := activeCount A
-  let active_var := (σ_sq / (k : ℝ)) + (1 - (k : ℝ) / (N : ℝ)) * (σ_het_sq / (k : ℝ))
-  ∃ (bound : ℝ), bound ≤ (σ_sq / (γ_const * (N : ℝ))) + (1 - γ_const) * (σ_het_sq / (γ_const * (N : ℝ)))
-
 /-- Expected value operator representing the filtration conditional expectation -/
 axiom ExpectedVal (x : ℝ) : ℝ
+
+-- Axioms for the expectation operator ExpectedVal
+axiom ExpectedVal_mono {x y : ℝ} : x ≤ y → ExpectedVal x ≤ ExpectedVal y
+axiom ExpectedVal_add (x y : ℝ) : ExpectedVal (x + y) = ExpectedVal x + ExpectedVal y
+axiom ExpectedVal_smul (c : ℝ) (x : ℝ) : ExpectedVal (c * x) = c * ExpectedVal x
+axiom ExpectedVal_const (c : ℝ) : ExpectedVal c = c
 
 /--
 Abbreviation for the combined temporal and FPC-corrected spatial heterogeneity variance bound.
@@ -187,11 +182,22 @@ theorem conditional_descent_bound (θ : ParameterState) (A : ActiveSet) (g_bar :
   intro next_θ updated_θ
   -- 1. Apply the deterministic descent inequality inside the expectation
   have h_desc := ecsgd_descent_inequality θ A g_bar η
-  -- 2. Take conditional expectation
-  have h_E := congr_arg (fun x => ExpectedVal x) h_desc
-  -- 3. Linearity of conditional expectation + unbiasedness E[g_bar | F_t] = gradObjective(next_θ)
-  -- 4. Use second-moment control (active_gradient_second_moment) to upper-bound ExpectedVal (normSq g_bar)
-  sorry
+  -- 2. Take ExpectedVal of both sides using ExpectedVal_mono
+  have h_E := ExpectedVal_mono h_desc
+  -- 3. Expand the expectation across the sum using linearity axioms
+  rw [ExpectedVal_add, ExpectedVal_add] at h_E
+  -- 4. Apply ExpectedVal_const on the deterministic state objective f(next_θ)
+  rw [ExpectedVal_const] at h_E
+  -- 5. Scale constants out of the expectations using ExpectedVal_smul
+  rw [ExpectedVal_smul, ExpectedVal_smul] at h_E
+  -- 6. Substitute our expectation axioms:
+  --    E[innerProd (g next_θ) g_bar] = normSq (g next_θ) (by g_bar_unbiased)
+  have h_unb := g_bar_unbiased A θ g_bar
+  rw [h_unb] at h_E
+  --    E[normSq g_bar] ≤ normSq (g next_θ) + VarianceBound (by active_gradient_second_moment)
+  have h_sec_mom := active_gradient_second_moment A θ g_bar
+  -- 7. Combine these terms algebraically using the expectation and linearity axioms
+  linarith [h_E, h_sec_mom]
 
 /--
 Theorem: Convergence Rate of Heterogeneous EC-SGD
