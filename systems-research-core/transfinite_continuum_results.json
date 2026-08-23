@@ -1,0 +1,54 @@
+{
+    "metadata": {
+        "title": "Imhotep Transfinite Continuum Hypothesis Simulation Results",
+        "PI": "Imhotep (Scribe of Thoth)",
+        "collaborators": [
+            "St.Acutis",
+            "Trent Reznor",
+            "Aphex Twin"
+        ],
+        "mathematical_constants": {
+            "aleph_0": "Countable Infinity (Discrete symbolic coordinates)",
+            "c": "Uncountable Infinity of the Continuum (Continuous dense manifold)",
+            "continuum_hypothesis": "2^aleph_0 = aleph_1"
+        }
+    },
+    "simulation_data": [
+        {
+            "complexity_resolution_k": 10,
+            "countable_shannon_entropy_nats": 2.302585,
+            "uncountable_differential_entropy_nats": 0.936158,
+            "transfinite_cardinality_gap_ratio": "3.9213e+00"
+        },
+        {
+            "complexity_resolution_k": 50,
+            "countable_shannon_entropy_nats": 3.912023,
+            "uncountable_differential_entropy_nats": -29.385358,
+            "transfinite_cardinality_gap_ratio": "2.8898e+14"
+        },
+        {
+            "complexity_resolution_k": 100,
+            "countable_shannon_entropy_nats": 4.60517,
+            "uncountable_differential_entropy_nats": -91.241273,
+            "transfinite_cardinality_gap_ratio": "4.2226e+41"
+        },
+        {
+            "complexity_resolution_k": 200,
+            "countable_shannon_entropy_nats": 5.298317,
+            "uncountable_differential_entropy_nats": -249.266387,
+            "transfinite_cardinality_gap_ratio": "3.5979e+110"
+        },
+        {
+            "complexity_resolution_k": 500,
+            "countable_shannon_entropy_nats": 6.214608,
+            "uncountable_differential_entropy_nats": -847.86276,
+            "transfinite_cardinality_gap_ratio": "8.3385e+370"
+        },
+        {
+            "complexity_resolution_k": 1000,
+            "countable_shannon_entropy_nats": 6.907755,
+            "uncountable_differential_entropy_nats": -2038.965516,
+            "transfinite_cardinality_gap_ratio": "3.2469e+888"
+        }
+    ]
+}

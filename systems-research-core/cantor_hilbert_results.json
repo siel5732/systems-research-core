@@ -1,0 +1,83 @@
+{
+    "metadata": {
+        "title": "Cantor-Hilbert Space-Filling Curve & Transfinite Vector Quantization",
+        "PI": "Trent Reznor & Aphex Twin",
+        "date": "2026-06-19",
+        "order": 5,
+        "grid_points_1d": 1024,
+        "hausdorff_fractal_dimension": 2.0,
+        "clumping_efficiency_avg_step": 0.0323
+    },
+    "semantic_mappings": [
+        {
+            "index_1d": 0,
+            "phrase": "Quantum Active Learning Engine",
+            "coords_2d": [
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "index_1d": 1,
+            "phrase": "Hadamard Phase Wavefunction",
+            "coords_2d": [
+                0.0,
+                0.0323
+            ]
+        },
+        {
+            "index_1d": 120,
+            "phrase": "Euler-Maruyama Stochastic Solver",
+            "coords_2d": [
+                0.2903,
+                0.1613
+            ]
+        },
+        {
+            "index_1d": 121,
+            "phrase": "Fractional Caputo Sub-Diffusion",
+            "coords_2d": [
+                0.2903,
+                0.129
+            ]
+        },
+        {
+            "index_1d": 512,
+            "phrase": "Flashforge AD5M Printer G-Code",
+            "coords_2d": [
+                0.5161,
+                0.5161
+            ]
+        },
+        {
+            "index_1d": 513,
+            "phrase": "Continuous Morlet Wavelet Filter",
+            "coords_2d": [
+                0.5484,
+                0.5161
+            ]
+        },
+        {
+            "index_1d": 1000,
+            "phrase": "Cantor Dust Transfinite Cardinality",
+            "coords_2d": [
+                0.9677,
+                0.1935
+            ]
+        },
+        {
+            "index_1d": 1001,
+            "phrase": "Aleph-Null Countable Set Theory",
+            "coords_2d": [
+                0.9677,
+                0.2258
+            ]
+        }
+    ],
+    "clumping_analysis": {
+        "conceptually_adjacent_quantum_distance": 0.0323,
+        "conceptually_adjacent_systems_distance": 0.0323,
+        "conceptually_adjacent_cantor_distance": 0.0323,
+        "unrelated_concept_distance": 0.98686
+    }
+}

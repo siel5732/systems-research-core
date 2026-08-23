@@ -1,0 +1,70 @@
+{
+  "Trent": {
+    "cash": 15.202924804687502,
+    "holdings": {
+      "SPY": 0.12,
+      "AAPL": 0.08,
+      "MSFT": 0.15554635812688775
+    },
+    "options": [],
+    "profile": "Conservative Value",
+    "targets": [
+      "SPY",
+      "AAPL",
+      "MSFT"
+    ],
+    "net_asset_value": 206.46005016180993
+  },
+  "Aphex": {
+    "cash": 16.968554435765093,
+    "holdings": {
+      "BTC-USD": 0.0018,
+      "NVDA": 0.3067376043946377
+    },
+    "options": [
+      {
+        "ticker": "ETH-USD",
+        "type": "CALL",
+        "strike": 2388.32,
+        "qty": 0.0004,
+        "premium": 70.24,
+        "expiry": 24
+      }
+    ],
+    "profile": "High-Volatility Tech/Crypto Derivatives",
+    "targets": [
+      "NVDA",
+      "BTC-USD",
+      "ETH-USD"
+    ],
+    "net_asset_value": 220.13084332092004
+  },
+  "Marie": {
+    "cash": 140.06763533933787,
+    "holdings": {
+      "AAPL": -0.1305446805651874,
+      "NVDA": 0.21037810715376276
+    },
+    "options": [],
+    "profile": "Thermodynamic Mean-Reversion",
+    "targets": [
+      "AAPL",
+      "NVDA",
+      "SPY"
+    ],
+    "net_asset_value": 145.04957169329754
+  },
+  "Anubis": {
+    "cash": 152.47998046875,
+    "holdings": {
+      "GLD": 0.25
+    },
+    "options": [],
+    "profile": "Volatility Safe-Haven & Hedge Sentry",
+    "targets": [
+      "GLD",
+      "SPY"
+    ],
+    "net_asset_value": 256.29498291015625
+  }
+}

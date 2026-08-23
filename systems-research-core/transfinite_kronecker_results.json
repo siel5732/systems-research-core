@@ -1,0 +1,31 @@
+{
+    "metadata": {
+        "title": "Transfinite Kronecker Tensor Memory Factorization Solver",
+        "PI": "Imhotep",
+        "collaborators": [
+            "St.Acutis",
+            "Trent Reznor"
+        ],
+        "timestamp": "2026-06-20T01:10:00Z"
+    },
+    "dimensions": {
+        "n": 32,
+        "dense_dimension": 1024
+    },
+    "performance": {
+        "dense_build_ms": 147.0961570739746,
+        "dense_retrieval_ms": 41.01920127868652,
+        "kron_retrieval_ms": 2.7341842651367188,
+        "speedup_factor": 15.002354377397976
+    },
+    "fidelity": {
+        "max_absolute_error": 3.9968028886505635e-15,
+        "cosine_similarity": 1.0
+    },
+    "efficiency": {
+        "dense_parameters": 1048576,
+        "kronecker_parameters": 2048,
+        "compression_ratio": 512.0,
+        "theoretical_flop_reduction": 16.0
+    }
+}
