@@ -67,7 +67,7 @@ class ECSGDSimulator:
         local_grad_true = global_grad + spatial_bias
         
         # Temporal stochastic noise: E[||g_i(θ) - ∇f_i(θ)||^2] ≤ σ^2
-        np.random.seed(int(time.time() * 1000) + worker_idx) # Random per run
+        np.random.seed((int(time.time() * 1000) + worker_idx) % 4294967295) # Random per run, bound seed to 32-bit uint
         stochastic_noise = np.random.randn(self.d)
         stochastic_noise /= np.linalg.norm(stochastic_noise)
         stochastic_noise *= np.sqrt(self.sigma_sq)
