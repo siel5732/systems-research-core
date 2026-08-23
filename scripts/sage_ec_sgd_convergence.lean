@@ -8,7 +8,7 @@ This Lean 4 file formalizes the mathematical structures, lemmas, and the main
 convergence theorem for the Erasure-Coherent SGD (EC-SGD) paradigm under stochastic
 delays, bounded local objective (spatial) heterogeneity, and the explicit descent inequality steps.
 
-SAGE x Grok Peer Review Version — Sunday, August 23rd, 2026
+SAGE x Grok x Claude Peer Review Version — Sunday, August 23rd, 2026
 -/
 
 -- Base structures for parameter space (R^d)^N
@@ -100,6 +100,9 @@ axiom gradObjective : ParameterState → ParameterState
 axiom L_const : ℝ
 axiom L_pos : 0 < L_const
 
+/-- L-smoothness constant is non-negative (Required for Lemma 4 inequality preservation) -/
+axiom L_const_nonneg : L_const ≥ 0
+
 /-- L-smoothness of the global objective -/
 axiom L_smoothness (θ₁ θ₂ : ParameterState) :
   let f := ObjectiveFunction
@@ -180,24 +183,23 @@ theorem conditional_descent_bound (θ : ParameterState) (A : ActiveSet) (g_bar :
   let updated_θ := next_θ - η • g_bar
   ExpectedVal (ObjectiveFunction updated_θ) ≤ ObjectiveFunction next_θ - η * normSq (gradObjective next_θ) + (L_const * η^2 / 2) * (normSq (gradObjective next_θ) + VarianceBound) := by
   intro next_θ updated_θ
-  -- 1. Apply the deterministic descent inequality inside the expectation
-  have h_desc := ecsgd_descent_inequality θ A g_bar η
-  -- 2. Take ExpectedVal of both sides using ExpectedVal_mono
-  have h_E := ExpectedVal_mono h_desc
-  -- 3. Expand the expectation across the sum using linearity axioms
-  rw [ExpectedVal_add, ExpectedVal_add] at h_E
-  -- 4. Apply ExpectedVal_const on the deterministic state objective f(next_θ)
-  rw [ExpectedVal_const] at h_E
-  -- 5. Scale constants out of the expectations using ExpectedVal_smul
-  rw [ExpectedVal_smul, ExpectedVal_smul] at h_E
-  -- 6. Substitute our expectation axioms:
-  --    E[innerProd (g next_θ) g_bar] = normSq (g next_θ) (by g_bar_unbiased)
-  have h_unb := g_bar_unbiased A θ g_bar
-  rw [h_unb] at h_E
-  --    E[normSq g_bar] ≤ normSq (g next_θ) + VarianceBound (by active_gradient_second_moment)
-  have h_sec_mom := active_gradient_second_moment A θ g_bar
-  -- 7. Combine these terms algebraically using the expectation and linearity axioms
-  linarith [h_E, h_sec_mom]
+  -- 1. Apply the deterministic descent inequality inside the expectation (Lemma 3)
+  have h1 := ecsgd_descent_inequality θ A g_bar η
+  -- 2. Take conditional expectation using ExpectedVal_mono to lift the pointwise bound
+  have h2 := ExpectedVal_mono h1
+  -- 3. Push ExpectedVal through the sum/scalar structure on the RHS
+  simp only [sub_eq_add_neg, ← neg_mul, ← mul_neg] at h2
+  rw [ExpectedVal_add, ExpectedVal_add, ExpectedVal_const, ExpectedVal_smul, ExpectedVal_smul] at h2
+  -- 4. Substitute the unbiasedness identity (g_bar_unbiased) for the linear term
+  rw [g_bar_unbiased A θ g_bar] at h2
+  -- 5. Bound the second-moment term via active_gradient_second_moment,
+  --    scaled by the nonnegative coefficient (η² * L_const / 2)
+  have hcoeff : (η^2 * L_const / 2) ≥ 0 := by positivity
+  have h3 := active_gradient_second_moment A θ g_bar
+  have h4 : (η^2 * L_const / 2) * ExpectedVal (normSq g_bar) ≤ (η^2 * L_const / 2) * (normSq (gradObjective next_θ) + VarianceBound) :=
+    mul_le_mul_of_nonneg_left h3 hcoeff
+  -- 6. Chain h2 and h4, then close by ring-normalizing the coefficient placement
+  nlinarith [h2, h4]
 
 /--
 Theorem: Convergence Rate of Heterogeneous EC-SGD
@@ -213,6 +215,6 @@ theorem ecsgd_heterogeneous_convergence_rate (T : ℕ) (hT : T > 0) (η : ℝ) (
   -- 1. Telescope the conditional_descent_bound (Lemma 4) from t = 0 to T-1 using Finset.sum over Finset.range T.
   -- 2. Sum the expected descent steps: E[f(θ_T)] - f(θ_0) ≤ -η * \sum ||∇f(θ_t)||^2 + \sum (L * η^2 / 2) * Var(g_bar).
   -- 3. Use the objective_lower_bound axiom to guarantee f(θ_T) - f(θ_0) is bounded below by f* - f(θ_0).
-  -- 4. Rearrange terms to isolate the sum of gradient norms squared.
+  -- 4. Rearrange terms to isolate the sum of expected gradient norms squared.
   -- 5. Divide by T to obtain the time-averaged gradient norm, arriving at the robust O(1/sqrt(T)) rate.
   sorry
