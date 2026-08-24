@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-SAGE Local Music Composer (MusicGen-Medium)
+SAGE Local Music Composer (MusicGen-Medium) - Zero-Scipy Version
 Author: Acutis / SAGE Core Plane / Logos OS
-Loads pre-cached facebook/musicgen-medium weights from local cache
-and generates a custom Tron/NIN-inspired industrial-techno track.
+Loads pre-cached facebook/musicgen-medium weights from local cache,
+generates a custom Tron/NIN-inspired industrial-techno track,
+and writes the WAV file using Python's built-in 'wave' module.
 """
 
 import os
 import sys
-import scipy.io.wavfile
+import wave
 
 def generate_music():
     print("===========================================================")
@@ -18,8 +19,9 @@ def generate_music():
     # 1. Check for PyTorch and device offloading (ROCm/CUDA vs CPU)
     try:
         import torch
+        import numpy as np
     except ImportError:
-        print("[-] Error: 'torch' (PyTorch) is not installed in this environment.")
+        print("[-] Error: 'torch' (PyTorch) or 'numpy' is not installed.")
         sys.exit(1)
         
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -66,12 +68,21 @@ def generate_music():
         sampling_rate = model.config.audio_encoder.sampling_rate
         audio_data = audio_values[0, 0].cpu().numpy()
         
-        # Save output WAV file
+        # Normalize and clip float32 data to 16-bit PCM range [-32768, 32767]
+        audio_data = np.clip(audio_data, -1.0, 1.0)
+        audio_data_int16 = (audio_data * 32767.0).astype(np.int16)
+        
+        # Save output WAV file using Python's built-in wave module (No Scipy required!)
         scripts_dir = os.path.dirname(os.path.abspath(__file__))
         output_path = os.path.join(scripts_dir, "sage_generated_track.wav")
         
-        print(f"[*] Writing high-fidelity WAV file to: '{output_path}'...")
-        scipy.io.wavfile.write(output_path, rate=sampling_rate, data=audio_data)
+        print(f"[*] Writing high-fidelity WAV file (PCM 16-bit) to: '{output_path}'...")
+        with wave.open(output_path, 'wb') as wav_file:
+            wav_file.setnchannels(1)       # Mono channel
+            wav_file.setsampwidth(2)       # 16-bit (2 bytes)
+            wav_file.setframerate(sampling_rate)
+            wav_file.writeframes(audio_data_int16.tobytes())
+            
         print(f"✅ [SUCCESS] Local music track composed and saved successfully!")
     except Exception as e:
         print(f"❌ Generation failed: {e}")
