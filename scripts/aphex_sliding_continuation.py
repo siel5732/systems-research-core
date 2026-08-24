@@ -148,5 +148,5 @@ def generate_infinite_track(prompt, num_segments=4, segment_duration=30):
 
 if __name__ == "__main__":
     # Test run: Compose a 2-minute (120-second) song: 4 blocks x 30 seconds
-    prompt_str = "A gritty industrial-techno track, heavy Nine Inch Nails bassline, Tron synthwave synthesizers, slow dark electronic beat, powerful and clean master"
+    prompt_str = "Slipknot-style nu-metal and aggressive alternative-metal song about the 8 limbs of yoga with a bluesy groove, heavy slow drums, expressive and soulful electric guitar solos, raw and rhythmic vocals, clean master"
     generate_infinite_track(prompt_str, num_segments=4, segment_duration=30)
