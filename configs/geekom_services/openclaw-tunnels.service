@@ -1,0 +1,27 @@
+[Unit]
+Description=OpenClaw Secure SSH Local Tunnels (Node & Webhook)
+After=network.target network-online.target
+Wants=network-online.target
+# Disable restart rate-limiting so it reconnects infinitely
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+# User-level systemd executes as fq9f, so paths can be relative to home (~/)
+# We use Local Port Forwards (-L) so GEEKOM can talk to local ports 18790 and 18191
+# and have them forwarded to the VPS Gateway (49017) and Webhook (18191).
+ExecStart=/usr/bin/ssh -N \
+    -o "ServerAliveInterval=15" \
+    -o "ServerAliveCountMax=3" \
+    -o "ExitOnForwardFailure=yes" \
+    -o "StrictHostKeyChecking=accept-new" \
+    -L 18790:127.0.0.1:49017 \
+    -L 18191:127.0.0.1:18191 \
+    root@2.24.83.231
+
+# Infinite restart policy
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

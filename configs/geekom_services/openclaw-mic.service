@@ -1,0 +1,19 @@
+[Unit]
+Description=OpenClaw Voice Mic Listener Service (openWakeWord)
+# Needs PulseAudio/PipeWire to be running, so it waits for the user graphical session target
+After=default.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+# Ensure we run as fq9f user (which standard systemd --user does automatically)
+# Sets the display or media environment variables if needed
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /opt/openclaw-voice/mic_listener.py
+
+# Infinite restart policy if the audio server crashes or python script exits
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
