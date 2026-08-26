@@ -1,0 +1,73 @@
+{
+    "metadata": {
+        "title": "Modern Ultrasonic Tribology and Nanopositioning Fluidization",
+        "PI": "Imhotep (Acoustic Systems Architect)",
+        "collaborators": [
+            "St.Acutis",
+            "Trent Reznor"
+        ],
+        "security_classification": "Strictly Private & Local - Holy of Holies",
+        "stage_specs": {
+            "mass_kg": 10.0,
+            "velocity_mps": 0.05
+        }
+    },
+    "ultrasonic_fluidization_sweep": [
+        {
+            "vibration_amplitude_microns": 0.0,
+            "dynamic_friction_coefficient": 0.2,
+            "positioning_resolution_nanometers": 1200.0,
+            "frictional_heat_dissipation_watts": 0.980665,
+            "required_sliding_force_newtons": 19.6133
+        },
+        {
+            "vibration_amplitude_microns": 0.2,
+            "dynamic_friction_coefficient": 0.130957,
+            "positioning_resolution_nanometers": 514.493593,
+            "frictional_heat_dissipation_watts": 0.642126,
+            "required_sliding_force_newtons": 12.842514
+        },
+        {
+            "vibration_amplitude_microns": 0.5,
+            "dynamic_friction_coefficient": 0.05674,
+            "positioning_resolution_nanometers": 96.584278,
+            "frictional_heat_dissipation_watts": 0.278217,
+            "required_sliding_force_newtons": 5.564335
+        },
+        {
+            "vibration_amplitude_microns": 0.8,
+            "dynamic_friction_coefficient": 0.02126,
+            "positioning_resolution_nanometers": 13.560208,
+            "frictional_heat_dissipation_watts": 0.104247,
+            "required_sliding_force_newtons": 2.084938
+        },
+        {
+            "vibration_amplitude_microns": 1.0,
+            "dynamic_friction_coefficient": 0.010639,
+            "positioning_resolution_nanometers": 3.39552,
+            "frictional_heat_dissipation_watts": 0.052165,
+            "required_sliding_force_newtons": 1.04331
+        },
+        {
+            "vibration_amplitude_microns": 1.5,
+            "dynamic_friction_coefficient": 0.001799,
+            "positioning_resolution_nanometers": 0.097039,
+            "frictional_heat_dissipation_watts": 0.008819,
+            "required_sliding_force_newtons": 0.176374
+        },
+        {
+            "vibration_amplitude_microns": 2.0,
+            "dynamic_friction_coefficient": 0.000298,
+            "positioning_resolution_nanometers": 0.002671,
+            "frictional_heat_dissipation_watts": 0.001463,
+            "required_sliding_force_newtons": 0.029264
+        },
+        {
+            "vibration_amplitude_microns": 2.5,
+            "dynamic_friction_coefficient": 0.0001,
+            "positioning_resolution_nanometers": 0.0004,
+            "frictional_heat_dissipation_watts": 0.00049,
+            "required_sliding_force_newtons": 0.009807
+        }
+    ]
+}

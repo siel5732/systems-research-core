@@ -29,8 +29,8 @@ def main():
         
     buffer_content = open(buffer_path).read()
     
-    # Extract logs
-    queue_match = re.search(r"## Staged Learning Logs \(Queue\)(.*)", buffer_content, re.DOTALL)
+    # Extract logs (robust to emojis like the shield)
+    queue_match = re.search(r"##\s*(?:🛡️\s*)?Staged Learning Logs\s*\(Queue\)(.*)", buffer_content, re.DOTALL)
     if not queue_match:
         print("[-] Error: No active queue found in preconscious buffer.")
         sys.exit(1)
@@ -86,10 +86,10 @@ def main():
     with open(memory_path, "w") as f:
         f.write(memory_content)
         
-    # Clear queue in preconscious_buffer.md
+    # Clear queue in preconscious_buffer.md (robust to emojis)
     new_buffer = re.sub(
-        r"## Staged Learning Logs \(Queue\).*?$",
-        "## Staged Learning Logs (Queue)\n(Empty - All logs consolidated to MEMORY.md)",
+        r"##\s*(?:🛡️\s*)?Staged Learning Logs\s*\(Queue\).*?$",
+        "## 🛡️ Staged Learning Logs (Queue)\n(Empty - All logs consolidated to MEMORY.md)",
         buffer_content,
         flags=re.DOTALL
     )

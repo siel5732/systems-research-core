@@ -1,0 +1,20 @@
+[Unit]
+Description=OpenClaw Node Client (Connecting to Marie's VPS Gateway Container on Port 49018)
+# Wait for network online state
+After=network.target network-online.target
+Wants=network-online.target
+# Disable restart rate-limiting so it reconnects infinitely
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Environment=OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1
+# %H automatically expands to the local hostname (e.g. jachin-marie or boaz-marie)
+ExecStart=/usr/bin/env openclaw node run --host 10.240.0.2 --port 49018 --display-name %H-marie
+
+# Infinite restart policy to keep reconnecting if the network or gateway drops
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

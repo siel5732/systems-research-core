@@ -5,7 +5,10 @@ import subprocess
 import json
 from datetime import datetime
 
-SCRIPTS_DIR = "/home/fq9f/systems-research-core/scripts"
+# Resolve paths relative to the script location
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
+RESULTS_DIR = os.path.join(BASE_DIR, "results")
 
 def run_script(script_name: str, args: list = []) -> tuple[bool, str]:
     script_path = os.path.join(SCRIPTS_DIR, script_name)
@@ -62,9 +65,8 @@ def main():
     }
     
     # Write report to results
-    results_dir = "/home/fq9f/systems-research-core/results"
-    os.makedirs(results_dir, exist_ok=True)
-    report_file = os.path.join(results_dir, "three_day_hardening_report.json")
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    report_file = os.path.join(RESULTS_DIR, "three_day_hardening_report.json")
     with open(report_file, "w") as f:
         json.dump(report, f, indent=2)
     print(f"\n[Hardening] Consolidated report written to {report_file}")
@@ -72,12 +74,10 @@ def main():
     # Commit and push to git
     print("\n[Hardening] Synchronizing results to remote repository...")
     try:
-        # Run git operations inside the systems-research-core directory
-        repo_dir = "/home/fq9f/systems-research-core"
-        subprocess.run(["git", "-C", repo_dir, "add", "results/", "logs/"], check=True)
+        subprocess.run(["git", "-C", BASE_DIR, "add", "results/"], check=True)
         commit_msg = f"chore(SAGE): auto-commit 3-day hardening round {datetime.now().strftime('%Y-%m-%d')}"
-        subprocess.run(["git", "-C", repo_dir, "commit", "-m", commit_msg], check=True)
-        subprocess.run(["git", "-C", repo_dir, "push", "origin", "main"], check=True)
+        subprocess.run(["git", "-C", BASE_DIR, "commit", "-m", commit_msg], check=True)
+        subprocess.run(["git", "-C", BASE_DIR, "push", "origin", "main"], check=True)
         print("🟢 Sync Complete! Hardening round committed and pushed to GitHub.")
     except Exception as e:
         print(f"⚠️ Git synchronization error: {e}", file=sys.stderr)

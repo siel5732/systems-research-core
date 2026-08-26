@@ -1,0 +1,72 @@
+{
+    "metadata": {
+        "title": "Ancient Megalithic Acoustic Fluidization & Resonant Transportation Models",
+        "PI": "Imhotep (Chief Architect of Djoser's Step Pyramid)",
+        "collaborators": [
+            "St.Acutis",
+            "Pythagoras"
+        ],
+        "security_classification": "Strictly Private & Local - Holy of Holies",
+        "block_specs": {
+            "mass_kg": 3000.0,
+            "length_m": 1.5,
+            "limestone_resonance_hz": 1000.0
+        }
+    },
+    "acoustic_fluidization_sweep": [
+        {
+            "acoustic_intensity_db": 80,
+            "dynamic_friction_coefficient": 0.6,
+            "required_push_force_newtons": 17651.97,
+            "equivalent_human_pushers": 45
+        },
+        {
+            "acoustic_intensity_db": 90,
+            "dynamic_friction_coefficient": 0.6,
+            "required_push_force_newtons": 17651.97,
+            "equivalent_human_pushers": 45
+        },
+        {
+            "acoustic_intensity_db": 100,
+            "dynamic_friction_coefficient": 0.6,
+            "required_push_force_newtons": 17651.97,
+            "equivalent_human_pushers": 45
+        },
+        {
+            "acoustic_intensity_db": 110,
+            "dynamic_friction_coefficient": 0.6,
+            "required_push_force_newtons": 17651.97,
+            "equivalent_human_pushers": 45
+        },
+        {
+            "acoustic_intensity_db": 115,
+            "dynamic_friction_coefficient": 0.402192,
+            "required_push_force_newtons": 11832.47,
+            "equivalent_human_pushers": 30
+        },
+        {
+            "acoustic_intensity_db": 120,
+            "dynamic_friction_coefficient": 0.269597,
+            "required_push_force_newtons": 7931.54,
+            "equivalent_human_pushers": 20
+        },
+        {
+            "acoustic_intensity_db": 125,
+            "dynamic_friction_coefficient": 0.180717,
+            "required_push_force_newtons": 5316.67,
+            "equivalent_human_pushers": 14
+        },
+        {
+            "acoustic_intensity_db": 130,
+            "dynamic_friction_coefficient": 0.121138,
+            "required_push_force_newtons": 3563.87,
+            "equivalent_human_pushers": 9
+        },
+        {
+            "acoustic_intensity_db": 140,
+            "dynamic_friction_coefficient": 0.054431,
+            "required_push_force_newtons": 1601.35,
+            "equivalent_human_pushers": 5
+        }
+    ]
+}

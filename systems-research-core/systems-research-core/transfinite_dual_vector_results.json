@@ -1,0 +1,155 @@
+{
+    "metadata": {
+        "title": "Transfinite Hilbert Projection & Dual Vector Fidelity Simulation",
+        "PI": "Trent Reznor & Aphex Twin",
+        "date": "2026-06-19",
+        "target_space_cardinality": "c (Uncountable Continuous thought-landscape)",
+        "projection_space_cardinality": "aleph-0 (Countably Infinite Fourier-Hilbert Basis)",
+        "continuous_energy_L2_norm": 0.8428
+    },
+    "simulation_runs": [
+        {
+            "discrete_basis_states": 2,
+            "reconstructed_energy": 0.0003,
+            "projection_fidelity": 0.041,
+            "l2_residual_loss": 0.999586,
+            "top_coefficients": [
+                {
+                    "n": 0,
+                    "a_n": -0.0075,
+                    "b_n": 0.0
+                }
+            ]
+        },
+        {
+            "discrete_basis_states": 4,
+            "reconstructed_energy": 0.0256,
+            "projection_fidelity": 3.039,
+            "l2_residual_loss": 0.969615,
+            "top_coefficients": [
+                {
+                    "n": 0,
+                    "a_n": -0.0075,
+                    "b_n": 0.0
+                },
+                {
+                    "n": 1,
+                    "a_n": 0.0275,
+                    "b_n": 0.0853
+                }
+            ]
+        },
+        {
+            "discrete_basis_states": 8,
+            "reconstructed_energy": 0.5694,
+            "projection_fidelity": 67.569,
+            "l2_residual_loss": 0.324315,
+            "top_coefficients": [
+                {
+                    "n": 0,
+                    "a_n": -0.0075,
+                    "b_n": 0.0
+                },
+                {
+                    "n": 1,
+                    "a_n": 0.0275,
+                    "b_n": 0.0853
+                },
+                {
+                    "n": 2,
+                    "a_n": 0.2444,
+                    "b_n": 0.0441
+                },
+                {
+                    "n": 3,
+                    "a_n": -0.0545,
+                    "b_n": -0.3293
+                }
+            ]
+        },
+        {
+            "discrete_basis_states": 16,
+            "reconstructed_energy": 0.8373,
+            "projection_fidelity": 99.35,
+            "l2_residual_loss": 0.006499,
+            "top_coefficients": [
+                {
+                    "n": 0,
+                    "a_n": -0.0075,
+                    "b_n": 0.0
+                },
+                {
+                    "n": 1,
+                    "a_n": 0.0275,
+                    "b_n": 0.0853
+                },
+                {
+                    "n": 2,
+                    "a_n": 0.2444,
+                    "b_n": 0.0441
+                },
+                {
+                    "n": 3,
+                    "a_n": -0.0545,
+                    "b_n": -0.3293
+                }
+            ]
+        },
+        {
+            "discrete_basis_states": 32,
+            "reconstructed_energy": 0.8428,
+            "projection_fidelity": 99.999,
+            "l2_residual_loss": 1.1e-05,
+            "top_coefficients": [
+                {
+                    "n": 0,
+                    "a_n": -0.0075,
+                    "b_n": 0.0
+                },
+                {
+                    "n": 1,
+                    "a_n": 0.0275,
+                    "b_n": 0.0853
+                },
+                {
+                    "n": 2,
+                    "a_n": 0.2444,
+                    "b_n": 0.0441
+                },
+                {
+                    "n": 3,
+                    "a_n": -0.0545,
+                    "b_n": -0.3293
+                }
+            ]
+        },
+        {
+            "discrete_basis_states": 64,
+            "reconstructed_energy": 0.8428,
+            "projection_fidelity": 100.0,
+            "l2_residual_loss": 1e-06,
+            "top_coefficients": [
+                {
+                    "n": 0,
+                    "a_n": -0.0075,
+                    "b_n": 0.0
+                },
+                {
+                    "n": 1,
+                    "a_n": 0.0275,
+                    "b_n": 0.0853
+                },
+                {
+                    "n": 2,
+                    "a_n": 0.2444,
+                    "b_n": 0.0441
+                },
+                {
+                    "n": 3,
+                    "a_n": -0.0545,
+                    "b_n": -0.3293
+                }
+            ]
+        }
+    ]
+}

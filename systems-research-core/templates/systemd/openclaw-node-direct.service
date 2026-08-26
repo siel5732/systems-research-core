@@ -1,0 +1,21 @@
+[Unit]
+Description=OpenClaw Node Client (Direct SDN Node for Jachin/Boaz)
+# Wait for the network to be online
+After=network.target network-online.target
+Wants=network-online.target
+# Disable restart rate-limiting so it reconnects infinitely
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Environment=OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1
+# For direct nodes, they connect directly to the VPS Gateway over the Tailscale IP (e.g., 10.240.0.2:49017)
+# Replace 10.240.0.2 with your actual VPS Tailscale IP address if different.
+ExecStart=/usr/bin/env openclaw node run --host 10.240.0.2 --port 49017
+
+# Infinite restart policy
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

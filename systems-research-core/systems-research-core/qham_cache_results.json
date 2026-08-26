@@ -1,0 +1,42 @@
+{
+    "metadata": {
+        "title": "Private GEEKOM QHAM ChromaDB Cache Performance Metrics",
+        "PIs": [
+            "Dr. Marie Curie",
+            "Sir Frederick Banting"
+        ],
+        "security": "Strictly Local / Air-Gapped",
+        "dimensions": 128,
+        "superimposed_nodes": 4
+    },
+    "retrieval_benchmarks": [
+        {
+            "tag": "marie_chaperone_905",
+            "core": "MPS-I (Marie)",
+            "cosine_similarity": 0.533761,
+            "reconstruction_error": 0.965649,
+            "cache_hit_latency_factor": "O(1) Constant"
+        },
+        {
+            "tag": "fred_gck_258",
+            "core": "Diabetes (Sir Fred)",
+            "cosine_similarity": 0.610088,
+            "reconstruction_error": 0.883077,
+            "cache_hit_latency_factor": "O(1) Constant"
+        },
+        {
+            "tag": "marie_fus_apoe",
+            "core": "MPS-I (Marie)",
+            "cosine_similarity": 0.554486,
+            "reconstruction_error": 0.943943,
+            "cache_hit_latency_factor": "O(1) Constant"
+        },
+        {
+            "tag": "fred_faraday_islet",
+            "core": "Diabetes (Sir Fred)",
+            "cosine_similarity": 0.561417,
+            "reconstruction_error": 0.936572,
+            "cache_hit_latency_factor": "O(1) Constant"
+        }
+    ]
+}
