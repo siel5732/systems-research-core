@@ -1,0 +1,508 @@
+[
+  {
+    "title": "Extreme Quantum Cognition Machines for Deliberative Decision Making",
+    "authors": [
+      "Francesco Romeo",
+      "Jacopo Settino"
+    ],
+    "summary": "We introduce Extreme Quantum Cognition Machines, a class of quantum learning architectures for deliberative decision making that is tolerant to noisy and contradictory training data. Inspired by the quantum cognition paradigm, Extreme Quantum Cognition Machines are closely related to quantum extreme learning and quantum reservoir computing, where fixed quantum dynamics generates a nonlinear feature map and learning is confined to a linear readout. A dynamical attention mechanism, implemented through an input-dependent interaction term in the Hamiltonian, modulates the quantum evolution and biases the resulting feature embedding toward task-relevant correlations. The approach is validated on linguistic classification tasks, which serve as paradigmatic examples of deliberative inference. Hardware-compatible quantum implementations of the proposed framework are discussed, together with potential applications in symbolic inference, sequence analysis, anomaly detection, and automatic diagnosis, with direct relevance to domains such as biology, forensics, and cybersecurity.",
+    "published": "2026-03-05T17:53:35Z",
+    "link": "http://arxiv.org/abs/2603.05430v2"
+  },
+  {
+    "title": "Descriptive and Foundational Aspects of Quantum Cognition",
+    "authors": [
+      "Reinhard Blutner",
+      "Peter beim Graben"
+    ],
+    "summary": "Quantum mechanics emerged as the result of a successful resolution of stringent empirical and profound conceptual conflicts within the development of atomic physics at the beginning of the last century. At first glance, it seems to be bizarre and even ridiculous to apply ideas of quantum physics in order to improve current psychological and linguistic or semantic ideas. However, a closer look shows that there are some parallels in the development of quantum physics and advanced theories of cognitive science. In psychology, geometric models of meaning have a long tradition. However, they suffer from many shortcomings which are illustrated by discussing several puzzles of bounded rationality. In the first part of this article, we argue that the present account of quantum cognition - taking quantum probabilities rather than classical probabilities - can give a more systematic description of these puzzles than the alternate and rather eclectic treatments in the traditional framework of bounded rationality. Unfortunately, the quantum probabilistic treatment does not always and does not automatically provide a deeper understanding and a true explanation of these puzzles. In the second part of this article, we explain the foundational issue from the perspective of Piron, Foulis, Randall, and others, and we apply it to the foundation of quantum cognition. In this connection, we show that quantum probabilities are of (virtual) conceptual necessity if grounded in an abstract algebraic framework of orthomodular lattices. This framework is motivated by assuming partial Boolean algebras (describing particular perspectives) that are combined into a uniform system while considering certain capacity restrictions. It is at this point that one important aspect of the whole idea of bounded rationality directly enters the theoretical scenery of quantum cognition: resource limitation.",
+    "published": "2014-10-15T08:26:01Z",
+    "link": "http://arxiv.org/abs/1410.3961v1"
+  },
+  {
+    "title": "Some Examples of Contextuality in Physics: Implications to Quantum Cognition",
+    "authors": [
+      "J. Acacio de Barros",
+      "Gary Oas"
+    ],
+    "summary": "Contextuality, the impossibility of assigning a single random variable to represent the outcomes of the same measurement procedure under different experimental conditions, is a central aspect of quantum mechanics. Thus defined, it appears in well-known cases in quantum mechanics, such as the double-slit experiment, the Bell-EPR experiment, and the Kochen-Specker theorem. Here we examine contextuality in such cases, and discuss how each of them bring different conceptual issues when applied to quantum cognition. We then focus on the shortcomings of using quantum probabilities to describe social systems, and explain how negative quasi-probability distributions may address such limitations.",
+    "published": "2015-06-16T23:55:42Z",
+    "link": "http://arxiv.org/abs/1512.00033v1"
+  },
+  {
+    "title": "Quantum Cognition Beyond Hilbert Space I: Fundamentals",
+    "authors": [
+      "Diederik Aerts",
+      "Lyneth Beltran",
+      "Massimiliano Sassoli de Bianchi",
+      "Sandro Sozzo",
+      "Tomas Veloz"
+    ],
+    "summary": "The formalism of quantum theory in Hilbert space has been applied with success to the modeling and explanation of several cognitive phenomena, whereas traditional cognitive approaches were problematical. However, this 'quantum cognition paradigm' was recently challenged by its proven impossibility to simultaneously model 'question order effects' and 'response replicability'. In Part I of this paper we describe sequential dichotomic measurements within an operational and realistic framework for human cognition elaborated by ourselves, and represent them in a quantum-like 'extended Bloch representation' where the Born rule of quantum probability does not necessarily hold. In Part II we apply this mathematical framework to successfully model question order effects, response replicability and unpacking effects, thus opening the way toward quantum cognition beyond Hilbert space.",
+    "published": "2016-04-27T23:30:29Z",
+    "link": "http://arxiv.org/abs/1604.08268v1"
+  },
+  {
+    "title": "Spin quantum computing, spin quantum cognition",
+    "authors": [
+      "Betony Adams",
+      "Francesco Petruccione"
+    ],
+    "summary": "Over two decades ago, Bruce Kane proposed that spin-half phosphorus nuclei embedded in a spin-zero silicon substrate could serve as a viable platform for spin-based quantum computing. These nuclear spins exhibit remarkably long coherence times, making them ideal candidates for qubits. Despite this advantage, practical realisation of spin quantum computing remains a challenge. More recently, physicist Matthew Fisher proposed a hypothesis linking nuclear spin dynamics, specifically those of phosphorus nuclei within the spin-zero matrix of calcium phosphate molecules, to neural activation and, potentially, cognition. The theory has generated both interest and scepticism, with some fundamental questions remaining. We review this intersection of quantum computing and quantum biology by outlining the similarities between these models of quantum computing and quantum cognition. We then address some of the open questions and the lessons that might be learned in each context. In doing so, we highlight a promising bidirectional exchange: not only might quantum computing offer tools for understanding quantum biology, but biological models may also inspire novel strategies for quantum information processing.",
+    "published": "2025-10-08T16:26:52Z",
+    "link": "http://arxiv.org/abs/2510.07196v1"
+  },
+  {
+    "title": "A Quantum Cognition Analysis of Human Behaviour by Hardy's Non-locality Argument",
+    "authors": [
+      "Pegah Imannezhad",
+      "Ali Ahanj"
+    ],
+    "summary": "Quantum cognition is an emerging field making uses of quantum theory to model cognitive phenomena which cannot be explained by classical theories. Usually, in cognitive tests, subjects are asked to give a response to a question, but in this paper, we just observed the subjects' behaviour and the question and answer method was not applied in order to prevent any mental background on participants' minds. Finally, we examined the experimental data on Hardy's non-locality argument (HNA), and we noticed the violation of HNA in human behaviour.",
+    "published": "2018-11-27T08:35:13Z",
+    "link": "http://arxiv.org/abs/1811.11847v1"
+  },
+  {
+    "title": "From Quantum Cognition to Conceptuality Interpretation I: Tracing the Brussels Group's Intellectual Journey",
+    "authors": [
+      "Diederik Aerts",
+      "Massimiliano Sassoli de Bianchi",
+      "Sandro Sozzo"
+    ],
+    "summary": "The conceptuality interpretation of quantum mechanics proposes that quantum entities have a conceptual nature, interacting with the material world through processes that are the physical counterpart of the meaning-based processes which typically occur in human cognition. This interpretation emerged from the early developments in quantum cognition, a field that uses quantum mathematics to model human cognitive activity. It benefited from the specific approach taken by the Brussels research group, modeling concepts themselves as quantum entities and minds as measuring apparatuses. The article sketches the essential steps of the intellectual journey going from the first applications of quantum notions and formalisms to human cognition to the proposal of a potentially groundbreaking interpretation of quantum mechanics, offering profound explanations for major quantum phenomena. This was done by drawing numerous parallels with the human conceptual domain and suggesting the existence of a level of cognitive activity that would underlie our physical reality. This means that an increased cross-fertilization between the conceptuality interpretation and quantum cognition is to be expected in the future, both of which are synergistic in furthering our understanding of the nature of reality. This is the first part of a two-part article. In the second part, which can be read independently of the first, the successes of the interpretation will be described in a more systematic way, providing a brief overview of what has been achieved so far.",
+    "published": "2024-11-23T00:22:51Z",
+    "link": "http://arxiv.org/abs/2412.06799v1"
+  },
+  {
+    "title": "Are Words the Quanta of Human Language? Extending the Domain of Quantum Cognition",
+    "authors": [
+      "Diederik Aerts",
+      "Lester Beltran"
+    ],
+    "summary": "In previous research, we showed that 'texts that tell a story' exhibit a statistical structure that is not Maxwell-Boltzmann but Bose-Einstein. Our explanation is that this is due to the presence of 'indistinguishability' in human language as a result of the same words in different parts of the story being indistinguishable from one another. In the current article, we set out to provide an explanation for this Bose-Einstein statistics. We show that it is the presence of 'meaning' in 'stories' that gives rise to the lack of independence characteristic of Bose-Einstein, and provides conclusive evidence that 'words can be considered the quanta of human language', structurally similar to how 'photons are the quanta of light'. Using several studies on entanglement from our Brussels research group, we also show that it is also the presence of 'meaning' in texts that makes the von Neumann entropy of a total text smaller relative to the entropy of the words composing it. We explain how the new insights in this article fit in with the research domain called 'quantum cognition', where quantum probability models and quantum vector spaces are used in human cognition, and are also relevant to the use of quantum structures in information retrieval and natural language processing, and how they introduce 'quantization' and 'Bose-Einstein statistics' as relevant quantum effects there. Inspired by the conceptuality interpretation of quantum mechanics, and relying on the new insights, we put forward hypotheses about the nature of physical reality. In doing so, we note how this new type of decrease in entropy, and its explanation, may be important for the development of quantum thermodynamics. We likewise note how it can also give rise to an original explanatory picture of the nature of physical reality on the surface of planet Earth, in which human culture emerges as a reinforcing continuation of life.",
+    "published": "2021-10-10T22:02:06Z",
+    "link": "http://arxiv.org/abs/2110.04913v2"
+  },
+  {
+    "title": "Quantum Cognition Machine Learning for Forecasting Chromosomal Instability",
+    "authors": [
+      "Giuseppe Di Caro",
+      "Vahagn Kirakosyan",
+      "Alexander G. Abanov",
+      "Jerome R. Busemeyer",
+      "Luca Candelori",
+      "Nadine Hartmann",
+      "Ernest T. Lam",
+      "Kharen Musaelian",
+      "Ryan Samson",
+      "Harold Steinacker",
+      "Dario Villani",
+      "Martin T. Wells",
+      "Richard J. Wenstrup",
+      "Mengjia Xu"
+    ],
+    "summary": "The accurate prediction of chromosomal instability from the morphology of circulating tumor cells (CTCs) enables real-time detection of CTCs with high metastatic potential in the context of liquid biopsy diagnostics. However, it presents a significant challenge due to the high dimensionality and complexity of single-cell digital pathology data. Here, we introduce the application of Quantum Cognition Machine Learning (QCML), a quantum-inspired computational framework, to estimate morphology-predicted chromosomal instability in CTCs from patients with metastatic breast cancer. QCML leverages quantum mechanical principles to represent data as state vectors in a Hilbert space, enabling context-aware feature modeling, dimensionality reduction, and enhanced generalization without requiring curated feature selection. QCML outperforms conventional machine learning methods when tested on out of sample verification CTCs, achieving higher accuracy in identifying predicted large-scale state transitions (pLST) status from CTC-derived morphology features. These preliminary findings support the application of QCML as a novel machine learning tool with superior performance in high-dimensional, low-sample-size biomedical contexts. QCML enables the simulation of cognition-like learning for the identification of biologically meaningful prediction of chromosomal instability from CTC morphology, offering a novel tool for CTC classification in liquid biopsy.",
+    "published": "2025-06-02T13:55:33Z",
+    "link": "http://arxiv.org/abs/2506.03199v2"
+  },
+  {
+    "title": "Quantum-Cognitive Neural Networks: Assessing Confidence and Uncertainty with Human Decision-Making Simulations",
+    "authors": [
+      "Milan Maksimovic",
+      "Ivan S. Maksymov"
+    ],
+    "summary": "Modern machine learning (ML) systems excel in recognising and classifying images with remarkable accuracy. However, like many computer software systems, they can fail by generating confusing or erroneous outputs or by deferring to human operators to interpret the results and make final decisions. In this paper, we employ the recently proposed quantum-tunnelling neural networks (QT-NNs), inspired by human brain processes, alongside quantum cognition theory, to classify image datasets while emulating human perception and judgment. Our findings suggest that the QT-NN model provides compelling evidence of its potential to replicate human-like decision-making and outperform traditional ML algorithms.",
+    "published": "2024-12-11T01:34:21Z",
+    "link": "http://arxiv.org/abs/2412.08010v1"
+  },
+  {
+    "title": "Robust estimation of the intrinsic dimension of data sets with quantum cognition machine learning",
+    "authors": [
+      "Luca Candelori",
+      "Alexander G. Abanov",
+      "Jeffrey Berger",
+      "Cameron J. Hogan",
+      "Vahagn Kirakosyan",
+      "Kharen Musaelian",
+      "Ryan Samson",
+      "James E. T. Smith",
+      "Dario Villani",
+      "Martin T. Wells",
+      "Mengjia Xu"
+    ],
+    "summary": "We propose a new data representation method based on Quantum Cognition Machine Learning and apply it to manifold learning, specifically to the estimation of intrinsic dimension of data sets. The idea is to learn a representation of each data point as a quantum state, encoding both local properties of the point as well as its relation with the entire data. Inspired by ideas from quantum geometry, we then construct from the quantum states a point cloud equipped with a quantum metric. The metric exhibits a spectral gap whose location corresponds to the intrinsic dimension of the data. The proposed estimator is based on the detection of this spectral gap. When tested on synthetic manifold benchmarks, our estimates are shown to be robust with respect to the introduction of point-wise Gaussian noise. This is in contrast to current state-of-the-art estimators, which tend to attribute artificial ``shadow dimensions'' to noise artifacts, leading to overestimates. This is a significant advantage when dealing with real data sets, which are inevitably affected by unknown levels of noise. We show the applicability and robustness of our method on real data, by testing it on the ISOMAP face database, MNIST, and the Wisconsin Breast Cancer Dataset.",
+    "published": "2024-09-19T14:24:35Z",
+    "link": "http://arxiv.org/abs/2409.12805v1"
+  },
+  {
+    "title": "A Survey of Quantum-Cognitively Inspired Sentiment Analysis Models",
+    "authors": [
+      "Yaochen Liu",
+      "Qiuchi Li",
+      "Benyou Wang",
+      "Yazhou Zhang",
+      "Dawei Song"
+    ],
+    "summary": "Quantum theory, originally proposed as a physical theory to describe the motions of microscopic particles, has been applied to various non-physics domains involving human cognition and decision-making that are inherently uncertain and exhibit certain non-classical, quantum-like characteristics. Sentiment analysis is a typical example of such domains. In the last few years, by leveraging the modeling power of quantum probability (a non-classical probability stemming from quantum mechanics methodology) and deep neural networks, a range of novel quantum-cognitively inspired models for sentiment analysis have emerged and performed well. This survey presents a timely overview of the latest developments in this fascinating cross-disciplinary area. We first provide a background of quantum probability and quantum cognition at a theoretical level, analyzing their advantages over classical theories in modeling the cognitive aspects of sentiment analysis. Then, recent quantum-cognitively inspired models are introduced and discussed in detail, focusing on how they approach the key challenges of the sentiment analysis task. Finally, we discuss the limitations of the current research and highlight future research directions.",
+    "published": "2023-06-06T11:54:48Z",
+    "link": "http://arxiv.org/abs/2306.03608v1"
+  },
+  {
+    "title": "Quantum Cognition-Inspired EEG-based Recommendation via Graph Neural Networks",
+    "authors": [
+      "Jinkun Han",
+      "Wei Li",
+      "Yingshu Li",
+      "Zhipeng Cai"
+    ],
+    "summary": "Current recommendation systems recommend goods by considering users' historical behaviors, social relations, ratings, and other multi-modals. Although outdated user information presents the trends of a user's interests, no recommendation system can know the users' real-time thoughts indeed. With the development of brain-computer interfaces, it is time to explore next-generation recommenders that show users' real-time thoughts without delay. Electroencephalography (EEG) is a promising method of collecting brain signals because of its convenience and mobility. Currently, there is only few research on EEG-based recommendations due to the complexity of learning human brain activity. To explore the utility of EEG-based recommendation, we propose a novel neural network model, QUARK, combining Quantum Cognition Theory and Graph Convolutional Networks for accurate item recommendations. Compared with the state-of-the-art recommendation models, the superiority of QUARK is confirmed via extensive experiments.",
+    "published": "2025-01-05T21:45:13Z",
+    "link": "http://arxiv.org/abs/2501.02671v1"
+  },
+  {
+    "title": "Moral Dilemmas for Artificial Intelligence: a position paper on an application of Compositional Quantum Cognition",
+    "authors": [
+      "Camilo M. Signorelli",
+      "Xerxes D. Arsiwalla"
+    ],
+    "summary": "Traditionally, the way one evaluates the performance of an Artificial Intelligence (AI) system is via a comparison to human performance in specific tasks, treating humans as a reference for high-level cognition. However, these comparisons leave out important features of human intelligence: the capability to transfer knowledge and make complex decisions based on emotional and rational reasoning. These decisions are influenced by current inferences as well as prior experiences, making the decision process strongly subjective and apparently biased. In this context, a definition of compositional intelligence is necessary to incorporate these features in future AI tests. Here, a concrete implementation of this will be suggested, using recent developments in quantum cognition, natural language and compositional meaning of sentences, thanks to categorical compositional models of meaning.",
+    "published": "2019-11-22T17:25:32Z",
+    "link": "http://arxiv.org/abs/1911.10154v1"
+  },
+  {
+    "title": "Supervised Similarity for High-Yield Corporate Bonds with Quantum Cognition Machine Learning",
+    "authors": [
+      "Joshua Rosaler",
+      "Luca Candelori",
+      "Vahagn Kirakosyan",
+      "Kharen Musaelian",
+      "Ryan Samson",
+      "Martin T. Wells",
+      "Dhagash Mehta",
+      "Stefano Pasquali"
+    ],
+    "summary": "We investigate the application of quantum cognition machine learning (QCML), a novel paradigm for both supervised and unsupervised learning tasks rooted in the mathematical formalism of quantum theory, to distance metric learning in corporate bond markets. Compared to equities, corporate bonds are relatively illiquid and both trade and quote data in these securities are relatively sparse. Thus, a measure of distance/similarity among corporate bonds is particularly useful for a variety of practical applications in the trading of illiquid bonds, including the identification of similar tradable alternatives, pricing securities with relatively few recent quotes or trades, and explaining the predictions and performance of ML models based on their training data. Previous research has explored supervised similarity learning based on classical tree-based models in this context; here, we explore the application of the QCML paradigm for supervised distance metric learning in the same context, showing that it outperforms classical tree-based models in high-yield (HY) markets, while giving comparable or better performance (depending on the evaluation metric) in investment grade (IG) markets.",
+    "published": "2025-02-03T16:28:44Z",
+    "link": "http://arxiv.org/abs/2502.01495v1"
+  },
+  {
+    "title": "Evolutionary Processes in Quantum Decision Theory",
+    "authors": [
+      "V. I. Yukalov"
+    ],
+    "summary": "The review presents the basics of quantum decision theory, with the emphasis on temporary processes in decision making. The aim is to explain the principal points of the theory. The difference of an operationally testable rational choice between alternatives from a choice decorated by irrational feelings is elucidated. Quantum-classical correspondence is emphasized. A model of quantum intelligence network is described. Dynamic inconsistencies are shown to be resolved in the frame of the quantum decision theory.",
+    "published": "2020-06-22T10:19:28Z",
+    "link": "http://arxiv.org/abs/2006.16763v1"
+  },
+  {
+    "title": "The dynamical quantum Zeno effect in quantum decision theory",
+    "authors": [
+      "R. Rossi"
+    ],
+    "summary": "In this paper it is proposed the dynamical quantum Zeno Effect in quantum decision theory. The measurement postulate is not an essential ingredient for the explanation of the quantum Zeno effect, a dynamical account is given in quantum physics. In this account, the entanglement between the system of interest and the apparatus inhibit the quantum transition. The collapse postulate is not considered. It is show in this paper that the belief-action entanglement model provides a mathematical framework for the dynamical quantum Zeno effect in quantum decision theory. It is also shown that, in this context the dynamical account implies that opinion change process can be inhibited by frequent evaluations of intentions to act.",
+    "published": "2020-06-05T18:21:59Z",
+    "link": "http://arxiv.org/abs/2006.03620v1"
+  },
+  {
+    "title": "Interference and inequality in quantum decision theory",
+    "authors": [
+      "Taksu Cheon",
+      "Taiki Takahashi"
+    ],
+    "summary": "The quantum decision theory is examined in its simplest form of two-condition two-choice setting. A set of inequalities to be satisfied by any quantum conditional probability describing the decision process is derived. Experimental data indicating the breakdown of classical explanations are critically examined with quantum theory using the full set of quantum phases.",
+    "published": "2010-08-16T11:38:59Z",
+    "link": "http://arxiv.org/abs/1008.2628v2"
+  },
+  {
+    "title": "Processing Information in Quantum Decision Theory",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "A survey is given summarizing the state of the art of describing information processing in Quantum Decision Theory, which has been recently advanced as a novel variant of decision making, based on the mathematical theory of separable Hilbert spaces. This mathematical structure captures the effect of superposition of composite prospects, including many incorporated intended actions. The theory characterizes entangled decision making, non-commutativity of subsequent decisions, and intention interference. The self-consistent procedure of decision making, in the frame of the quantum decision theory, takes into account both the available objective information as well as subjective contextual effects. This quantum approach avoids any paradox typical of classical decision theory. Conditional maximization of entropy, equivalent to the minimization of an information functional, makes it possible to connect the quantum and classical decision theories, showing that the latter is the limit of the former under vanishing interference terms.",
+    "published": "2008-02-25T11:08:19Z",
+    "link": "http://arxiv.org/abs/0802.3597v3"
+  },
+  {
+    "title": "A new foundation of quantum decision theory",
+    "authors": [
+      "Inge S. Helland"
+    ],
+    "summary": "Quantum decision theory is introduced here, and new basis for this theory is proposed. It is first based upon the author's general arguments for the Hilbert space formalism in quantum theory, next on arguments for the Born rule, that is, the basis for calculating quantum probabilities. A basic notion behind the quantum theory foundation is that of theoretical variables, that are divided into accessible and inaccessible ones. This is here specialized to decision variables. It is assumed that all accessible variables can be seen as functions of a specific inaccessible variable. Another assumption is that there exist two different maximal accessible theoretical variables in the given situation. Two basic assumptions behind the Born rule are 1) the likelihood principle, 2) the actor in question has motivations that can be modeled by a hypothetical perfectly rational higher being. The theory is illustrated by a medical example. Finally, a brief discussion of decision processes is given.",
+    "published": "2023-10-19T14:08:02Z",
+    "link": "http://arxiv.org/abs/2310.12762v5"
+  },
+  {
+    "title": "Positive operator-valued measures in quantum decision theory",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "We show that the correct mathematical foundation of quantum decision theory, dealing with uncertain events, requires the use of positive operator-valued measure that is a generalization of the projection-valued measure. The latter is appropriate for operationally testable events, while the former is necessary for characterizing operationally uncertain events. In decision making, one has to distinguish composite non-entangled events from composite entangled events. The mathematical definition of entangled prospects is based on the theory of Hilbert-Schmidt spaces and is analogous to the definition of entangled statistical operators in quantum information theory. We demonstrate that the necessary condition for the appearance of an interference term in the quantum probability is the occurrence of entangled prospects and the existence of an entangled strategic state of a decision maker. The origin of uncertainties in standard lotteries is explained.",
+    "published": "2015-03-16T17:59:08Z",
+    "link": "http://arxiv.org/abs/1503.04750v1"
+  },
+  {
+    "title": "Quantitative Predictions in Quantum Decision Theory",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "Quantum Decision Theory, advanced earlier by the authors, and illustrated for lotteries with gains, is generalized to the games containing lotteries with gains as well as losses. The mathematical structure of the approach is based on the theory of quantum measurements, which makes this approach relevant both for the description of decision making of humans and the creation of artificial quantum intelligence. General rules are formulated allowing for the explicit calculation of quantum probabilities representing the fraction of decision makers preferring the considered prospects. This provides a method to quantitatively predict decision-maker choices, including the cases of games with high uncertainty for which the classical expected utility theory fails. The approach is applied to experimental results obtained on a set of lottery gambles with gains and losses. Our predictions, involving no fitting parameters, are in very good agreement with experimental data. The use of quantum decision making in game theory is described. A principal scheme of creating quantum artificial intelligence is suggested.",
+    "published": "2018-02-18T08:18:37Z",
+    "link": "http://arxiv.org/abs/1802.06348v1"
+  },
+  {
+    "title": "Preference reversal in quantum decision theory",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "We consider the psychological effect of preference reversal and show that it finds a natural explanation in the frame of quantum decision theory. When people choose between lotteries with non-negative payoffs, they prefer a more certain lottery because of uncertainty aversion. But when people evaluate lottery prices, e.g. for selling to others the right to play them, they do this more rationally, being less subject to behavioral biases. This difference can be explained by the presence of the attraction factors entering the expression of quantum probabilities. Only the existence of attraction factors can explain why, considering two lotteries with close utility factors, a decision maker prefers one of them when choosing, but evaluates higher the other one when pricing. We derive a general quantitative criterion for the preference reversal to occur that relates the utilities of the two lotteries to the attraction factors under choosing versus pricing and test successfully its application on experiments by Tversky et al. We also show that the planning paradox can be treated as a kind of preference reversal.",
+    "published": "2015-10-08T12:56:48Z",
+    "link": "http://arxiv.org/abs/1510.02300v1"
+  },
+  {
+    "title": "Quantum decision theory as quantum theory of measurement",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "We present a general theory of quantum information processing devices, that can be applied to human decision makers, to atomic multimode registers, or to molecular high-spin registers. Our quantum decision theory is a generalization of the quantum theory of measurement, endowed with an action ring, a prospect lattice and a probability operator measure. The algebra of probability operators plays the role of the algebra of local observables. Because of the composite nature of prospects and of the entangling properties of the probability operators, quantum interference terms appear, which make actions noncommutative and the prospect probabilities non-additive. The theory provides the basis for explaining a variety of paradoxes typical of the application of classical utility theory to real human decision making. The principal advantage of our approach is that it is formulated as a self-consistent mathematical theory, which allows us to explain not just one effect but actually all known paradoxes in human decision making. Being general, the approach can serve as a tool for characterizing quantum information processing by means of atomic, molecular, and condensed-matter systems.",
+    "published": "2009-03-30T11:29:30Z",
+    "link": "http://arxiv.org/abs/0903.5188v1"
+  },
+  {
+    "title": "Quantum theory of measurements as quantum decision theory",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "Theory of quantum measurements is often classified as decision theory. An event in decision theory corresponds to the measurement of an observable. This analogy looks clear for operationally testable simple events. However, the situation is essentially more complicated in the case of composite events. The most difficult point is the relation between decisions under uncertainty and measurements under uncertainty. We suggest a unified language for describing the processes of quantum decision making and quantum measurements. The notion of quantum measurements under uncertainty is introduced. We show that the correct mathematical foundation for the theory of measurements under uncertainty, as well as for quantum decision theory dealing with uncertain events, requires the use of positive operator-valued measure that is a generalization of projection-valued measure. The latter is appropriate for operationally testable events, while the former is necessary for characterizing operationally uncertain events. In both decision making and quantum measurements, one has to distinguish composite non-entangled events from composite entangled events. Quantum probability can be essentially different from classical probability only for entangled events. The necessary condition for the appearance of an interference term in the quantum probability is the occurrence of entangled prospects and the existence of an entangled strategic state of a decision maker or of an entangled statistical state of a measuring device.",
+    "published": "2015-03-30T16:14:24Z",
+    "link": "http://arxiv.org/abs/1503.08731v1"
+  },
+  {
+    "title": "Mathematical Structure of Quantum Decision Theory",
+    "authors": [
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "One of the most complex systems is the human brain whose formalized functioning is characterized by decision theory. We present a \"Quantum Decision Theory\" of decision making, based on the mathematical theory of separable Hilbert spaces. This mathematical structure captures the effect of superposition of composite prospects, including many incorporated intentions, which allows us to explain a variety of interesting fallacies and anomalies that have been reported to particularize the decision making of real human beings. The theory describes entangled decision making, non-commutativity of subsequent decisions, and intention interference of composite prospects. We demonstrate how the violation of the Savage's sure-thing principle (disjunction effect) can be explained as a result of the interference of intentions, when making decisions under uncertainty. The conjunction fallacy is also explained by the presence of the interference terms. We demonstrate that all known anomalies and paradoxes, documented in the context of classical decision theory, are reducible to just a few mathematical archetypes, all of which finding straightforward explanations in the frame of the developed quantum approach.",
+    "published": "2008-08-01T13:14:20Z",
+    "link": "http://arxiv.org/abs/0808.0112v3"
+  },
+  {
+    "title": "Process estimation in qubit systems: a quantum decision theory approach",
+    "authors": [
+      "Ivan Maffeis",
+      "Seid Koudia",
+      "Abdelhakim Gharbi",
+      "Matteo G. A. Paris"
+    ],
+    "summary": "We address quantum decision theory as a convenient framework to analyze process discrimination and estimation in qubit systems. In particular we discuss the following problems: i) how to discriminate whether or not a given unitary perturbation has been applied to a qubit system; ii) how to determine the amplitude of the minimum detectable perturbation. In order to solve the first problem, we exploit the so-called Bayes strategy, and look for the optimal measurement to discriminate, with minimum error probability, whether or not the unitary transformation has been applied to a given signal. Concerning the second problem, the strategy of Neyman and Pearson is used to determine the ultimate bound posed by quantum mechanics to the minimum detectable amplitude of the qubit transformation. We consider both pure and mixed initial preparations of the qubit, and solve the corresponding binary decision problems. We also analyze the use of entangled qubits in the estimation protocol and found that entanglement, in general, improves stability rather than precision. Finally, we take into account the possible occurrence of different kinds of background noise and evaluate the corresponding effects on the discrimination strategies.",
+    "published": "2019-03-05T21:04:05Z",
+    "link": "http://arxiv.org/abs/1903.02051v2"
+  },
+  {
+    "title": "Quickest Detection for Human-Sensor Systems using Quantum Decision Theory",
+    "authors": [
+      "Luke Snow",
+      "Vikram Krishnamurthy",
+      "Brian M. Sadler"
+    ],
+    "summary": "In mathematical psychology, recent models for human decision-making use Quantum Decision Theory to capture important human-centric features such as order effects and violation of the sure-thing principle (total probability law). We construct and analyze a human-sensor system where a quickest detector aims to detect a change in an underlying state by observing human decisions that are influenced by the state.   Apart from providing an analytical framework for such human-sensor systems, we also analyze the structure of the quickest detection policy. We show that the quickest detection policy has a single threshold and the optimal cost incurred is lower bounded by that of the classical quickest detector. This indicates that intermediate human decisions strictly hinder detection performance. We also analyze the sensitivity of the quickest detection cost with respect to the quantum decision parameters of the human decision maker, revealing that the performance is robust to inaccurate knowledge of the decision-making process. Numerical results are provided which suggest that observing the decisions of more rational decision makers will improve the quickest detection performance. Finally, we illustrate a numerical implementation of this quickest detector in the context of the Prisoner's Dilemma problem, in which it has been observed that Quantum Decision Theory can uniquely model empirically tested violations of the sure-thing principle.",
+    "published": "2022-08-18T01:21:52Z",
+    "link": "http://arxiv.org/abs/2208.08583v1"
+  },
+  {
+    "title": "Quantum decision theory in simple risky choices",
+    "authors": [
+      "M. Favre",
+      "A. Wittwer",
+      "H. R. Heinimann",
+      "V. I. Yukalov",
+      "D. Sornette"
+    ],
+    "summary": "Quantum decision theory (QDT) is a recently developed theory of decision making based on the mathematics of Hilbert spaces, a framework known in physics for its application to quantum mechanics. This framework formalizes the concept of uncertainty and other effects that are particularly manifest in cognitive processes, which makes it well suited for the study of decision making. QDT describes a decision maker's choice as a stochastic event occurring with a probability that is the sum of an objective utility factor and a subjective attraction factor. QDT offers a prediction for the average effect of subjectivity on decision makers, the quarter law. We examine individual and aggregated (group) data, and find that the results are in good agreement with the quarter law at the level of groups. At the individual level, it appears that the quarter law could be refined in order to reflect individual characteristics. This article revisits the formalism of QDT along a concrete example and offers a practical guide to researchers who are interested in applying QDT to a dataset of binary lotteries in the domain of gains.",
+    "published": "2016-02-12T13:57:13Z",
+    "link": "http://arxiv.org/abs/1602.04058v2"
+  },
+  {
+    "title": "A Subjective Model of Human Decision Making Based on Quantum Decision Theory",
+    "authors": [
+      "Chenda Zhang",
+      "Hedvig Kjellstr\u00f6m"
+    ],
+    "summary": "Computer modeling of human decision making is of large importance for, e.g., sustainable transport, urban development, and online recommendation systems. In this paper we present a model for predicting the behavior of an individual during a binary game under different amounts of risk, gain, and time pressure. The model is based on Quantum Decision Theory (QDT), which has been shown to enable modeling of the irrational and subjective aspects of the decision making, not accounted for by the classical Cumulative Prospect Theory (CPT). Experiments on two different datasets show that our QDT-based approach outperforms both a CPT-based approach and data driven approaches such as feed-forward neural networks and random forests.",
+    "published": "2021-01-14T20:02:51Z",
+    "link": "http://arxiv.org/abs/2101.05851v1"
+  },
+  {
+    "title": "Validating argument-based opinion dynamics with survey experiments",
+    "authors": [
+      "Sven Banisch",
+      "Hawal Shamon"
+    ],
+    "summary": "The empirical validation of models remains one of the most important challenges in opinion dynamics. In this contribution, we report on recent developments on combining data from survey experiments with computational models of opinion formation. We extend previous work on the empirical assessment of an argument-based model for opinion dynamics in which biased processing is the principle mechanism. While previous work (Banisch & Shamon, in press) has focused on calibrating the micro mechanism with experimental data on argument-induced opinion change, this paper concentrates on the macro level using the empirical data gathered in the survey experiment. For this purpose, the argument model is extended by an external source of balanced information which allows to control for the impact of peer influence processes relative to other noisy processes. We show that surveyed opinion distributions are matched with a high level of accuracy in a specific region in the parameter space, indicating an equal impact of social influence and external noise. More importantly, the estimated strength of biased processing given the macro data is compatible with those values that achieve high likelihood at the micro level. The main contribution of the paper is hence to show that the extended argument-based model provides a solid bridge from the micro processes of argument-induced attitude change to macro level opinion distributions. Beyond that, we review the development of argument-based models and present a new method for the automated classification of model outcomes.",
+    "published": "2022-12-20T10:21:30Z",
+    "link": "http://arxiv.org/abs/2212.10143v2"
+  },
+  {
+    "title": "Facilitating on-line opinion dynamics by mining expressions of causation. The case of climate change debates on The Guardian",
+    "authors": [
+      "Tom Willaert",
+      "Sven Banisch",
+      "Paul Van Eecke",
+      "Katrien Beuls"
+    ],
+    "summary": "News website comment sections are spaces where potentially conflicting opinions and beliefs are voiced. Addressing questions of how to study such cultural and societal conflicts through technological means, the present article critically examines possibilities and limitations of machine-guided exploration and potential facilitation of on-line opinion dynamics. These investigations are guided by a discussion of an experimental observatory for mining and analyzing opinions from climate change-related user comments on news articles from the TheGuardian.com. This observatory combines causal mapping methods with computational text analysis in order to mine beliefs and visualize opinion landscapes based on expressions of causation. By (1) introducing digital methods and open infrastructures for data exploration and analysis and (2) engaging in debates about the implications of such methods and infrastructures, notably in terms of the leap from opinion observation to debate facilitation, the article aims to make a practical and theoretical contribution to the study of opinion dynamics and conflict in new media environments.",
+    "published": "2019-12-03T09:20:41Z",
+    "link": "http://arxiv.org/abs/1912.01252v1"
+  },
+  {
+    "title": "Opinion Dynamics on Complex Networks",
+    "authors": [
+      "Jiarui Dong",
+      "Yi-Cheng Zhang",
+      "Yixiu Kong"
+    ],
+    "summary": "Social media has emerged as a significant source of information for people. As agents interact with each other through social media platforms, they create numerous complex social networks. Within these networks, information spread among agents and their opinions may be altered by their neighbors' influence. This paper explores opinion dynamics on social networks, which are influenced by complex network structure, confirmation bias, and specific issues discussed. We propose a novel model based on previous models to simulate how public opinion evolves from consensus to radicalization and to polarization. We also analyze how agents change their stance under their neighbors' impact. Our model reveals the emergence of opinion groups and shows how different factors affect opinion dynamics. This paper contributes to the understanding of opinion dynamics on social networks and their possible applications in finance, marketing, politics, and social media.",
+    "published": "2023-03-05T02:16:30Z",
+    "link": "http://arxiv.org/abs/2303.02550v1"
+  },
+  {
+    "title": "Balancer effects in opinion dynamics",
+    "authors": [
+      "Taksu Cheon",
+      "Jun Morimoto"
+    ],
+    "summary": "We introduce a novel type of contrarian agent, the balancer, to Galam model of opinion dynamics, in order to account for the existence of social skepticism over one-sidedness. We find that the inclusion of balancers, along with majoritarian floaters and single-sided inflexibles, brings about the emergence of a critical point on parametric plane of the dynamical system. Around the critical point, three distinct phases of opinion dynamics separated by discontinuous changes are found.",
+    "published": "2015-07-27T09:21:10Z",
+    "link": "http://arxiv.org/abs/1507.07339v2"
+  },
+  {
+    "title": "Opinion Dynamics and Sociophysics",
+    "authors": [
+      "D. Stauffer"
+    ],
+    "summary": "No abstract given. Contents:   I. Definition and Introduction   II. Schelling Model   III. Opinion Dynamics   IV. Languages, Hierarchies and Football   V. Future Directions",
+    "published": "2007-05-07T11:56:47Z",
+    "link": "http://arxiv.org/abs/0705.0891v1"
+  },
+  {
+    "title": "Opinion dynamics on switching networks",
+    "authors": [
+      "Amirreza Talebi"
+    ],
+    "summary": "We study opinion dynamics over a directed multilayer network. In particular, we consider networks in which the impact of neighbors of agents on their opinions is proportional to their in-degree. Agents update their opinions over time to coordinate with their neighbors. However, the frequency of agents' interactions with neighbors in different network layers differs. Consequently, the multilayer network's adjacency matrices are time-varying. We aim to characterize how the frequency of activation of different layers impacts the convergence of the opinion dynamics process.",
+    "published": "2024-07-25T03:57:14Z",
+    "link": "http://arxiv.org/abs/2407.17749v1"
+  },
+  {
+    "title": "From classical to modern opinion dynamics",
+    "authors": [
+      "Hossein Noorazar",
+      "Kevin R. Vixie",
+      "Arghavan Talebanpour",
+      "Yunfeng Hu"
+    ],
+    "summary": "In this age of Facebook, Instagram and Twitter, there is rapidly growing interest in understanding network-enabled opinion dynamics in large groups of autonomous agents. The phenomena of opinion polarization, the spread of propaganda and fake news, and the manipulation of sentiment are of interest to large numbers of organizations and people, some of whom are resource rich. Whether it is the more nefarious players such as foreign governments that are attempting to sway elections or large corporations that are trying to bend sentiment -- often quite surreptitiously, or it is more open and above board, like researchers that want to spread the news of some finding or some business interest that wants to make a large group of people aware of genuinely helpful innovations that they are marketing, what is at stake is often significant. In this paper we review many of the classical, and some of the new, social interaction models aimed at understanding opinion dynamics. While the first papers studying opinion dynamics appeared over 60 years ago, there is still a great deal of room for innovation and exploration. We believe that the political climate and the extraordinary (even unprecedented) events in the sphere of politics in the last few years will inspire new interest and new ideas. It is our aim to help those interested researchers understand what has already been explored in a significant portion of the field of opinion dynamics. We believe that in doing this, it will become clear that there is still much to be done.",
+    "published": "2019-09-26T13:36:02Z",
+    "link": "http://arxiv.org/abs/1909.12089v2"
+  },
+  {
+    "title": "Extremism definitions in opinion dynamics models",
+    "authors": [
+      "Andr\u00e9 C. R. Martins"
+    ],
+    "summary": "There are several opinion dynamics models where extremism is defined as part of their characteristics. However, the way extremism is implemented in each model does not correspond to equivalent definitions. While some models focus on one aspect of the problem, others focus on different characteristics. This paper shows how each model only captures part of the problem and how Bayesian inspired opinion models can help put those differences in perspective. That discussion suggests new ways to introduce variables that can represent the problem of extremism better than we do today.   Keywords: Extremism, Opinion dynamics, CODA, Sociophysics",
+    "published": "2020-04-30T02:23:31Z",
+    "link": "http://arxiv.org/abs/2004.14548v1"
+  },
+  {
+    "title": "Optimal control in opinion dynamics models: towards a unified framework",
+    "authors": [
+      "Ivan V. Kozitsin"
+    ],
+    "summary": "Understanding how individuals change their opinions is essential to mitigate the harmful effect of fake news and stop opinion polarization. Building upon an extremely flexible opinion dynamics model that can capture the key microscopic mechanisms of social influence, the current paper elaborates a framework to find optimal control, which, thus, can be applied to a broad set of opinion dynamics settings. Using a combination of theoretical and computational approaches, I characterize the properties of optimal control and demonstrates how the elaborated framework can be applied to specific examples, which cover the classical situations that garner remarkable attention in the literature on opinion dynamics models: assimilative influence, bounded confidence, and dissimilative influence.",
+    "published": "2022-07-04T10:05:02Z",
+    "link": "http://arxiv.org/abs/2207.01300v1"
+  },
+  {
+    "title": "Opinion Dynamics over Migration Networks",
+    "authors": [
+      "L\u0151rinc M\u00e1rton",
+      "Stefanie Winkelmann",
+      "Mauricio J. del Razo",
+      "Nata\u0161a Djurdjevac Conrad"
+    ],
+    "summary": "Opinions play a crucial role in shaping collective phenomena such as political polarization, cultural integration and demographic change. By continuously changing social environments in which opinions evolve, human migration serves as an important driver of collective opinion formation. While migration and opinion dynamics have both been extensively studied, the few existing models that couple the two are primarily deterministic and therefore cannot capture demographic fluctuations, finite-size effects or stochastic transitions between emergent collective states. To address this limitation, we introduce a unifying stochastic framework for opinion dynamics over migration networks that couples local opinion transitions, demographic processes and migration between communities. The dynamics are formulated through a spatio--temporal master equation, which provides a probabilistic description of the underlying population process. From this microscopic representation, we derive deterministic mean-field equations governing the co-evolution of community sizes and opinion compositions, thereby linking agent-level interactions to macroscopic population behavior. Using two representative case studies, we demonstrate how stochasticity and migration can qualitatively change the emergent dynamics and collective outcomes, including the emergence of consensus, polarization and the stabilization of oscillatory opinion dynamics. These examples highlight the rich interplay between social interactions, demographic change and migration in deterministic and stochastic settings, and they demonstrate that migration should be viewed as an integral component of collective opinion formation rather than only an external demographic process.",
+    "published": "2026-06-24T10:49:39Z",
+    "link": "http://arxiv.org/abs/2606.25682v1"
+  },
+  {
+    "title": "Adversarial Perturbations of Opinion Dynamics in Networks",
+    "authors": [
+      "Jason Gaitonde",
+      "Jon Kleinberg",
+      "Eva Tardos"
+    ],
+    "summary": "We study the connections between network structure, opinion dynamics, and an adversary's power to artificially induce disagreements. We approach these questions by extending models of opinion formation in the social sciences to represent scenarios, familiar from recent events, in which external actors seek to destabilize communities through sophisticated information warfare tactics via fake news and bots. In many instances, the intrinsic goals of these efforts are not necessarily to shift the overall sentiment of the network, but rather to induce discord. These perturbations diffuse via opinion dynamics on the underlying network, through mechanisms that have been analyzed and abstracted through work in computer science and the social sciences. We investigate the properties of such attacks, considering optimal strategies both for the adversary seeking to create disagreement and for the entities tasked with defending the network from attack. We show that for different formulations of these types of objectives, different regimes of the spectral structure of the network will limit the adversary's capacity to sow discord; this enables us to qualitatively describe which networks are most vulnerable against these perturbations. We then consider the algorithmic task of a network defender to mitigate these sorts of adversarial attacks by insulating nodes heterogeneously; we show that, by considering the geometry of this problem, this optimization task can be efficiently solved via convex programming. Finally, we generalize these results to allow for two network structures, where the opinion dynamics process and the measurement of disagreement become uncoupled, and determine how the adversary's power changes; for instance, this may arise when opinion dynamics are controlled an online community via social media, while disagreement is measured along \"real-world\" connections.",
+    "published": "2020-03-16T04:01:09Z",
+    "link": "http://arxiv.org/abs/2003.07010v2"
+  },
+  {
+    "title": "Simulating Opinion Dynamics with Networks of LLM-based Agents",
+    "authors": [
+      "Yun-Shiuan Chuang",
+      "Agam Goyal",
+      "Nikunj Harlalka",
+      "Siddharth Suresh",
+      "Robert Hawkins",
+      "Sijia Yang",
+      "Dhavan Shah",
+      "Junjie Hu",
+      "Timothy T. Rogers"
+    ],
+    "summary": "Accurately simulating human opinion dynamics is crucial for understanding a variety of societal phenomena, including polarization and the spread of misinformation. However, the agent-based models (ABMs) commonly used for such simulations often over-simplify human behavior. We propose a new approach to simulating opinion dynamics based on populations of Large Language Models (LLMs). Our findings reveal a strong inherent bias in LLM agents towards producing accurate information, leading simulated agents to consensus in line with scientific reality. This bias limits their utility for understanding resistance to consensus views on issues like climate change. After inducing confirmation bias through prompt engineering, however, we observed opinion fragmentation in line with existing agent-based modeling and opinion dynamics research. These insights highlight the promise and limitations of LLM agents in this domain and suggest a path forward: refining LLMs with real-world discourse to better simulate the evolution of human beliefs.",
+    "published": "2023-11-16T07:01:48Z",
+    "link": "http://arxiv.org/abs/2311.09618v4"
+  },
+  {
+    "title": "Opinion dynamics: Statistical physics and beyond",
+    "authors": [
+      "Michele Starnini",
+      "Fabian Baumann",
+      "Tobias Galla",
+      "David Garcia",
+      "Gerardo I\u00f1iguez",
+      "M\u00e1rton Karsai",
+      "Jan Lorenz",
+      "Katarzyna Sznajd-Weron"
+    ],
+    "summary": "Opinion dynamics, the study of how individual beliefs and collective public opinion evolve, is a fertile domain for applying statistical physics to complex social phenomena. Like physical systems, societies exhibit macroscopic regularities from localized interactions, leading to outcomes such as consensus or fragmentation. This field has grown significantly, attracting interdisciplinary methods and driven by a surge in large-scale behavioral data. This review covers its rapid progress, bridging the literature dispersion. We begin with essential concepts and definitions, encompassing the nature of opinions, microscopic and macroscopic dynamics. This foundation leads to an overview of empirical research, from lab experiments to large-scale data analysis, which informs and validates models of opinion dynamics. We then present individual-based models, categorized by their macroscopic phenomena (e.g., consensus, polarization, echo chambers) and microscopic mechanisms (e.g., homophily, assimilation). Furthermore, the review covers common analytical and computational tools, including stochastic processes, treatments, simulations, and optimization. Finally, we explore emerging frontiers, such as connecting empirical data to models and using AI agents as testbeds for novel social phenomena. By systematizing terminology and emphasizing analogies with traditional physics, this review aims to consolidate knowledge, provide a robust theoretical foundation, and shape future research in opinion dynamics.",
+    "published": "2025-07-15T17:45:12Z",
+    "link": "http://arxiv.org/abs/2507.11521v2"
+  },
+  {
+    "title": "Opinion Dynamics with Decaying Confidence: Application to Community Detection in Graphs",
+    "authors": [
+      "Irinel Constantin Morarescu",
+      "Antoine Girard"
+    ],
+    "summary": "We study a class of discrete-time multi-agent systems modelling opinion dynamics with decaying confidence. We consider a network of agents where each agent has an opinion. At each time step, the agents exchange their opinion with their neighbors and update it by taking into account only the opinions that differ from their own less than some confidence bound. This confidence bound is decaying: an agent gives repetitively confidence only to its neighbors that approach sufficiently fast its opinion. Essentially, the agents try to reach an agreement with the constraint that it has to be approached no slower than a prescribed convergence rate. Under that constraint, global consensus may not be achieved and only local agreements may be reached. The agents reaching a local agreement form communities inside the network. In this paper, we analyze this opinion dynamics model: we show that communities correspond to asymptotically connected component of the network and give an algebraic characterization of communities in terms of eigenvalues of the matrix defining the collective dynamics. Finally, we apply our opinion dynamics model to address the problem of community detection in graphs. We propose a new formulation of the community detection problem based on eigenvalues of normalized Laplacian matrix of graphs and show that this problem can be solved using our opinion dynamics model. We consider three examples of networks, and compare the communities we detect with those obtained by existing algorithms based on modularity optimization. We show that our opinion dynamics model not only provides an appealing approach to community detection but that it is also effective.",
+    "published": "2009-11-27T16:13:33Z",
+    "link": "http://arxiv.org/abs/0911.5239v2"
+  },
+  {
+    "title": "Testing the validity of multiple opinion dynamics models",
+    "authors": [
+      "Samuel Moor-Smith",
+      "Dino Carpentras"
+    ],
+    "summary": "While opinion dynamics models have been extensively studied as stylized models, there has been growing attention to the possibility of combining these models with empirical data. This attention seems to be driven by the many social issues that strongly depend on people's opinions (such as climate change and vaccination) and the need for empirically valid models to design related policy interventions. While different models have been combined in various ways with empirical data, standardised comparison of models against empirical data is still lacking. In this article, we test the validity of multiple opinion dynamics models--including both stylized and more realistic models. Our approach follows a \"data science-like\" validation procedure, where we first calibrate the model's free parameters using an initial range of years (e.g. 2010-2015), and then use data from one wave (e.g. 2016) to predict data in the following wave (e.g. 2017). We initially tested such a procedure using simulated data and then tested different models on various topics from the European Social Survey. Both toy models and empirical models perform well on the simulated data, but fail to predict future years in the empirical data. Furthermore, during the calibration phase on the empirical data, most models learned to \"freeze\"--meaning that their predictions for the following year are just a copy of the data from the previous year. This work advances the literature by offering a benchmark for comparing different opinion dynamics models. Furthermore, our tests show that real-world dynamics appear to be completely incompatible with the dynamics of the tested models. This calls for more effort in exploring what are the features that would improve validity and applications for opinion dynamics models.",
+    "published": "2026-01-31T19:40:59Z",
+    "link": "http://arxiv.org/abs/2602.00876v1"
+  }
+]

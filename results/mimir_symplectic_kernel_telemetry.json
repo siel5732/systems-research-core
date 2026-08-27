@@ -1,0 +1,9 @@
+{
+  "n_samples": 50,
+  "rademacher_unconstrained": 0.0880335702010805,
+  "rademacher_symplectic": 0.0,
+  "complexity_reduction_percent": 100.0,
+  "physics_iq_unconstrained": 0.9319206609750299,
+  "physics_iq_symplectic": 0.9909001045313983,
+  "grounding_hash": "0xc48a5146b2147a79bc4315bc27d5e7b"
+}

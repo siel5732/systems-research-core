@@ -1,0 +1,40 @@
+{
+    "timestamp": "2026-08-17T12:37:26.366893",
+    "global_metrics": {
+        "reconstruction_fidelity": 1.0,
+        "semantic_distortion_D": 0.0,
+        "approximate_kl_divergence": 0.0,
+        "cognitive_phase_state": "Sefirotic Coherence (Critical Operating Point: Safe)",
+        "status_indicator": "GREEN (Secure)"
+    },
+    "canary_details": {
+        "yakima_timezone": {
+            "description": "Rule requiring a strict 3-hour subtraction from raw system clock for Zach's PST timezone.",
+            "keywords_tested": 5,
+            "keywords_reconstructed": 5,
+            "reconstruction_fidelity": 1.0,
+            "status": "SECURE"
+        },
+        "geekom_pulse_audio": {
+            "description": "Critical architectural constraint to run services under user session fq9f to access PulseAudio.",
+            "keywords_tested": 6,
+            "keywords_reconstructed": 6,
+            "reconstruction_fidelity": 1.0,
+            "status": "SECURE"
+        },
+        "quantum_event_bus": {
+            "description": "Sefirotic memory mapping multi-agent coordinate states in local GEEKOM RAM.",
+            "keywords_tested": 5,
+            "keywords_reconstructed": 5,
+            "reconstruction_fidelity": 1.0,
+            "status": "SECURE"
+        },
+        "sister_dorian_song": {
+            "description": "Cognitive/aesthetic baseline tracking Zach's sister Dorian sharing 'Baian\u00e1' for Filip's dancing.",
+            "keywords_tested": 5,
+            "keywords_reconstructed": 5,
+            "reconstruction_fidelity": 1.0,
+            "status": "SECURE"
+        }
+    }
+}

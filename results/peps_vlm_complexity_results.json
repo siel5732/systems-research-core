@@ -1,0 +1,14 @@
+{
+    "metadata": {
+        "title": "VLM-Guided 2D PEPS Complexity Reduction Report",
+        "authors": "Acutis, Dr. Marie Curie, and Zachary Sielaff",
+        "grid_dimensions": "4x4 (16 Qubits)",
+        "hilbert_space_dimension": 65536,
+        "virtual_bond_dimension_chi": 3
+    },
+    "complexity_metrics": {
+        "classical_exact_operations": 26244,
+        "vlm_guided_sefirotic_operations": 216,
+        "complexity_speedup_factor": 121.5
+    }
+}

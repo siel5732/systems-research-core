@@ -1,0 +1,14 @@
+{
+  "p2p": {
+    "coherence": 1.0,
+    "entropy": 0.0,
+    "drifts": 0,
+    "traces": 18
+  },
+  "gwt": {
+    "coherence": 1.0,
+    "entropy": 0.0,
+    "drifts": 0,
+    "traces": 18
+  }
+}

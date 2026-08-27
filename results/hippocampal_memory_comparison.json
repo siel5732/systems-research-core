@@ -1,0 +1,12 @@
+{
+  "flat_rag": {
+    "retrieved_count": 3,
+    "contradiction_count": 1,
+    "interference": "high"
+  },
+  "hippocampal_indexing": {
+    "retrieved_count": 1,
+    "contradiction_count": 0,
+    "interference": "zero"
+  }
+}

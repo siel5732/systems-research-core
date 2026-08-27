@@ -5,10 +5,10 @@
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
-        "selected_topic_id": 3,
-        "title": "Mechanical Joint Load-Bearing Shear Stress Impact on Chondrocyte GAG Synthesis",
+        "selected_topic_id": 1,
+        "title": "CRISPR-Cas12a Homology-Directed Repair (HDR) Optimization using Chondrocyte Enhancers",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.2031,
+        "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
             0.0,
             0.1016,

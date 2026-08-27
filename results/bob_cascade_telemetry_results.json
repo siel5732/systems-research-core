@@ -1,0 +1,92 @@
+{
+    "report_generated": "2026-08-17T09:53:41.272491",
+    "geologist": "Bob the Geologist (SAGE Field Core)",
+    "base_coordinates": {
+        "lat": 46.808306,
+        "lon": -121.113791,
+        "location": "Devil's Table Cabin"
+    },
+    "monitored_stations": {
+        "YKM": {
+            "lat": 46.564,
+            "lon": -120.531,
+            "elev_m": 340,
+            "type": "Permanent UW"
+        },
+        "VGB": {
+            "lat": 46.611,
+            "lon": -120.389,
+            "elev_m": 620,
+            "type": "Permanent UW"
+        },
+        "RR1": {
+            "lat": 46.528,
+            "lon": -120.469,
+            "elev_m": 480,
+            "type": "Temporary Array (Landslide Foot)"
+        },
+        "RR2": {
+            "lat": 46.523,
+            "lon": -120.473,
+            "elev_m": 590,
+            "type": "Temporary Array (Scarp Ridge)"
+        },
+        "RR3": {
+            "lat": 46.525,
+            "lon": -120.471,
+            "elev_m": 530,
+            "type": "Temporary Array (Mid-Slide Wedge)"
+        }
+    },
+    "active_seismic_events": [
+        {
+            "event_id": "pnsn6198421",
+            "timestamp": "2026-08-17T09:53:41.272400",
+            "lat": 46.5262,
+            "lon": -120.4727,
+            "depth_km": 1.2,
+            "magnitude": 1.8,
+            "type": "Low-Frequency Creep / Rockfall Harmonic Shudder",
+            "station_detections": [
+                "RR1",
+                "RR2",
+                "RR3",
+                "YKM"
+            ],
+            "dist_to_cabin_km": 77.75,
+            "stress_classification": "Shallow Creep / Landslide Instability (Active Slope)"
+        },
+        {
+            "event_id": "pnsn6198432",
+            "timestamp": "2026-08-17T09:53:41.272422",
+            "lat": 46.5191,
+            "lon": -120.4812,
+            "depth_km": 0.8,
+            "magnitude": 1.1,
+            "type": "Micro-seismic Fracture (Scarp slip)",
+            "station_detections": [
+                "RR2",
+                "RR3"
+            ],
+            "dist_to_cabin_km": 77.21,
+            "stress_classification": "Shallow Creep / Landslide Instability (Active Slope)"
+        },
+        {
+            "event_id": "pnsn6198450",
+            "timestamp": "2026-08-17T09:53:41.272424",
+            "lat": 46.8083,
+            "lon": -121.1138,
+            "depth_km": 14.5,
+            "magnitude": 2.4,
+            "type": "Deep Crustal Shear (Naches River / Devil's Table fault line)",
+            "station_detections": [
+                "YKM",
+                "VGB"
+            ],
+            "dist_to_cabin_km": 0.0,
+            "stress_classification": "Deep Tectonic Release (Stable)"
+        }
+    ],
+    "regional_basalt_strain_coefficient": 1.42e-06,
+    "avalanche_risk_index": "MODERATE (Creeping basalt beds under thermal expansion)"
+}

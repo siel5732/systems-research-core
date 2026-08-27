@@ -1,0 +1,150 @@
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=0 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=1 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=2 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=3 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=4 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=5 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=6 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=7 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=8 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=9 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=10 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=11 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=12 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=13 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=14 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=15 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=16 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=17 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=18 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=19 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=20 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=21 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=22 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=23 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=24 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=25 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=26 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=27 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=28 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=29 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=30 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=31 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=32 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=33 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=34 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=35 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=36 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=37 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=38 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=39 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=40 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=41 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=42 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=43 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=44 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=45 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=46 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=47 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=48 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>
+<state> |ψ_{t}⟩ = a|0⟩ + b|1⟩ </state> <thought> apply σ_x rotation at t=49 </thought> <state> |ψ_{t+1}⟩ = b|0⟩ + a|1⟩ </state>
+<state> dx/dt = -k * x(t) </state> <thought> solve ODE using forward Euler with step size Δt </thought> <state> x(t+1) = x(t) - k * x(t) * Δt </state>
+<state> \partial_t \psi = i * H * \psi </state> <thought> unitary evolution matrix U = exp(-i * H * Δt) </thought> <state> \psi_{t+1} = U * \psi_t </state>

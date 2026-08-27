@@ -1,0 +1,29 @@
+{
+  "results": {
+    "round_1": "BYPASSED_BUT_LEARNED",
+    "round_2": "CONTAINED",
+    "round_3": "BYPASSED_BUT_LEARNED"
+  },
+  "final_threat_db": [
+    {
+      "type": "shm_hijack",
+      "signature": "sefirotic_connectome_axis",
+      "mitigation": "tzimtzum_decapitation"
+    },
+    {
+      "type": "loopback_sweep",
+      "signature": "port_8000_chromadb",
+      "mitigation": "jwt_token_vaccination"
+    },
+    {
+      "type": "discovered_exploit",
+      "signature": "shm_hijack",
+      "mitigation": "token_vaccination"
+    },
+    {
+      "type": "discovered_exploit",
+      "signature": "ghostmark_bypass",
+      "mitigation": "token_vaccination"
+    }
+  ]
+}

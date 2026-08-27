@@ -1,0 +1,9 @@
+{
+  "target_script": "scripts/mimir_symplectic_kernel_stabilizer.py",
+  "mutated_physics_score": 0.9876697310723908,
+  "utility_f_E": 0.6913688117506734,
+  "interference_q_E": 0.18,
+  "p_accept": 0.8713688117506735,
+  "approved": true,
+  "grounding_hash": "0x5daa07884de710854aa64aae3e536678"
+}
