@@ -36,7 +36,7 @@ def deploy_lumen_to_consortium(
     try:
         create_repo(
             repo_id=repo_id,
-            token=***
+            token=token,
             repo_type="model",
             exist_ok=True,
             private=False # Public and open-source for the Consortium!
