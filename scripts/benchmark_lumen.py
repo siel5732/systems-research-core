@@ -156,7 +156,7 @@ def run_lumen_bench():
         )
         
         # Decode and analyze output
-        decoded_output = tokenizer.decode(generated_tokens)
+        decoded_output = tokenizer.decode(generated_tokens, skip_special_tokens=False)
         
         syntax_res = evaluate_syntax_coherence(decoded_output)
         diversity = evaluate_diversity_entropy(generated_tokens)
