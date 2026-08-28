@@ -82,6 +82,8 @@ def generate_sample_math_corpus(output_path: str):
     print(f"[+] Sample math corpus generated at {output_path}")
 
 if __name__ == "__main__":
-    # Create temp directory for training files
-    corpus_file = "research_round/lumen_preview_corpus.txt"
+    # Prioritize the full training corpus if available to match pretrained weights
+    corpus_file = "research_round/lumen_training_corpus.txt"
+    if not os.path.exists(corpus_file):
+        corpus_file = "research_round/lumen_preview_corpus.txt"
     build_lumen_tokenizer(corpus_file)
