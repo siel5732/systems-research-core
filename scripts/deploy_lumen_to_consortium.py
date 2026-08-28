@@ -4,7 +4,7 @@ scripts/deploy_lumen_to_consortium.py
 
 Programmatic deployment script to upload SAGE-Lumen-3M model weights,
 tokenizer configurations, and the architecture definition directly to the
-Small Model Consortium (slmconsortium) organization on Hugging Face.
+Small Model Consortium (slmconsortium) organization on Hugging Face as a PR.
 """
 
 import os
@@ -12,7 +12,7 @@ import sys
 import argparse
 
 try:
-    from huggingface_hub import HfApi, create_repo
+    from huggingface_hub import HfApi, create_repo, CommitOperationAdd
 except ImportError:
     print("[-] huggingface_hub library not found. Run: pip install huggingface_hub")
     sys.exit(1)
@@ -25,25 +25,25 @@ def deploy_lumen_to_consortium(
     repo_id="slmconsortium/sage-lumen-3m"
 ):
     if not token:
-        print("[!] Error: No Hugging Face token provided. Pass it via --token or set the HF_TOKEN environment variable.")
+        print("[!] Error: No Hugging Face token provided. Pass it via --token *** or set the HF_TOKEN environment variable.")
         sys.exit(1)
         
     api = HfApi(token=token)
     
     print(f"[*] Initializing Small Model Consortium Release: {repo_id}...")
     
-    # 1. Create the repository on Hugging Face under the Consortium Org
+    # 1. Create the repository on Hugging Face under the Consortium Org (no-op since Zach already created it)
     try:
         create_repo(
             repo_id=repo_id,
-            token=token,
+            token=***
             repo_type="model",
             exist_ok=True,
             private=False # Public and open-source for the Consortium!
         )
         print(f"[+] Hugging Face Consortium repository '{repo_id}' verified/created successfully.")
     except Exception as e:
-        print(f"[!] Warning/Notice during repository creation: {e}")
+        print(f"[!] Note: Repository already exists or verification bypassed: {e}")
 
     # 2. Write a beautiful, custom README for the Consortium
     readme_content = f"""---
@@ -96,7 +96,7 @@ For full details on SAGE (Sovereign Agentic Governance & Epistemic Protocol) or 
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(readme_content)
 
-    print("[*] Uploading model files to Hugging Face Hub...")
+    print("[*] Staging files for Hugging Face Hub Pull Request...")
     
     # 3. Define the file uploads map
     files_to_upload = {
@@ -113,37 +113,42 @@ For full details on SAGE (Sovereign Agentic Governance & Epistemic Protocol) or 
         if os.path.exists(vps_bin):
             files_to_upload[vps_bin] = "pytorch_model.bin"
             
-    # Upload files in batch
-    success_count = 0
+    # Build commit operations list
+    operations = []
     for local_file, repo_file in files_to_upload.items():
         if os.path.exists(local_file):
-            print(f"  - Uploading {local_file} -> {repo_file}...")
-            try:
-                api.upload_file(
-                    path_or_fileobj=local_file,
-                    path_in_repo=repo_file,
-                    repo_id=repo_id,
-                    token=token,
-                    repo_type="model"
-                )
-                print(f"    [+] Successfully uploaded {repo_file}!")
-                success_count += 1
-            except Exception as e:
-                print(f"    [!] Error uploading {repo_file}: {e}")
+            print(f"  - Staging {local_file} -> {repo_file}...")
+            operations.append(CommitOperationAdd(path_in_repo=repo_file, path_or_fileobj=local_file))
         else:
             print(f"  - [!] Warning: Local file '{local_file}' not found. Skipping.")
+
+    if not operations:
+        print("[!] Error: No files to upload. Process aborted.")
+        sys.exit(1)
+
+    print(f"[*] Executing programmatically opened Pull Request on {repo_id}...")
+    try:
+        pr_info = api.create_commit(
+            repo_id=repo_id,
+            operations=operations,
+            commit_message="Publish SAGE-Lumen-3M model weights, tokenizer, and architecture",
+            token=token,
+            repo_type="model",
+            create_pr=True
+        )
+        print(f"\n[+] Pull Request successfully created live!")
+        print(f"    [+] PR URL: {pr_info.pr_url}")
+        print(f"\n[+] Consortium Release Submitted! SAGE-Lumen-3M is live and awaiting merge at: {pr_info.pr_url}")
+    except Exception as e:
+        print(f"    [!] Error during Pull Request creation: {e}")
+        print("\n[-] Upload failed. Please check your token or repository state.")
 
     # Clean up local temporary README
     if os.path.exists(readme_path):
         os.remove(readme_path)
-        
-    if success_count > 0:
-        print(f"\n[+] Consortium Release Complete! SAGE-Lumen-3M is live at: https://huggingface.co/{repo_id}")
-    else:
-        print("\n[-] Upload failed. You may need to grant write permissions to your token for the 'slmconsortium' organization.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Deploy SAGE-Lumen-3M to the Small Model Consortium")
+    parser = argparse.ArgumentParser(description="Deploy SAGE-Lumen-3M to the Small Model Consortium as a PR")
     parser.add_argument("--token", type=str, default=os.environ.get("HF_TOKEN"), help="Hugging Face API Write Token")
     args = parser.parse_args()
     
