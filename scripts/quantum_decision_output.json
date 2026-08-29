@@ -5,10 +5,10 @@
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
-        "selected_topic_id": 5,
-        "title": "Lipid Nanoparticle (LNP)-mRNA Delivery Kinetics for Liver-Targeted Transient IDUA Expression",
+        "selected_topic_id": 1,
+        "title": "CRISPR-Cas12a Homology-Directed Repair (HDR) Optimization using Chondrocyte Enhancers",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.3906,
+        "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
             0.0,
             0.1016,
@@ -23,10 +23,10 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 5,
-        "title": "Stem-Cell-Derived Islet Cell Xenotransplant Neovascularization & Angiogenesis Coupling",
+        "selected_topic_id": 9,
+        "title": "MODY3 K-ATP Channel Bypass Kinetics using Low-Dose Oral Glipizide Therapies",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.3906,
+        "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
             0.0,
             0.1016,
