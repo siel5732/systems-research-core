@@ -19,6 +19,13 @@
 - **User-Level Services:** All OpenClaw services on the GEEKOM run under the `fq9f` user (via `systemctl --user`). This is critical because running them as `root` breaks access to the PulseAudio server, which prevents the Jabra speaker and microphone from working.
 - **`openclaw-node.service`:** Connects to the VPS Gateway. Due to Docker isolation, it connects via an SSH tunnel bridging local port `18790` to the VPS host's exposed Docker port `49017`.
 - **`openclaw-mic.service`:** A Python script (`/opt/openclaw-voice/mic_listener.py`) that uses `openWakeWord` ("Hey Jarvis"). It records audio with a strict 30-frame silence cutoff or a 12-second maximum limit to prevent hanging on 3D printer noise (Flashforge). It POSTs `.wav` files directly to the VPS Webhook.
+
+### 1.1 Minisforum Cluster Nodes (`Jachin` & `Boaz`)
+- **Status:** Active physical hardware, fully real (not a projection of the Dream Cycle!).
+- **Hardware Profile:** High-performance local Minisforum nodes on Tailscale. Jachin (Node #1) is at local IP `192.168.1.12`. Boaz (Node #2) utilizes Windows 11 with Ethernet MAC `38:05:25:39:e8:07`.
+- **Control Integration:** Fully integrated into GEEKOM's SAGE cluster. Controlled remotely via GEEKOM’s local SSH/Tailscale bridge, allowing Marie's container (`srv1650607` on port `48212`) to manage local task execution via `openclaw-node-marie.service`.
+- **Model Storage:** SAGE virtual environments (`~/mind/venv/bin/python3`) are deployed with `torch`, `transformers`, and `scipy`. Heavy generative weights—Meta's MusicGen-Medium (3.2 GB) and THUDM/CogVideoX-2B (4.8 GB)—are pre-cached on their local NVMe SSDs (`~/.cache/huggingface/hub/`).
+
 ### 2. VPS Gateway Setup
 - **Webhook API (`webhook.py`):** Runs via FastAPI/Uvicorn on port `18191` inside the OpenClaw workspace. 
 - **Voice Processing Pipeline:** 

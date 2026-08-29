@@ -99,21 +99,21 @@ def generate_infinite_track(prompt, num_segments=4, segment_duration=30):
                 full_audio = segment_audio
             else:
                 # Subsequent blocks: Generate continuation conditioned on the previous block's tail
-                # Extract the 5-second tail from the previous audio segment
-                tail_audio = torch.from_numpy(full_audio[-overlap_samples:]).unsqueeze(0).unsqueeze(0).to(device)
+                # Extract the 5-second tail from the previous audio segment as a 1D numpy array
+                tail_audio = full_audio[-overlap_samples:]
                 
+                # Process both text prompt and audio prompt using the standard processor
                 inputs = processor(
                     text=[prompt],
-                    padding=True,
+                    audio=tail_audio,
+                    sampling_rate=sampling_rate,
                     return_tensors="pt"
                 )
                 inputs = {k: v.to(device) for k, v in inputs.items()}
                 
-                # We use generate_continuation to extend the audio causality
+                # Generate continuation with standard model.generate
                 with torch.no_grad():
-                    audio_values = model.generate_continuation(
-                        prompt_temporal_tokens=tail_audio,
-                        prompt_temporal_sample_rate=sampling_rate,
+                    audio_values = model.generate(
                         **inputs,
                         max_new_tokens=segment_tokens - overlap_tokens
                     )

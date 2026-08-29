@@ -54,8 +54,8 @@ Our 6-compartment ODE model tracks systemic LNP transport, ApoE-mediated recepto
    where $k_{trans} = 25.0 \text{ day}^{-1}$ is the translation/secretion scaling factor, and $k_{deg\_E} = 0.14 \text{ day}^{-1}$ corresponds to an enzyme half-life of 5 days.
 
 6. **Glycosaminoglycan (GAG) Degradation ($G$):**
-   $$\frac{dG}{dt} = k_{syn\_G} - \frac{k_{deg\_G} E \cdot G}{K_{M\_G} + G}$s
-   where $k_{syn\_G} = 100.0 \text; mg/day}$ is the baseline GAG synthesis rate, $k_{deg\_G} = 2.2 \text{ day}^{-1}$ is the enzymatic clearance rate, and $K_{M\_G} = 150.0 \text{ mg}$ is the Michaelis-Menten constant.
+   $$\frac{dG}{dt} = k_{syn\_G} - \frac{k_{deg\_G} E \cdot G}{K_{M\_G} + G}$$
+   where $k_{syn\_G} = 100.0 \text{ mg/day}$ is the baseline GAG synthesis rate, $k_{deg\_G} = 2.2 \text{ day}^{-1}$ is the enzymatic clearance rate, and $K_{M\_G} = 150.0 \text{ mg}$ is the Michaelis-Menten constant.
 
 ### Quantitative Simulation Results & Insights
 
@@ -102,7 +102,7 @@ The coupled system tracks Islet Density ($I$), Capillary Vessel Density ($V$), L
 
 5. **Systemic Insulin ($N$, $\mu$IU/mL):**
    $$\frac{dN}{dt} = \psi_N I \left(\frac{G^2}{h_G^2 + G^2}\right) \left(\frac{V}{K_V}\right) - d_N N$$
-   where $\psi_N = 340.0$ (max secretion rate), $h_G = 120.0 \text; mg/dL}$ (GSIS threshold), and $d_N = 8.0 \text{ day}^{-1}$ (insulin degradation half-life).
+   where $\psi_N = 340.0$ (max secretion rate), $h_G = 120.0 \text{ mg/dL}$ (GSIS threshold), and $d_N = 8.0 \text{ day}^{-1}$ (insulin degradation half-life).
 
 ### Simulation Trajectories & Metabolic Recovery
 
