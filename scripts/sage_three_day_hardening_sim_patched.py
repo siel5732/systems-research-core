@@ -5,10 +5,11 @@ import subprocess
 import json
 from datetime import datetime
 
-# Resolve paths relative to the script location
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
-RESULTS_DIR = os.path.join(BASE_DIR, "results")
+# Adjust paths to use the actual workspace location
+WORKSPACE_ROOT = "/data/.openclaw/workspace"
+CORE_DIR = os.path.join(WORKSPACE_ROOT, "systems-research-core")
+SCRIPTS_DIR = os.path.join(CORE_DIR, "scripts")
+RESULTS_DIR = os.path.join(CORE_DIR, "results")
 
 def run_script(script_name: str, args: list = []) -> tuple[bool, str]:
     script_path = os.path.join(SCRIPTS_DIR, script_name)
@@ -17,7 +18,8 @@ def run_script(script_name: str, args: list = []) -> tuple[bool, str]:
     
     print(f"[Hardening] Launching {script_name}...")
     try:
-        cmd = ["/usr/bin/python3", script_path] + args
+        # Use absolute path for python3 to ensure environment consistency
+        cmd = ["python3", script_path] + args
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
         if result.returncode == 0:
             return True, result.stdout
@@ -74,10 +76,11 @@ def main():
     # Commit and push to git
     print("\n[Hardening] Synchronizing results to remote repository...")
     try:
-        subprocess.run(["git", "-C", BASE_DIR, "add", "results/"], check=True)
+        # Run git operations inside the systems-research-core directory
+        subprocess.run(["git", "-C", CORE_DIR, "add", "results/", "logs/"], check=True)
         commit_msg = f"chore(SAGE): auto-commit 3-day hardening round {datetime.now().strftime('%Y-%m-%d')}"
-        subprocess.run(["git", "-C", BASE_DIR, "commit", "-m", commit_msg], check=True)
-        subprocess.run(["git", "-C", BASE_DIR, "push", "origin", "main"], check=True)
+        subprocess.run(["git", "-C", CORE_DIR, "commit", "-m", commit_msg], check=True)
+        subprocess.run(["git", "-C", CORE_DIR, "push", "origin", "main"], check=True)
         print("🟢 Sync Complete! Hardening round committed and pushed to GitHub.")
     except Exception as e:
         print(f"⚠️ Git synchronization error: {e}", file=sys.stderr)

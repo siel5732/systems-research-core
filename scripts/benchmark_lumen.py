@@ -56,32 +56,20 @@ def sample_tokens(model, input_ids, max_tokens=100, temp=0.7, top_p=0.9, rep_pen
     return generated[0].tolist()
 
 def evaluate_syntax_coherence(text: str) -> dict:
-    """Checks XML structural integrity of SAGE-Lumen output syntax."""
+    """Checks XML structural integrity of SAGE-Lumen output syntax using sequential index tracking."""
     tags = ["<s>", "<state>", "</state>", "<thought>", "</thought>", "<state>", "</state>", "</s>"]
-    positions = {tag: [] for tag in tags}
-    
-    # Simple order check
-    for tag in tags:
-        pos = text.find(tag)
-        positions[tag].append(pos)
-        
+    current_pos = 0
     passed_syntax = True
     reasons = []
     
-    # 1. Check occurrences
     for tag in tags:
-        if text.count(tag) == 0:
+        pos = text.find(tag, current_pos)
+        if pos == -1:
             passed_syntax = False
-            reasons.append(f"Missing tag: {tag}")
-            
-    # 2. Check linear flow: s -> state -> /state -> thought -> /thought -> state -> /state -> /s
-    if passed_syntax:
-        indices = [text.find(t) for t in tags]
-        # Sort and verify it is strictly increasing
-        if indices != sorted(indices):
-            passed_syntax = False
-            reasons.append("Malformed tag sequence order.")
-            
+            reasons.append(f"Missing or out-of-order tag: {tag}")
+            break
+        current_pos = pos + len(tag)
+        
     return {"passed": passed_syntax, "reasons": reasons}
 
 def evaluate_diversity_entropy(tokens: list) -> float:
@@ -156,7 +144,7 @@ def run_lumen_bench():
         )
         
         # Decode and analyze output
-        decoded_output = tokenizer.decode(generated_tokens)
+        decoded_output = tokenizer.decode(generated_tokens, skip_special_tokens=False)
         
         syntax_res = evaluate_syntax_coherence(decoded_output)
         diversity = evaluate_diversity_entropy(generated_tokens)
