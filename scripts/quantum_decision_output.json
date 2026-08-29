@@ -5,10 +5,10 @@
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
-        "selected_topic_id": 9,
-        "title": "Skeletal Chondrocytic Extracellular Matrix Degradation under Local GAG Pressure",
+        "selected_topic_id": 7,
+        "title": "Anti-Drug Antibody (ADA) Humoral Clearance Kinetics and Tolerization",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.1016,
+        "wave_amplitude_probability": 0.2031,
         "state_vector_probabilities": [
             0.0,
             0.1016,
@@ -23,10 +23,10 @@
         ]
     },
     "diabetes_core": {
-        "selected_topic_id": 5,
-        "title": "Stem-Cell-Derived Islet Cell Xenotransplant Neovascularization & Angiogenesis Coupling",
+        "selected_topic_id": 7,
+        "title": "Acoustic-Patterned Concentric Alignment of Beta-Cell Spheroids within Hydrogel Scaffolds",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.3906,
+        "wave_amplitude_probability": 0.2031,
         "state_vector_probabilities": [
             0.0,
             0.1016,
