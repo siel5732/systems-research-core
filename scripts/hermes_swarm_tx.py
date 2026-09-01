@@ -141,8 +141,8 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
     print(f"[*] Synchronizing Boaz (Odd) delays to {boaz_ip} over SSH...")
     # We format Boaz's map updates into a single multi-command block to execute on Boaz!
     boaz_cmd_list = []
-    # Find map ID dynamically on Boaz
-    boaz_cmd_list.append("MAP_ID=$(sudo bpftool map show | grep -o -E '[0-9]+: hash  name delay_map' | cut -d: -f1)")
+    # Find map ID dynamically on Boaz (using simple, spacing-proof grep | cut)
+    boaz_cmd_list.append("MAP_ID=$(sudo bpftool map show | grep delay_map | cut -d: -f1 | head -n1)")
     boaz_cmd_list.append("if [ -z \"$MAP_ID\" ]; then echo '[-] Boaz map missing'; exit 1; fi")
     
     for seq_id, delay_ns in boaz_delays.items():
@@ -201,5 +201,5 @@ if __name__ == "__main__":
     secret_key = "SEFIROTIC_COUNCIL_LOGOS_KEY"
     hmac_key = "SEFIROTIC_HMAC_KEY"
     
-    run_swarm_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
+    run_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
 EOF
