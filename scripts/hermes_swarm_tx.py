@@ -203,4 +203,3 @@ if __name__ == "__main__":
     hmac_key = "SEFIROTIC_HMAC_KEY"
     
     run_swarm_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
-EOF
