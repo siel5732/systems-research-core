@@ -151,7 +151,8 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
         val_bytes = struct.pack("<Q", delay_ns)
         key_hex = " ".join(f"0x{b:02x}" for b in key_bytes)
         val_hex = " ".join(f"0x{b:02x}" for b in val_bytes)
-        boaz_cmd_list.append(f"sudo bpftool map update id \\$MAP_ID key {key_hex} value {val_hex}")
+        # Note: Do NOT escape the $ symbol in $MAP_ID so the remote bash shell can expand the variable correctly!
+        boaz_cmd_list.append(f"sudo bpftool map update id $MAP_ID key {key_hex} value {val_hex}")
         
     boaz_shell_script = " && ".join(boaz_cmd_list)
     try:
@@ -194,12 +195,12 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
     print("="*50 + "\n")
 
 if __name__ == "__main__":
-    ip = sys.argv[1] if len(sys.argv) > 1 else "10.240.0.1"
-    port = int(sys.argv[2]) if len(sys.argv) > 2 else 18888
+    ip = sys.argv[1] if len(sys.argv) > 2 else "10.240.0.1"
+    port = int(sys.argv[2]) if len(sys.argv) > 3 else 18888
     boaz = "192.168.1.8"
     
     secret_key = "SEFIROTIC_COUNCIL_LOGOS_KEY"
     hmac_key = "SEFIROTIC_HMAC_KEY"
     
-    run_swarm_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
+    run_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
 EOF
