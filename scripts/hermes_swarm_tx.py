@@ -202,5 +202,5 @@ if __name__ == "__main__":
     secret_key = "SEFIROTIC_COUNCIL_LOGOS_KEY"
     hmac_key = "SEFIROTIC_HMAC_KEY"
     
-    run_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
+    run_swarm_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
 EOF
