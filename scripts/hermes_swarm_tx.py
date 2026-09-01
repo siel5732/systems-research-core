@@ -155,7 +155,9 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
         
     boaz_shell_script = " && ".join(boaz_cmd_list)
     try:
-        subprocess.check_call(["ssh", "-t", "-o", "StrictHostKeyChecking=no", f"fq9f@{boaz_ip}", boaz_shell_script])
+        # Force SSH to use the fq9f user's authorized private key (-i /home/fq9f/.ssh/id_rsa)
+        # to prevent Permission Denied errors when python runs under sudo (root)!
+        subprocess.check_call(["ssh", "-t", "-i", "/home/fq9f/.ssh/id_rsa", "-o", "StrictHostKeyChecking=no", f"fq9f@{boaz_ip}", boaz_shell_script])
         print("[✓] Boaz delays successfully written to Boaz kernel memory.")
     except Exception as e:
         print(f"[-] Failed to update Boaz map: {e}")
@@ -168,8 +170,7 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
     print("[*] GEEKOM is blasting Even Packets...")
     print("[*] Boaz is blasting Odd Packets...")
     
-    # 1. Trigger Boaz blast in background over SSH
-    # Boaz sends only odd packets
+    # 1. Trigger Boaz blast in background over SSH (using fq9f private key)
     boaz_blast_script = (
         f"python3 -c '"
         f"import socket, struct; s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM); "
@@ -178,7 +179,7 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
         f"  s.sendto(struct.pack(\">I\", i) + hmac_bytes, (\"{target_ip}\", {target_port}))"
         f"'"
     )
-    subprocess.Popen(["ssh", "-o", "StrictHostKeyChecking=no", f"fq9f@{boaz_ip}", boaz_blast_script])
+    subprocess.Popen(["ssh", "-i", "/home/fq9f/.ssh/id_rsa", "-o", "StrictHostKeyChecking=no", f"fq9f@{boaz_ip}", boaz_blast_script])
     
     # 2. Local GEEKOM blast (even packets)
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -200,5 +201,5 @@ if __name__ == "__main__":
     secret_key = "SEFIROTIC_COUNCIL_LOGOS_KEY"
     hmac_key = "SEFIROTIC_HMAC_KEY"
     
-    run_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
+    run_swarm_transmitter(ip, port, boaz, "SAGE SECURE V3.2", secret_key, hmac_key)
 EOF
