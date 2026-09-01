@@ -262,11 +262,11 @@ def run_receiver(port, secret_key, hmac_key, expected_packets=192):
             data, addr = sock.recvfrom(1024)
             arrival_epoch_ms = time.time() * 1000.0  # Milliseconds
             
-            # SAGE Binary Header Parsing (20-byte binary packet payload)
-            if len(data) < 20:
+            # SAGE Binary Header Parsing (12-byte binary packet payload)
+            if len(data) < 12:
                 continue
             seq, = struct.unpack(">I", data[:4])
-            expected_mac = data[4:20].hex()
+            expected_mac = data[4:12].hex()
             
             received_packets.append({
                 "seq": seq,
