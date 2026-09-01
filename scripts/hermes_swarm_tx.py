@@ -185,9 +185,11 @@ def run_swarm_transmitter(target_ip, target_port, boaz_ip, secret_message, secre
     # 2. Local GEEKOM blast (even packets)
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     hmac_bytes = bytes.fromhex(expected_mac)
+    # Use loopback locally on GEEKOM if target is itself, bypassing raw loopback checksum offload drops
+    local_target_ip = "127.0.0.1" if target_ip == "100.81.252.125" else target_ip
     for i in range(0, 192, 2):
         payload_bytes = struct.pack(">I", i) + hmac_bytes
-        sock.sendto(payload_bytes, (target_ip, target_port))
+        sock.sendto(payload_bytes, (local_target_ip, target_port))
     sock.close()
     
     print("[✓] Distributed swarm blast complete.")
