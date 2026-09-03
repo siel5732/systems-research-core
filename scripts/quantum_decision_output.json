@@ -5,10 +5,10 @@
         "methodology": "Hadamard-Coin 1D Discrete-Time Quantum Walk (DTQW)"
     },
     "mps_core": {
-        "selected_topic_id": 3,
-        "title": "Mechanical Joint Load-Bearing Shear Stress Impact on Chondrocyte GAG Synthesis",
+        "selected_topic_id": 9,
+        "title": "Skeletal Chondrocytic Extracellular Matrix Degradation under Local GAG Pressure",
         "coverage_factor": 0.1,
-        "wave_amplitude_probability": 0.2031,
+        "wave_amplitude_probability": 0.1016,
         "state_vector_probabilities": [
             0.0,
             0.1016,
