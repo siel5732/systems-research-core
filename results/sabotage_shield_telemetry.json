@@ -1,110 +1,119 @@
 [
     {
-        "timestamp": "2026-08-18T00:39:59.109223",
+        "timestamp": "2026-09-04T23:31:07.073081",
         "cycle": 1,
-        "applied_micro_load_pct": 11.59,
-        "modulated_interval_sec": 2.57,
-        "core_temp_c": 49.3,
-        "calculated_fan_rpm": 2578,
-        "steg_channel_snr_db": -34.187543990984786
-    },
-    {
-        "timestamp": "2026-08-18T00:40:01.714064",
-        "cycle": 2,
-        "applied_micro_load_pct": 7.29,
-        "modulated_interval_sec": 2.36,
-        "core_temp_c": 47.8,
-        "calculated_fan_rpm": 2468,
-        "steg_channel_snr_db": -31.798391137112514
-    },
-    {
-        "timestamp": "2026-08-18T00:40:04.118797",
-        "cycle": 3,
-        "applied_micro_load_pct": 6.43,
-        "modulated_interval_sec": 2.57,
+        "applied_micro_load_pct": 6.66,
+        "modulated_interval_sec": 2.92,
         "core_temp_c": 47.5,
-        "calculated_fan_rpm": 2424,
-        "steg_channel_snr_db": -39.482236683674586
+        "calculated_fan_rpm": 2439,
+        "steg_channel_snr_db": -33.065739674158685
     },
     {
-        "timestamp": "2026-08-18T00:40:06.722727",
+        "timestamp": "2026-09-04T23:31:10.077282",
+        "cycle": 2,
+        "applied_micro_load_pct": 7.75,
+        "modulated_interval_sec": 2.12,
+        "core_temp_c": 47.9,
+        "calculated_fan_rpm": 2484,
+        "steg_channel_snr_db": -32.84677422520126
+    },
+    {
+        "timestamp": "2026-09-04T23:31:12.280601",
+        "cycle": 3,
+        "applied_micro_load_pct": 8.84,
+        "modulated_interval_sec": 2.36,
+        "core_temp_c": 48.8,
+        "calculated_fan_rpm": 2546,
+        "steg_channel_snr_db": -38.178289404496894
+    },
+    {
+        "timestamp": "2026-09-04T23:31:14.683965",
         "cycle": 4,
-        "applied_micro_load_pct": 6.46,
-        "modulated_interval_sec": 2.99,
-        "core_temp_c": 47.4,
-        "calculated_fan_rpm": 2443,
-        "steg_channel_snr_db": -33.6053814405498
-    },
-    {
-        "timestamp": "2026-08-18T00:40:09.727204",
-        "cycle": 5,
-        "applied_micro_load_pct": 10.61,
-        "modulated_interval_sec": 2.97,
-        "core_temp_c": 49.4,
-        "calculated_fan_rpm": 2585,
-        "steg_channel_snr_db": -34.92403947320689
-    },
-    {
-        "timestamp": "2026-08-18T00:40:12.731746",
-        "cycle": 6,
-        "applied_micro_load_pct": 3.67,
-        "modulated_interval_sec": 2.71,
-        "core_temp_c": 46.8,
-        "calculated_fan_rpm": 2389,
-        "steg_channel_snr_db": -33.711052989396464
-    },
-    {
-        "timestamp": "2026-08-18T00:40:15.536246",
-        "cycle": 7,
-        "applied_micro_load_pct": 10.28,
-        "modulated_interval_sec": 3.0,
-        "core_temp_c": 49.3,
-        "calculated_fan_rpm": 2583,
-        "steg_channel_snr_db": -36.422648723097424
-    },
-    {
-        "timestamp": "2026-08-18T00:40:18.540650",
-        "cycle": 8,
-        "applied_micro_load_pct": 4.03,
-        "modulated_interval_sec": 2.05,
-        "core_temp_c": 46.4,
-        "calculated_fan_rpm": 2353,
-        "steg_channel_snr_db": -38.504264660417505
-    },
-    {
-        "timestamp": "2026-08-18T00:40:20.643691",
-        "cycle": 9,
-        "applied_micro_load_pct": 4.5,
-        "modulated_interval_sec": 2.98,
-        "core_temp_c": 47.1,
-        "calculated_fan_rpm": 2392,
-        "steg_channel_snr_db": -38.79519581049536
-    },
-    {
-        "timestamp": "2026-08-18T00:40:23.648230",
-        "cycle": 10,
-        "applied_micro_load_pct": 10.87,
-        "modulated_interval_sec": 2.23,
-        "core_temp_c": 49.5,
-        "calculated_fan_rpm": 2625,
-        "steg_channel_snr_db": -33.52759569084178
-    },
-    {
-        "timestamp": "2026-08-18T00:40:25.951938",
-        "cycle": 11,
-        "applied_micro_load_pct": 8.77,
-        "modulated_interval_sec": 2.14,
-        "core_temp_c": 48.0,
-        "calculated_fan_rpm": 2477,
-        "steg_channel_snr_db": -34.141437277013125
-    },
-    {
-        "timestamp": "2026-08-18T00:40:28.155157",
-        "cycle": 12,
-        "applied_micro_load_pct": 6.47,
+        "applied_micro_load_pct": 4.49,
         "modulated_interval_sec": 2.12,
         "core_temp_c": 47.2,
-        "calculated_fan_rpm": 2419,
-        "steg_channel_snr_db": -31.122694349208082
+        "calculated_fan_rpm": 2411,
+        "steg_channel_snr_db": -35.53849899598356
+    },
+    {
+        "timestamp": "2026-09-04T23:31:16.887279",
+        "cycle": 5,
+        "applied_micro_load_pct": 9.32,
+        "modulated_interval_sec": 2.23,
+        "core_temp_c": 48.6,
+        "calculated_fan_rpm": 2536,
+        "steg_channel_snr_db": -40.27435782777694
+    },
+    {
+        "timestamp": "2026-09-04T23:31:19.190540",
+        "cycle": 6,
+        "applied_micro_load_pct": 11.98,
+        "modulated_interval_sec": 2.36,
+        "core_temp_c": 49.6,
+        "calculated_fan_rpm": 2629,
+        "steg_channel_snr_db": -35.82315566841312
+    },
+    {
+        "timestamp": "2026-09-04T23:31:21.594344",
+        "cycle": 7,
+        "applied_micro_load_pct": 4.42,
+        "modulated_interval_sec": 3.0,
+        "core_temp_c": 46.5,
+        "calculated_fan_rpm": 2343,
+        "steg_channel_snr_db": -33.338406641228524
+    },
+    {
+        "timestamp": "2026-09-04T23:31:24.598362",
+        "cycle": 8,
+        "applied_micro_load_pct": 3.3,
+        "modulated_interval_sec": 2.23,
+        "core_temp_c": 46.3,
+        "calculated_fan_rpm": 2321,
+        "steg_channel_snr_db": -31.998532640014396
+    },
+    {
+        "timestamp": "2026-09-04T23:31:26.901734",
+        "cycle": 9,
+        "applied_micro_load_pct": 10.39,
+        "modulated_interval_sec": 2.12,
+        "core_temp_c": 49.6,
+        "calculated_fan_rpm": 2622,
+        "steg_channel_snr_db": -30.97233648817095
+    },
+    {
+        "timestamp": "2026-09-04T23:31:29.105123",
+        "cycle": 10,
+        "applied_micro_load_pct": 4.28,
+        "modulated_interval_sec": 2.96,
+        "core_temp_c": 47.2,
+        "calculated_fan_rpm": 2402,
+        "steg_channel_snr_db": -34.49359492131373
+    },
+    {
+        "timestamp": "2026-09-04T23:31:32.109726",
+        "cycle": 11,
+        "applied_micro_load_pct": 8.81,
+        "modulated_interval_sec": 2.14,
+        "core_temp_c": 48.2,
+        "calculated_fan_rpm": 2499,
+        "steg_channel_snr_db": -39.49059389155161
+    },
+    {
+        "timestamp": "2026-09-04T23:31:34.313157",
+        "cycle": 12,
+        "applied_micro_load_pct": 7.84,
+        "modulated_interval_sec": 2.05,
+        "core_temp_c": 48.6,
+        "calculated_fan_rpm": 2545,
+        "steg_channel_snr_db": -40.41464212499817
+    },
+    {
+        "timestamp": "2026-09-04T23:31:36.416484",
+        "cycle": 13,
+        "applied_micro_load_pct": 3.37,
+        "modulated_interval_sec": 2.98,
+        "core_temp_c": 46.0,
+        "calculated_fan_rpm": 2319,
+        "steg_channel_snr_db": -35.521307189806734
     }
 ]

@@ -13,7 +13,7 @@
       "AAPL",
       "MSFT"
     ],
-    "net_asset_value": 211.15144608009396
+    "net_asset_value": 210.94984225007758
   },
   "Aphex": {
     "cash": 19.549357951390085,
@@ -28,7 +28,7 @@
       "BTC-USD",
       "ETH-USD"
     ],
-    "net_asset_value": 233.63745791813818
+    "net_asset_value": 233.4410014369566
   },
   "Marie": {
     "cash": 105.0507265045034,
@@ -43,7 +43,7 @@
       "NVDA",
       "SPY"
     ],
-    "net_asset_value": 146.58251483305358
+    "net_asset_value": 146.86515667298278
   },
   "Anubis": {
     "cash": 152.47998046875,
@@ -56,6 +56,6 @@
       "GLD",
       "SPY"
     ],
-    "net_asset_value": 253.8999786376953
+    "net_asset_value": 254.17247772216797
   }
 }
