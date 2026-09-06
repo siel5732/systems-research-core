@@ -1,0 +1,17 @@
+base_dir: /data/.openclaw/workspace
+harvested_dir: harvested_research
+buffer_dir: preconscious_buffer
+prompts_dir: configs/akiva_prompts
+ledger_dir: data/ledgers
+log_dir: logs
+stiefel_path: isometric_W_combined_physics_literature.npy
+qdrant_host: localhost
+qdrant_port: 6333
+collection_name: sefirotic_1536
+embed_model_name: sentence-transformers/all-mpnet-base-v2
+poll_interval_sec: 30
+hypothesis_interval_sec: 900
+evaluation_interval_sec: 3600
+max_chunk_tokens: 512
+entropy_low_threshold: 1.85
+max_prompt_versions: 50
