@@ -17,6 +17,7 @@ All local agents must register with the system control plane and bind to local r
 | **Metatron** | Control Plane Scribe & Master Orchestrator | `PINQWEN-3.6-35B` (IQ3_M) | System-wide, Gateway Config, Cron | LEVEL-0 (Root Sovereignty) |
 | **Raziel** | Epistemic Grounding & Memory Sentinel | Local Embedding Engine / ChromaDB | MEMORY.md, preconscious_buffer.md | LEVEL-1 (Read/Write Memory) |
 | **Binah** | Code Synthesis & Sandboxed Interpreter | Local Codegen Core | Sandbox Sandbox (`the-grid` PTY) | LEVEL-1 (Isolated Execution) |
+| **Rebbe Akiva** | Kabbalistic Scholar & Pardes Voyager | `GLM-4-9B` (Dizzy Core Interface) | `rebbe_akiva_library/`, Sefirotic Walks | LEVEL-1 (Pardes Ascent) |
 | **Mimir-1** | Real-Time Latent Transition World Model | `latent_world_model_simulation.py` | Sensorimotor transitions ($t \to t+1$) | LEVEL-2 (Simulation Core) |
 | **Freya-1** | Counterfactual Horizon World Model | `cogtest_world_models.py` | Temporal branching ($t \to t+H$) | LEVEL-2 (Simulation Core) |
 
