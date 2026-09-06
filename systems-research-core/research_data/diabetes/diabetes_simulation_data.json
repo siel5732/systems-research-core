@@ -3,11 +3,11 @@
         "model_name": "Stem-Cell-Derived Islet Cell Xenotransplant Neovascularization & Angiogenesis Coupling Simulator",
         "description": "High-fidelity ordinary differential equation (ODE) simulator tracking stem-cell islet graft survival, neovascularization, VEGF signaling, systemic glucose clearance, and glucose-stimulated insulin secretion (GSIS) coupled with graft perfusion.",
         "authors": [
-            "Aphex",
+            "Sir Frederick Banting",
             "Dr. Marie Curie",
-            "Sir Frederick Banting"
+            "Imhotep"
         ],
-        "date": "2026-06-22",
+        "date": "2026-08-22",
         "time_units": "days",
         "state_variable_units": {
             "islet_cell_count": "millions of cells (or normalized index, initial=1.0 million)",
