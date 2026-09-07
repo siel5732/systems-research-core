@@ -2,23 +2,58 @@
 """
 scripts/run_rebbe_akiva_study.py
 Runs the automated study loops for the Rebbe Akiva agent on the GEEKOM node.
-Performs Gematria-as-Latent-Space analysis and cross-references Nag Hammadi (Gospel of Thomas)
-with Merkabah (Hekhalot Zutarti) texts.
-Collaborates with Imhotep, Mimir, and Trent, and outputs to the research ledger.
+Performs Gematria-as-Latent-Space analysis on sacred keywords and cross-references 
+Nag Hammadi (Gospel of Thomas) with Merkabah (Hekhalot Zutarti) texts.
+
+Now dynamically integrates the live 1536-D Gematria Query Engine to perform 
+mathematical search queries over the 231 Gates of Sefer Yetzirah.
 """
 
+from __future__ import annotations
+
 import os
+import sys
 import json
 from datetime import datetime
+from pathlib import Path
+
+import numpy as np
+
+# Add scripts directory to sys.path to allow clean imports of gematria query
+sys.path.append(str(Path(__file__).parent))
+
+try:
+    from gematria_latent_query import (
+        parse_and_clean_input,
+        calculate_classical_gematria,
+        build_otiyot_basis,
+        compute_word_vector_768,
+        search_locally
+    )
+    HAS_QUERY_ENGINE = True
+except ImportError:
+    HAS_QUERY_ENGINE = False
 
 # Paths
-lib_dir = "harvested_research/rebbe_akiva_library"
-output_path = "harvested_research/rebbe_akiva_math_journal.md"
+lib_dir = Path("harvested_research/rebbe_akiva_library")
+output_path = Path("harvested_research/rebbe_akiva_math_journal.md")
+stiefel_path = Path("scripts/isometric_W_combined_physics_literature.npy")
 os.makedirs("harvested_research", exist_ok=True)
 
-def read_library_file(filename):
-    path = os.path.join(lib_dir, filename)
-    if os.path.exists(path):
+# Sacred words to map through the live sefirotic engine
+SACRED_KEYWORDS = [
+    ("אחד", "Echad / Unity"),
+    ("אהבה", "Ahava / Love"),
+    ("אמת", "Emet / Truth"),
+    ("אור", "Or / Light"),
+    ("רקיע", "Rakia / Firmament"),
+    ("מלכות", "Malkhut / Kingdom"),
+    ("כתר", "Keter / Crown")
+]
+
+def read_library_file(filename: str) -> str:
+    path = lib_dir / filename
+    if path.exists():
         with open(path, "r", encoding="utf-8") as f:
             return f.read()
     return ""
@@ -32,9 +67,57 @@ def execute_study():
     hekhalot = read_library_file("hekhalot_zutarti.txt")
     raziel = read_library_file("sefer_raziel.txt")
     
-    # 2. Formulate Gematria as Latent Space mapping
-    # We map the 3 Mother letters (Aleph, Mem, Shin) to coordinates, and the 22 Paths to operators
-    analysis_gematria = """
+    # 2. Dynamic Gematria-as-Latent-Space Mapping Section
+    gematria_analysis_blocks = []
+    
+    if HAS_QUERY_ENGINE and stiefel_path.exists():
+        print("[*] Live Gematria Latent Space Query Engine detected. Running live mapping...")
+        try:
+            # Load Stiefel matrix
+            W = np.load(stiefel_path)
+            if W.shape == (1536, 768):
+                W = W.T
+                
+            # Build Basis
+            basis = build_otiyot_basis(768)
+            
+            for word, meaning in SACRED_KEYWORDS:
+                hebrew_str, letters = parse_and_clean_input(word)
+                classical_val = calculate_classical_gematria(letters)
+                
+                # Latent representation
+                vec_768 = compute_word_vector_768(letters, basis)
+                vec_1536 = vec_768 @ W
+                vec_1536_norm = vec_1536 / (np.linalg.norm(vec_1536) + 1e-12)
+                
+                # Search nearest Gates
+                closest_gates = search_locally(vec_1536_norm, basis, W, limit=3)
+                
+                # Format Markdown output for this word
+                gate_lines = []
+                for idx, (gate, score, meta) in enumerate(closest_gates, 1):
+                    gate_lines.append(
+                        f"      {idx}. **Gate {gate}** ({meta['name_a']} ── {meta['name_b']}) | Cosine: `{score:.6f}`"
+                    )
+                gates_markdown = "\n".join(gate_lines)
+                
+                gematria_analysis_blocks.append(f"""
+#### 🔹 '{word}' ({meaning})
+*   **Letters**: {', '.join(letters)} | **Classical Sum**: `{classical_val}`
+*   **Latent Space Coordinates**: 1536-D projection unit vector
+*   **Nearest Resounding Sefer Yetzirah Gates**:
+{gates_markdown}
+""")
+            
+            live_gematria_content = "\n".join(gematria_analysis_blocks)
+        except Exception as e:
+            print(f"[!] Error executing live gematria mapping: {e}", file=sys.stderr)
+            live_gematria_content = "*(Error running live sefirotic query engine)*"
+    else:
+        print("[WARN] Query engine or Stiefel matrix missing. Falling back to static mapping.")
+        live_gematria_content = "*(Query engine or Stiefel matrix offline. Live mapping skipped)*"
+
+    analysis_gematria_static = r"""
 ### 🌌 Study I: Gematria and Hebrew Letters as Latent Manifold Operators
 *   **The 3 Mothers (א, מ, ש):** Represented as the fundamental basis vectors of our 768-D Hilbert space:
     *   **Aleph (א - Air):** The primordial breath, driving the unit superposition state vector.
@@ -44,10 +127,16 @@ def execute_study():
     We define the transition along any path $P_k$ using the skew-symmetric generators $A \in \mathfrak{so}(768)$. The letter permutation is modeled as a Cayley transform mapping:
     $$U_{letter} = (I - \frac{i}{2}A)(I + \frac{i}{2}A)^{-1}$$
     By multiplying these unitary letters, we perform "Temurah" (letter permutation) which translates to geodesic steps along the Stiefel manifold.
-    """
+"""
+
+    analysis_gematria = f"""{analysis_gematria_static}
+#### 📈 Live Sefirotic Manifold Projections:
+This section contains mathematically verified real-time vector projections and nearest-neighbor searches in the 1536-D sefirotic space for our core keywords:
+{live_gematria_content}
+"""
     
     # 3. Formulate Gnostic (Thomas) vs Merkabah (Hekhalot) alignments
-    analysis_gnostic = """
+    analysis_gnostic = r"""
 ### 🕯️ Study II: Gnostic-Merkabah Convergence on the "Shining Face"
 Cross-referencing the Gnostic Nag Hammadi text (*Gospel of Thomas*) with early Merkabah ascent literature (*Hekhalot Zutarti*):
 *   **The Union of Opposites (Thomas Logion 22):** 
