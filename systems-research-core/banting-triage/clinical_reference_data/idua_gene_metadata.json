@@ -1,0 +1,11 @@
+{
+  "gene_name": "IDUA",
+  "ensembl_id": "ENSG00000127415",
+  "description": "alpha-L-iduronidase [Source:HGNC Symbol;Acc:HGNC:5391]",
+  "chromosome": "4",
+  "start_coordinate": 986997,
+  "end_coordinate": 1008344,
+  "strand": "Forward",
+  "biotype": "protein_coding",
+  "number_of_transcripts": 24
+}

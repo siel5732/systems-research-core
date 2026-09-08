@@ -1,0 +1,111 @@
+**Audit Summary**
+
+The Hermes-3.2 design mixes systematic linear coding over GF(2), key-seeded timing modulation, a first-order discrete-time PLL, and a Hurst-scaled acceptance window. The high-level architecture is coherent for a covert timing channel, but the concrete Python fragments contain multiple implementation defects (undefined names, incomplete loops, incorrect matrix orientation, non-reproducible RNG seeding on the receiver, and missing HMAC verification in the shown RX path). These must be fixed before any quantitative claims about security or reliability are meaningful. Below I address the four requested aspects strictly on the mathematical / algorithmic level implied by the description and the supplied fragments.
+
+### 1. First-Order Discrete-Time PLL Loop Filter (`pll_mu = 0.04`)
+
+The update is the classic first-order loop:
+
+\[
+\hat{b}_{k+1} = \hat{b}_k + \mu \cdot e_k
+\]
+
+where \(e_k\) is the residual after subtracting the expected modulation (i.e., a pure phase/frequency error estimate).  
+
+- **Stability for constant offset.**  
+  Under a pure constant clock offset \(\Delta\) (no process noise), the recursion converges exponentially:
+
+  \[
+  \hat{b}_k = \Delta\bigl(1-(1-\mu)^k\bigr)
+  \]
+
+  provided \(0 < \mu < 2\). For \(\mu=0.04\) the time constant is \(\approx 1/\mu \approx 25\) samples. After ~100 packets the residual bias is already < \(e^{-4}\approx 0.018\) of the original offset. This is stable and non-oscillatory.
+
+- **Tracking ramp (linear drift).**  
+  A constant frequency offset (linear phase ramp) produces a steady-state lag of \(\approx \dot{\phi}/\mu\). With \(\mu=0.04\) a 100 ppm relative clock drift at a 50 ms baseline produces a lag of only a few hundred microseconds—well inside typical microsecond-resolution timing budgets.
+
+- **Edge cases / divergence.**  
+  - If the acceptance gate discards a long consecutive run, the loop freezes; when packets resume the sudden residual can be large. Because the filter is first-order and \(\mu\) is modest, it simply steps toward the new value; it does not diverge.  
+  - Oscillation occurs only for \(\mu\ge 1\) (or when the residual sign is inverted by a systematic decoding error—see §2). With the given \(\mu\) the closed-loop poles lie safely inside the unit circle.  
+  - Under heavy-tailed (Log-Normal + GPD) residuals the loop still converges in mean, but the variance of \(\hat{b}\) grows. A practical mitigation is a soft limiter or a second-order loop (PI filter) that also estimates frequency.
+
+Recommendation: keep \(\mu\in[0.02,0.08]\) for the 50 ms grid; add a simple magnitude clamp (\(|e|\le 3\cdot\text{tol}\)) to protect against outliers.
+
+### 2. Last-Good-Packet Referencing & Error Cascade
+
+The receiver computes the inter-arrival deviation relative to the *last accepted* packet and then subtracts the modulation that corresponds to the *decoded bit* of that last packet:
+
+\[
+\text{last_mod} = 
+\begin{cases}
++\delta_{\text{last}} & \text{if last_bit}=1\\
+-\delta_{\text{last}} & \text{if last_bit}=0
+\end{cases}
+\]
+
+If `last_bit_decoded` is wrong, `last_mod` has the opposite sign. Consequently the residual presented to the current packet is offset by \(2\delta_{\text{last}}\). Because \(\delta_i\) themselves lie in \([0.15,0.45]\) ms while the Hurst-scaled tolerance grows only as \(n^{0.75}\), a single bit flip can push the next residual outside the acceptance window, causing the packet to be discarded. The loop then stays locked to the erroneous last-good packet; every subsequent residual inherits the same \(2\delta\) bias until a correctly decoded packet is accepted. This is precisely an error-cascade / phase-unlock event.
+
+The cascade probability rises sharply once the packet-loss or false-rejection rate exceeds a few percent, because the distance \(n\) to the last good packet grows and the tolerance \(n^{0.75}\) eventually becomes large enough to accept a wrong-sign residual, locking the error in permanently.
+
+Mitigations:
+- Maintain a short sliding window of candidate “last-good” packets and choose the one that maximises subsequent correlation.
+- Periodically force a hard re-lock to the absolute grid (using the PLL bias alone) every 16–32 packets.
+- Treat the sign of the residual as a soft bit and feed it into a subsequent soft-decision decoder rather than hard-thresholding immediately.
+
+### 3. GF(2) Systematic Fountain FEC & Gaussian Elimination
+
+The encoder builds a systematic generator matrix \(G\in\{0,1\}^{192\times128}\) whose first 128 rows form \(I_{128}\) and whose remaining 64 rows are random (key-seeded). The received packets therefore supply a subset of the rows of the parity-check system
+
+\[
+A\mathbf{x}=\mathbf{b}\qquad\text{over }\mathrm{GF}(2).
+\]
+
+Standard Gaussian elimination (the supplied `gf2_gaussian_elimination`) correctly recovers \(\mathbf{x}\) whenever the selected rows span the full column space, i.e., \(\operatorname{rank}(A)=128\).  
+
+- **Behaviour under >20 % erasures.**  
+  With 192 equations and a random parity part, the failure probability for a random subset of size \(m\) is essentially the probability that a random \(m\times128\) matrix over GF(2) is rank-deficient. For \(m\ge140\) this probability is already < \(10^{-6}\) for typical random matrices; at 20 % loss (\(m\approx154\)) it is negligible. Below the MDS-like threshold the matrix becomes singular with non-negligible probability and the routine correctly returns `None`.
+
+- **Robustness limitations of the presented solver.**  
+  The implementation aborts as soon as any pivot column is all-zero and does not attempt to continue with a reduced-rank solution or to report free variables. It also assumes the matrix is presented with the information bits in the first 128 columns—any row permutation or column reordering breaks the final extraction step.
+
+Suggested improvements (in increasing order of complexity):
+1. Continue GE after rank deficiency, return a particular solution plus a basis for the null space, then use the HMAC to disambiguate.
+2. Switch to an incremental / online decoder (e.g., the inactivation decoder used in Raptor codes) so that newly arriving packets can be incorporated without restarting elimination.
+3. For still higher erasure rates, replace pure GE by belief-propagation on the Tanner graph of the parity-check matrix (the dual of \(G\)); BP is far cheaper and works well when the degree distribution is irregular.
+
+Because the code is systematic, the information-bit columns can be recovered by simple back-substitution once the parity equations have been solved; this is already the cheapest possible hard-decision decoder when the number of erasures is modest.
+
+### 4. Hurst-Scaled Acceptance Gate (\(H=0.75\))
+
+Fractional Brownian motion (fBm) with Hurst parameter \(H\) has increments whose standard deviation scales as
+
+\[
+\sigma(\Delta t)\propto(\Delta t)^H.
+\]
+
+Setting the acceptance half-width to \(c\cdot n^H\) (with \(n\) the number of baseline intervals since the last accepted packet) is therefore the mathematically correct scaling for an fBm-driven timing process. \(H=0.75\) is a plausible empirical value for many Internet paths that exhibit long-range dependence; it lies between ordinary diffusion (\(H=0.5\)) and the strongly persistent regime often observed on congested links.
+
+For a Tailscale/WireGuard overlay the situation is more nuanced:
+- The underlay still sees the usual heavy-tailed queueing, so an \(H\approx0.7{-}0.8\) model remains reasonable.
+- The overlay, however, adds a (usually small) constant encryption/decryption latency and occasional batching. These effects are closer to white or short-range correlated noise. Consequently the pure \(n^{0.75}\) window can be slightly oversized for small \(n\) and slightly undersized for very large \(n\).
+- A more accurate practical gate is a mixture:
+
+  \[
+  \text{tol}(n)=a\cdot n^{0.5}+b\cdot n^{0.75}
+  \]
+
+  with the coefficients fitted once on the particular GEEKOM/Minisforum + Tailscale path.
+
+Empirically, measuring the inter-arrival variance versus lag on a few thousand packets and performing a log-log regression will confirm whether \(H=0.75\) is optimal for the concrete deployment; the theoretical fBm argument alone does not guarantee optimality on an overlay network.
+
+---
+
+**Additional critical observations (implementation level)**
+
+- Receiver RNG seeding is broken: each call to `random.Random(...).random()` draws a fresh stream; the deltas are therefore not reproducible. Seed once and draw the whole vector.
+- Transmitter uses `random.Random(seedhash)` but `seedhash` is never defined (typo for `seed_hash`).
+- The systematic generator is built with rows = code bits, columns = information bits—consistent with the encoder—but the GE routine’s final extraction step assumes a particular column ordering that is not guaranteed after pivoting.
+- HMAC is computed and placed in every packet on the TX side, yet the shown RX fragment never verifies it against the recovered payload. Without that check the whole construction is open to forgery once an adversary can inject packets inside the timing window.
+- The “queue_prior” array appears in the RX deviation calculation but is never defined in the supplied fragment; its statistical model must be identical on both ends.
+
+Fix the reproducibility and verification bugs first; the four analytic questions above can then be validated by Monte-Carlo simulation on the real hardware path.
