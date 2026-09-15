@@ -1,314 +1,498 @@
 {
     "metadata": {
-        "title": "MPS-I Articular Chondrocyte CRISPR-Cas12a Homology-Directed Repair (HDR) Kinetics Simulation",
+        "title": "Skeletal Chondrocytic Extracellular Matrix Degradation under Local GAG Pressure",
         "PI": "Dr. Marie Sklodowska-Curie",
-        "date": "2026-08-20",
+        "date": "2026-08-25",
         "units": {
-            "time": "hours",
-            "dna_states": "percentage (%) of total alleles"
+            "time": "days",
+            "gag_concentration": "mg/g wet tissue",
+            "swelling_pressure": "kPa",
+            "mmp_concentration": "relative units",
+            "ecm_integrity": "percentage (%) of normal healthy matrix",
+            "chondrocyte_viability": "percentage (%) of normal cell population"
         }
     },
     "simulation_results": {
-        "Naive CRISPR-Cas12a in Chondrocytes (NHEJ Dominant)": {
+        "Untreated MPS-I Chondrocytes": {
             "metadata": {
-                "nhej_rate_constant": 0.52,
-                "hdr_rate_constant": 0.002,
-                "donor_recruitment_mult": 1.0,
-                "description": "Untreated articular chondrocytes relying almost entirely on error-prone NHEJ."
+                "idua_level": 0.0,
+                "k_syn_gag": 5.0,
+                "description": "Zero endogenous IDUA. Runaway GAG accumulation and severe osmotic matrix swelling."
             },
             "trajectory": [
                 {
-                    "time_hours": 0.0,
-                    "unbroken_dna_pct": 99.72,
-                    "double_strand_breaks_pct": 0.28,
-                    "nhej_indels_pct": 0.0,
-                    "hdr_precise_integration_pct": 0.0
+                    "time_days": 0.0,
+                    "gag_concentration_mg_g": 65.5,
+                    "swelling_pressure_kPa": 269.0,
+                    "mmp_concentration_units": 11.86,
+                    "ecm_integrity_pct": 42.37,
+                    "chondrocyte_viability_pct": 58.21
                 },
                 {
-                    "time_hours": 6.0,
-                    "unbroken_dna_pct": 24.29,
-                    "double_strand_breaks_pct": 14.96,
-                    "nhej_indels_pct": 60.51,
-                    "hdr_precise_integration_pct": 0.23
+                    "time_days": 5.0,
+                    "gag_concentration_mg_g": 90.5,
+                    "swelling_pressure_kPa": 424.0,
+                    "mmp_concentration_units": 6.31,
+                    "ecm_integrity_pct": 4.93,
+                    "chondrocyte_viability_pct": 5.46
                 },
                 {
-                    "time_hours": 12.0,
-                    "unbroken_dna_pct": 9.07,
-                    "double_strand_breaks_pct": 4.01,
-                    "nhej_indels_pct": 86.58,
-                    "hdr_precise_integration_pct": 0.33
+                    "time_days": 10.0,
+                    "gag_concentration_mg_g": 115.5,
+                    "swelling_pressure_kPa": 629.0,
+                    "mmp_concentration_units": 3.42,
+                    "ecm_integrity_pct": 1.6,
+                    "chondrocyte_viability_pct": 0.28
                 },
                 {
-                    "time_hours": 18.0,
-                    "unbroken_dna_pct": 4.57,
-                    "double_strand_breaks_pct": 1.25,
-                    "nhej_indels_pct": 93.83,
-                    "hdr_precise_integration_pct": 0.36
+                    "time_days": 15.0,
+                    "gag_concentration_mg_g": 140.5,
+                    "swelling_pressure_kPa": 884.0,
+                    "mmp_concentration_units": 2.42,
+                    "ecm_integrity_pct": 0.79,
+                    "chondrocyte_viability_pct": 0.01
                 },
                 {
-                    "time_hours": 24.0,
-                    "unbroken_dna_pct": 2.83,
-                    "double_strand_breaks_pct": 0.49,
-                    "nhej_indels_pct": 96.31,
-                    "hdr_precise_integration_pct": 0.37
+                    "time_days": 20.0,
+                    "gag_concentration_mg_g": 165.5,
+                    "swelling_pressure_kPa": 1189.0,
+                    "mmp_concentration_units": 2.12,
+                    "ecm_integrity_pct": 0.45,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 30.0,
-                    "unbroken_dna_pct": 2.02,
-                    "double_strand_breaks_pct": 0.23,
-                    "nhej_indels_pct": 97.37,
-                    "hdr_precise_integration_pct": 0.37
+                    "time_days": 25.0,
+                    "gag_concentration_mg_g": 190.5,
+                    "swelling_pressure_kPa": 1544.0,
+                    "mmp_concentration_units": 2.03,
+                    "ecm_integrity_pct": 0.27,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 36.0,
-                    "unbroken_dna_pct": 1.6,
-                    "double_strand_breaks_pct": 0.12,
-                    "nhej_indels_pct": 97.9,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 30.0,
+                    "gag_concentration_mg_g": 215.5,
+                    "swelling_pressure_kPa": 1949.0,
+                    "mmp_concentration_units": 2.01,
+                    "ecm_integrity_pct": 0.16,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 42.0,
-                    "unbroken_dna_pct": 1.36,
-                    "double_strand_breaks_pct": 0.07,
-                    "nhej_indels_pct": 98.19,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 35.0,
+                    "gag_concentration_mg_g": 240.5,
+                    "swelling_pressure_kPa": 2404.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.1,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 48.0,
-                    "unbroken_dna_pct": 1.22,
-                    "double_strand_breaks_pct": 0.04,
-                    "nhej_indels_pct": 98.36,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 40.0,
+                    "gag_concentration_mg_g": 265.5,
+                    "swelling_pressure_kPa": 2909.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.06,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 54.0,
-                    "unbroken_dna_pct": 1.12,
-                    "double_strand_breaks_pct": 0.03,
-                    "nhej_indels_pct": 98.47,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 45.0,
+                    "gag_concentration_mg_g": 290.5,
+                    "swelling_pressure_kPa": 3464.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.04,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 60.0,
-                    "unbroken_dna_pct": 1.06,
-                    "double_strand_breaks_pct": 0.02,
-                    "nhej_indels_pct": 98.54,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 50.0,
+                    "gag_concentration_mg_g": 315.5,
+                    "swelling_pressure_kPa": 4069.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.02,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 66.0,
-                    "unbroken_dna_pct": 1.02,
-                    "double_strand_breaks_pct": 0.01,
-                    "nhej_indels_pct": 98.59,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 55.0,
+                    "gag_concentration_mg_g": 340.5,
+                    "swelling_pressure_kPa": 4724.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.01,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 72,
-                    "unbroken_dna_pct": 1.0,
-                    "double_strand_breaks_pct": 0.01,
-                    "nhej_indels_pct": 98.62,
-                    "hdr_precise_integration_pct": 0.38
+                    "time_days": 60.0,
+                    "gag_concentration_mg_g": 365.5,
+                    "swelling_pressure_kPa": 5429.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.01,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 65.0,
+                    "gag_concentration_mg_g": 390.5,
+                    "swelling_pressure_kPa": 6184.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 70.0,
+                    "gag_concentration_mg_g": 415.5,
+                    "swelling_pressure_kPa": 6989.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 75.0,
+                    "gag_concentration_mg_g": 440.5,
+                    "swelling_pressure_kPa": 7844.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 80.0,
+                    "gag_concentration_mg_g": 465.5,
+                    "swelling_pressure_kPa": 8749.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 85.0,
+                    "gag_concentration_mg_g": 490.5,
+                    "swelling_pressure_kPa": 9704.0,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 90,
+                    "gag_concentration_mg_g": 515.0,
+                    "swelling_pressure_kPa": 10688.41,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
                 }
             ]
         },
-        "NHEJ-Inhibited CRISPR in Chondrocytes (SCR7-Enhanced)": {
+        "Standard Enzyme Replacement Therapy (ERT)": {
             "metadata": {
-                "nhej_rate_constant": 0.052,
-                "hdr_rate_constant": 0.002,
-                "donor_recruitment_mult": 3.0,
-                "description": "NHEJ inhibited by SCR7, holding DNA double-strand breaks open longer."
+                "idua_level": 0.08,
+                "k_syn_gag": 5.0,
+                "description": "Systemic laronidase infusions. Limited cartilage diffusion leaves deep tissue exposed to GAG pressure."
             },
             "trajectory": [
                 {
-                    "time_hours": 0.0,
-                    "unbroken_dna_pct": 99.72,
-                    "double_strand_breaks_pct": 0.28,
-                    "nhej_indels_pct": 0.0,
-                    "hdr_precise_integration_pct": 0.0
+                    "time_days": 0.0,
+                    "gag_concentration_mg_g": 65.42,
+                    "swelling_pressure_kPa": 269.0,
+                    "mmp_concentration_units": 11.86,
+                    "ecm_integrity_pct": 42.37,
+                    "chondrocyte_viability_pct": 58.21
                 },
                 {
-                    "time_hours": 6.0,
-                    "unbroken_dna_pct": 24.29,
-                    "double_strand_breaks_pct": 60.8,
-                    "nhej_indels_pct": 13.37,
-                    "hdr_precise_integration_pct": 1.54
+                    "time_days": 5.0,
+                    "gag_concentration_mg_g": 86.42,
+                    "swelling_pressure_kPa": 395.85,
+                    "mmp_concentration_units": 6.23,
+                    "ecm_integrity_pct": 4.99,
+                    "chondrocyte_viability_pct": 5.57
                 },
                 {
-                    "time_hours": 12.0,
-                    "unbroken_dna_pct": 9.07,
-                    "double_strand_breaks_pct": 55.29,
-                    "nhej_indels_pct": 31.95,
-                    "hdr_precise_integration_pct": 3.69
+                    "time_days": 10.0,
+                    "gag_concentration_mg_g": 107.27,
+                    "swelling_pressure_kPa": 556.68,
+                    "mmp_concentration_units": 3.38,
+                    "ecm_integrity_pct": 1.64,
+                    "chondrocyte_viability_pct": 0.31
                 },
                 {
-                    "time_hours": 18.0,
-                    "unbroken_dna_pct": 4.57,
-                    "double_strand_breaks_pct": 42.74,
-                    "nhej_indels_pct": 47.25,
-                    "hdr_precise_integration_pct": 5.45
+                    "time_days": 15.0,
+                    "gag_concentration_mg_g": 128.01,
+                    "swelling_pressure_kPa": 751.24,
+                    "mmp_concentration_units": 2.4,
+                    "ecm_integrity_pct": 0.82,
+                    "chondrocyte_viability_pct": 0.01
                 },
                 {
-                    "time_hours": 24.0,
-                    "unbroken_dna_pct": 2.83,
-                    "double_strand_breaks_pct": 31.61,
-                    "nhej_indels_pct": 58.78,
-                    "hdr_precise_integration_pct": 6.78
+                    "time_days": 20.0,
+                    "gag_concentration_mg_g": 148.68,
+                    "swelling_pressure_kPa": 979.35,
+                    "mmp_concentration_units": 2.11,
+                    "ecm_integrity_pct": 0.47,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 30.0,
-                    "unbroken_dna_pct": 2.02,
-                    "double_strand_breaks_pct": 22.98,
-                    "nhej_indels_pct": 67.24,
-                    "hdr_precise_integration_pct": 7.76
+                    "time_days": 25.0,
+                    "gag_concentration_mg_g": 169.3,
+                    "swelling_pressure_kPa": 1240.88,
+                    "mmp_concentration_units": 2.03,
+                    "ecm_integrity_pct": 0.28,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 36.0,
-                    "unbroken_dna_pct": 1.6,
-                    "double_strand_breaks_pct": 16.57,
-                    "nhej_indels_pct": 73.36,
-                    "hdr_precise_integration_pct": 8.46
+                    "time_days": 30.0,
+                    "gag_concentration_mg_g": 189.87,
+                    "swelling_pressure_kPa": 1535.74,
+                    "mmp_concentration_units": 2.01,
+                    "ecm_integrity_pct": 0.17,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 42.0,
-                    "unbroken_dna_pct": 1.36,
-                    "double_strand_breaks_pct": 11.9,
-                    "nhej_indels_pct": 77.76,
-                    "hdr_precise_integration_pct": 8.97
+                    "time_days": 35.0,
+                    "gag_concentration_mg_g": 210.4,
+                    "swelling_pressure_kPa": 1863.87,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.1,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 48.0,
-                    "unbroken_dna_pct": 1.22,
-                    "double_strand_breaks_pct": 8.52,
-                    "nhej_indels_pct": 80.92,
-                    "hdr_precise_integration_pct": 9.34
+                    "time_days": 40.0,
+                    "gag_concentration_mg_g": 230.91,
+                    "swelling_pressure_kPa": 2225.18,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.06,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 54.0,
-                    "unbroken_dna_pct": 1.12,
-                    "double_strand_breaks_pct": 6.1,
-                    "nhej_indels_pct": 83.18,
-                    "hdr_precise_integration_pct": 9.6
+                    "time_days": 45.0,
+                    "gag_concentration_mg_g": 251.39,
+                    "swelling_pressure_kPa": 2619.65,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.04,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 60.0,
-                    "unbroken_dna_pct": 1.06,
-                    "double_strand_breaks_pct": 4.35,
-                    "nhej_indels_pct": 84.8,
-                    "hdr_precise_integration_pct": 9.78
+                    "time_days": 50.0,
+                    "gag_concentration_mg_g": 271.85,
+                    "swelling_pressure_kPa": 3047.22,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.02,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 66.0,
-                    "unbroken_dna_pct": 1.02,
-                    "double_strand_breaks_pct": 3.11,
-                    "nhej_indels_pct": 85.95,
-                    "hdr_precise_integration_pct": 9.92
+                    "time_days": 55.0,
+                    "gag_concentration_mg_g": 292.29,
+                    "swelling_pressure_kPa": 3507.86,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.01,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 72,
-                    "unbroken_dna_pct": 1.0,
-                    "double_strand_breaks_pct": 2.22,
-                    "nhej_indels_pct": 86.77,
-                    "hdr_precise_integration_pct": 10.01
+                    "time_days": 60.0,
+                    "gag_concentration_mg_g": 312.72,
+                    "swelling_pressure_kPa": 4001.54,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.01,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 65.0,
+                    "gag_concentration_mg_g": 333.13,
+                    "swelling_pressure_kPa": 4528.24,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 70.0,
+                    "gag_concentration_mg_g": 353.53,
+                    "swelling_pressure_kPa": 5087.93,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 75.0,
+                    "gag_concentration_mg_g": 373.92,
+                    "swelling_pressure_kPa": 5680.6,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 80.0,
+                    "gag_concentration_mg_g": 394.31,
+                    "swelling_pressure_kPa": 6306.21,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 85.0,
+                    "gag_concentration_mg_g": 414.68,
+                    "swelling_pressure_kPa": 6964.77,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 90,
+                    "gag_concentration_mg_g": 434.63,
+                    "swelling_pressure_kPa": 7642.1,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
                 }
             ]
         },
-        "AcutisForge Chondrocyte-Targeted HDR-Optimized (FGF2 + SCR7 + NLS-Cas12a)": {
+        "AcutisForge Chondrocyte-Targeted CRISPR Rejuvenation": {
             "metadata": {
-                "nhej_rate_constant": 0.052,
-                "hdr_rate_constant": 0.058,
-                "donor_recruitment_mult": 9.5,
-                "description": "Combined NHEJ inhibition, cell-cycle reactivation with FGF2, and Col2a1-enhancer-driven precise integration."
+                "idua_level": 0.85,
+                "k_syn_gag": 5.0,
+                "description": "Direct chondrocytic editing yielding continuous local IDUA secretion, clearing GAGs from the inside out."
             },
             "trajectory": [
                 {
-                    "time_hours": 0.0,
-                    "unbroken_dna_pct": 99.72,
-                    "double_strand_breaks_pct": 0.28,
-                    "nhej_indels_pct": 0.0,
-                    "hdr_precise_integration_pct": 0.0
+                    "time_days": 0.0,
+                    "gag_concentration_mg_g": 64.67,
+                    "swelling_pressure_kPa": 269.0,
+                    "mmp_concentration_units": 11.86,
+                    "ecm_integrity_pct": 42.37,
+                    "chondrocyte_viability_pct": 58.21
                 },
                 {
-                    "time_hours": 6.0,
-                    "unbroken_dna_pct": 24.29,
-                    "double_strand_breaks_pct": 12.5,
-                    "nhej_indels_pct": 5.45,
-                    "hdr_precise_integration_pct": 57.76
+                    "time_days": 5.0,
+                    "gag_concentration_mg_g": 49.34,
+                    "swelling_pressure_kPa": 198.5,
+                    "mmp_concentration_units": 5.54,
+                    "ecm_integrity_pct": 5.56,
+                    "chondrocyte_viability_pct": 6.57
                 },
                 {
-                    "time_hours": 12.0,
-                    "unbroken_dna_pct": 9.07,
-                    "double_strand_breaks_pct": 3.18,
-                    "nhej_indels_pct": 7.57,
-                    "hdr_precise_integration_pct": 80.18
+                    "time_days": 10.0,
+                    "gag_concentration_mg_g": 36.62,
+                    "swelling_pressure_kPa": 154.29,
+                    "mmp_concentration_units": 3.02,
+                    "ecm_integrity_pct": 2.12,
+                    "chondrocyte_viability_pct": 0.58
                 },
                 {
-                    "time_hours": 18.0,
-                    "unbroken_dna_pct": 4.57,
-                    "double_strand_breaks_pct": 1.0,
-                    "nhej_indels_pct": 8.14,
-                    "hdr_precise_integration_pct": 86.29
+                    "time_days": 15.0,
+                    "gag_concentration_mg_g": 27.07,
+                    "swelling_pressure_kPa": 129.65,
+                    "mmp_concentration_units": 2.29,
+                    "ecm_integrity_pct": 1.12,
+                    "chondrocyte_viability_pct": 0.05
                 },
                 {
-                    "time_hours": 24.0,
-                    "unbroken_dna_pct": 2.83,
-                    "double_strand_breaks_pct": 0.4,
-                    "nhej_indels_pct": 8.35,
-                    "hdr_precise_integration_pct": 88.43
+                    "time_days": 20.0,
+                    "gag_concentration_mg_g": 20.85,
+                    "swelling_pressure_kPa": 117.55,
+                    "mmp_concentration_units": 2.08,
+                    "ecm_integrity_pct": 0.65,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 30.0,
-                    "unbroken_dna_pct": 2.02,
-                    "double_strand_breaks_pct": 0.19,
-                    "nhej_indels_pct": 8.43,
-                    "hdr_precise_integration_pct": 89.35
+                    "time_days": 25.0,
+                    "gag_concentration_mg_g": 17.39,
+                    "swelling_pressure_kPa": 112.17,
+                    "mmp_concentration_units": 2.02,
+                    "ecm_integrity_pct": 0.39,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 36.0,
-                    "unbroken_dna_pct": 1.6,
-                    "double_strand_breaks_pct": 0.1,
-                    "nhej_indels_pct": 8.48,
-                    "hdr_precise_integration_pct": 89.82
+                    "time_days": 30.0,
+                    "gag_concentration_mg_g": 15.71,
+                    "swelling_pressure_kPa": 109.9,
+                    "mmp_concentration_units": 2.01,
+                    "ecm_integrity_pct": 0.24,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 42.0,
-                    "unbroken_dna_pct": 1.36,
-                    "double_strand_breaks_pct": 0.06,
-                    "nhej_indels_pct": 8.5,
-                    "hdr_precise_integration_pct": 90.08
+                    "time_days": 35.0,
+                    "gag_concentration_mg_g": 14.97,
+                    "swelling_pressure_kPa": 108.97,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.14,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 48.0,
-                    "unbroken_dna_pct": 1.22,
-                    "double_strand_breaks_pct": 0.04,
-                    "nhej_indels_pct": 8.52,
-                    "hdr_precise_integration_pct": 90.23
+                    "time_days": 40.0,
+                    "gag_concentration_mg_g": 14.65,
+                    "swelling_pressure_kPa": 108.59,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.09,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 54.0,
-                    "unbroken_dna_pct": 1.12,
-                    "double_strand_breaks_pct": 0.02,
-                    "nhej_indels_pct": 8.52,
-                    "hdr_precise_integration_pct": 90.33
+                    "time_days": 45.0,
+                    "gag_concentration_mg_g": 14.52,
+                    "swelling_pressure_kPa": 108.43,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.05,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 60.0,
-                    "unbroken_dna_pct": 1.06,
-                    "double_strand_breaks_pct": 0.02,
-                    "nhej_indels_pct": 8.53,
-                    "hdr_precise_integration_pct": 90.39
+                    "time_days": 50.0,
+                    "gag_concentration_mg_g": 14.46,
+                    "swelling_pressure_kPa": 108.37,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.03,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 66.0,
-                    "unbroken_dna_pct": 1.02,
-                    "double_strand_breaks_pct": 0.01,
-                    "nhej_indels_pct": 8.53,
-                    "hdr_precise_integration_pct": 90.43
+                    "time_days": 55.0,
+                    "gag_concentration_mg_g": 14.44,
+                    "swelling_pressure_kPa": 108.34,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.02,
+                    "chondrocyte_viability_pct": 0.0
                 },
                 {
-                    "time_hours": 72,
-                    "unbroken_dna_pct": 1.0,
-                    "double_strand_breaks_pct": 0.01,
-                    "nhej_indels_pct": 8.54,
-                    "hdr_precise_integration_pct": 90.46
+                    "time_days": 60.0,
+                    "gag_concentration_mg_g": 14.43,
+                    "swelling_pressure_kPa": 108.33,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.01,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 65.0,
+                    "gag_concentration_mg_g": 14.43,
+                    "swelling_pressure_kPa": 108.32,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.01,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 70.0,
+                    "gag_concentration_mg_g": 14.42,
+                    "swelling_pressure_kPa": 108.32,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 75.0,
+                    "gag_concentration_mg_g": 14.42,
+                    "swelling_pressure_kPa": 108.32,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 80.0,
+                    "gag_concentration_mg_g": 14.42,
+                    "swelling_pressure_kPa": 108.32,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 85.0,
+                    "gag_concentration_mg_g": 14.42,
+                    "swelling_pressure_kPa": 108.32,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
+                },
+                {
+                    "time_days": 90,
+                    "gag_concentration_mg_g": 14.42,
+                    "swelling_pressure_kPa": 108.32,
+                    "mmp_concentration_units": 2.0,
+                    "ecm_integrity_pct": 0.0,
+                    "chondrocyte_viability_pct": 0.0
                 }
             ]
         }
